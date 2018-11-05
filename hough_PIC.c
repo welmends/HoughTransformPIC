@@ -2,11 +2,9 @@
  * @file hough_PIC.c
  * @brief Standard Hough Transform Implemantation on C language
           Platform: PIC16F18875 - Microchip (MPLAB X - XC8 C Compiler)
-          Input : Path to an image, Type of the image (Canny or Original) and
-                  Output type (Binary or 8 Bits)
-          Output: Hough Transform Matrix (Accumulator image [PGM])
-          Other: More information about the use of this code is present in
-                 instructions method
+          Input : ...
+          Output: ...
+          Other : ...
  * @author $Author:$ de Souza, Joao Wellington Mendes; Brito, Messyo Sousa
  * @version $Revision:$
  * @date $Date:$ Created on 05/11/2018 and Last Update on 05/11/2018
@@ -56,7 +54,6 @@
 #include <xc.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <time.h>
 #include <math.h>
 
@@ -68,30 +65,20 @@
 #define Baud_value (((float)(F_CPU)/(float)baud_rate)-1)//calculo do taxa de transmissão serial para Uart
 
 //#define M_PI            (3.14159265358979323846)//PI value approximation
-#define IMAGE_PATH_SIZE (100)//Standard size for image path
 #define THRESH_VALUE    (200)//Standard thresh value
-#define MAX_ROWS        (20)//Maximum size for rows
-#define MAX_COLS        (20)//Maximum size for cols
+#define GRAYSCALE       (255)//Levels of grayscale
+#define ROWS            (20)//Default size for rows
+#define COLS            (20)//Default size for cols
 
 ////////////////////////////////////////////////////////////////////////////////
 //                              Global Variables                              //
 ////////////////////////////////////////////////////////////////////////////////
-int j=0;
-
-////////////////////////////////////////////////////////////////////////////////
-//                                  Structs                                   //
-////////////////////////////////////////////////////////////////////////////////
-typedef struct{
-  char magicNumber[3];
-  int rows,cols,grayscale;
-  unsigned char pM[MAX_ROWS*MAX_COLS];
-}Matrix;
+unsigned char inputImage[400];//20x20 Matrix
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                 Prototypes                                 //
 ////////////////////////////////////////////////////////////////////////////////
-void instructions(void);
-void houghTransform(Matrix *image, Matrix *accumulator, char out_type);
+void houghTransform();
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                Source Code                                 //
@@ -107,53 +94,14 @@ void houghTransform(Matrix *image, Matrix *accumulator, char out_type);
  */
 int main(void) {
     TRISA = 0x0F;
-
-//    LATAbits.LATA4 = 0;
-//    LATAbits.LATA5 = 1;
-//    LATAbits.LATA6 = 1;            
-//    LATAbits.LATA7 = 0;
-//    while (1);
+    LATA = 0x00;
+    LATAbits.LATA7 = 1;// Start process - Bit LATA7 HIGH
     
-    while (1) {
-        j++;
-      LATA = 0x90;
-//    LATAbits.LATA4 = 0;
-//    LATAbits.LATA5 = 1;
-//    LATAbits.LATA6 = 1;            
-//    LATAbits.LATA7 = 0;
-    __delay_ms(500);  
-      LATA = 0x60;
-//    LATAbits.LATA4 = 1;
-//    LATAbits.LATA5 = 0;
-//    LATAbits.LATA6 = 0;            
-//    LATAbits.LATA7 = 1;
-    __delay_ms(500);
-    }
-}
-
-/**
- * @author: Joao Wellington and Messyo Sousa
- * @brief: Print on screen the instructions to use this program.
- * @param: void
- * @return: void
- */
-void instructions(void){
-  printf("\n");
-  printf(" **************************************************************************** \n");
-  printf("|                               [Instructions]                               |\n");
-  printf("| Compile: arm-unknown-linux-gnueabi-gcc src/hough_ARM.c -o objs/hough_ARM.o |\n");
-  printf("| Command: ./objs/hough_ARM.o <type> <out_type> <image_name>                 |\n");
-  printf("| Warning: The PGM image must be in 'images' folder                          |\n");
-  printf("| Example: ./objs/hough_ARM.o canny binary lines                             |\n");
-  printf("| Example: ./objs/hough_ARM.o original 8bits lines                           |\n");
-  printf("|                                                                            |\n");
-  printf("| <type>       : canny or original                                           |\n");
-  printf("| <out_type>   : binary or 8bits                                             |\n");
-  printf("| <image_name> : Any PGM image                                               |\n");
-  printf("|                                                                            |\n");
-  printf("| OBS: The output image will be generated in 'results' folder                |\n");
-  printf(" **************************************************************************** \n");
-  printf("\n");
+    //Process
+    
+    LATAbits.LATA7 = 0;
+    LATAbits.LATA6 = 1;// End process   - Bit LATA6 HIGH
+    return 0;
 }
 
 /**
@@ -166,38 +114,27 @@ void instructions(void){
  *         be applied to it with a default threshold value set in THRESH_VALUE.
  *         More information: http://homepages.inf.ed.ac.uk/rbf/HIPR2/hough.htm
  *                           PATENT US3069654A - Paul V C Hough
- * @param: Matrix *image       - input image Matrix
-           Matrix *accumulator - variable to store the accumulator
-           char out_type       - output type chosen
+ * @param: void
  * @return: void
  */
-void houghTransform(Matrix *image, Matrix *accumulator, char out_type){
+void houghTransform(void){
     // Calculate the height and width of the Hough accumulator
     // accu_width  = 0 to 180 degrees
     // accu_height = 2*D - 1 and D = sqrt(height^2 + width^2)
-	accumulator->rows        = 180;
-    accumulator->cols        = ceil(2*(sqrt(image->rows*image->rows + image->cols*image->cols))) - 1;
-    accumulator->grayscale   = image->grayscale;
-    strcpy(accumulator->magicNumber,image->magicNumber);
+	//accumulator->rows        = 180;
+    //accumulator->cols        = ceil(2*(sqrt(ROWS*ROWS + COLS*COLS))) - 1;
 
     // Go to each pixel with hight level (>THRESH_VALUE) and calculate Rho to each Theta
 	float rho;
 	int theta,i,j;
-	for(j=0; j<image->cols; j++){
-		for(i=0; i<image->rows; i++){
-			if(image->pM[ (j*image->rows) + i] > THRESH_VALUE){
+	for(j=0; j<COLS; j++){
+		for(i=0; i<ROWS; i++){
+			if(inputImage[ (j*ROWS) + i] > THRESH_VALUE){
 				for(theta=0; theta<180; theta++){
 					// rho = xcos(theta) + ysin(theta) [theta is in radians]
                     rho = ( (j)*cos((theta)*M_PI/180.0) ) + ( (i)*sin(theta*M_PI/180.0) );
-
-                    if(out_type=='b'){
-                        // accumulator(theta,rho+D) = High Level
-                        accumulator->pM[ (int)((ceil(rho + accumulator->cols/2) * 180.0)) + 180-theta-1] = accumulator->grayscale;
-                    }
-                    else{
-                        // accumulator(theta,rho+D)++
-                        accumulator->pM[ (int)((ceil(rho + accumulator->cols/2) * 180.0)) + 180-theta-1]++;
-                    }
+                    // accumulator(theta,rho+D)++
+                    inputImage[ (int)((ceil(rho + COLS/2) * 180.0)) + 180-theta-1]++;
 				}
 			}
 		}

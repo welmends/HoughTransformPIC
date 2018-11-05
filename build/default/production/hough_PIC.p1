@@ -6,31 +6,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 "950
 [; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 950: extern volatile unsigned char LATA __attribute__((address(0x016)));
 [v _LATA `Vuc ~T0 @X0 0 e@22 ]
-[v F12202 `(v ~T0 @X0 1 tf1`ul ]
-"92 /opt/microchip/xc8/v2.00/pic/include/pic.h
-[v __delay `JF12202 ~T0 @X0 0 e ]
-[p i __delay ]
-"113 /opt/microchip/xc8/v2.00/pic/include/c99/stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"84 hough_PIC.c
-[; ;hough_PIC.c: 84: typedef struct{
-[s S1632 `uc -> 3 `i `i 1 `i 1 `i 1 `uc -> 400 `i ]
-[n S1632 . magicNumber rows cols grayscale pM ]
-"214 /opt/microchip/xc8/v2.00/pic/include/c99/math.h
-[; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 214: float ceilf(float);
-[v _ceilf `(f ~T0 @X0 0 ef1`f ]
-"571
-[; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 571: float sqrtf(float);
-[v _sqrtf `(f ~T0 @X0 0 ef1`f ]
-"33 /opt/microchip/xc8/v2.00/pic/include/c99/string.h
-[; ;/opt/microchip/xc8/v2.00/pic/include/c99/string.h: 33: char *strcpy (char *restrict, const char *restrict);
-[v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"956
+[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 956:     struct {
+[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S53 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+"955
+[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 955: typedef union {
+[u S52 `S53 1 ]
+[n S52 . . ]
+"967
+[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
+[v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
 "230 /opt/microchip/xc8/v2.00/pic/include/c99/math.h
 [; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 230: float cosf(float);
 [v _cosf `(f ~T0 @X0 0 ef1`f ]
 "555
 [; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 555: float sinf(float);
 [v _sinf `(f ~T0 @X0 0 ef1`f ]
+"214
+[; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 214: float ceilf(float);
+[v _ceilf `(f ~T0 @X0 0 ef1`f ]
 "19 hough_PIC.c
 [p x FEXTOSC = OFF ]
 "20
@@ -1714,233 +1709,112 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 36645: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "79 hough_PIC.c
-[; ;hough_PIC.c: 79: int j=0;
-[v _j `i ~T0 @X0 1 e ]
-[i _j
--> 0 `i
-]
+[; ;hough_PIC.c: 79: unsigned char inputImage[400];
+[v _inputImage `uc ~T0 @X0 -> 400 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"108
-[; ;hough_PIC.c: 108: int main(void) {
+"98
+[; ;hough_PIC.c: 98: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"109
-[; ;hough_PIC.c: 109:     TRISA = 0x0F;
+"99
+[; ;hough_PIC.c: 99:     TRISA = 0x0F;
 [e = _TRISA -> -> 15 `i `uc ]
-"117
-[; ;hough_PIC.c: 117:     while (1) {
-[e :U 1635 ]
-{
-"118
-[; ;hough_PIC.c: 118:         j++;
-[e ++ _j -> 1 `i ]
-"119
-[; ;hough_PIC.c: 119:       LATA = 0x90;
-[e = _LATA -> -> 144 `i `uc ]
-"124
-[; ;hough_PIC.c: 124:     _delay((unsigned long)((500)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"125
-[; ;hough_PIC.c: 125:       LATA = 0x60;
-[e = _LATA -> -> 96 `i `uc ]
-"130
-[; ;hough_PIC.c: 130:     _delay((unsigned long)((500)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"131
-[; ;hough_PIC.c: 131:     }
+"100
+[; ;hough_PIC.c: 100:     LATA = 0x00;
+[e = _LATA -> -> 0 `i `uc ]
+"101
+[; ;hough_PIC.c: 101:     LATAbits.LATA7 = 1;
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+"105
+[; ;hough_PIC.c: 105:     LATAbits.LATA7 = 0;
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+"106
+[; ;hough_PIC.c: 106:     LATAbits.LATA6 = 1;
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+"107
+[; ;hough_PIC.c: 107:     return 0;
+[e ) -> 0 `i ]
+[e $UE 1632  ]
+"108
+[; ;hough_PIC.c: 108: }
+[e :UE 1632 ]
 }
-[e :U 1634 ]
-[e $U 1635  ]
-[e :U 1636 ]
-"132
-[; ;hough_PIC.c: 132: }
-[e :UE 1633 ]
-}
-"140
-[; ;hough_PIC.c: 140: void instructions(void){
-[v _instructions `(v ~T0 @X0 1 ef ]
-{
-[e :U _instructions ]
-[f ]
-"141
-[; ;hough_PIC.c: 141:   printf("\n");
-[e ( _printf :s 1C ]
-"142
-[; ;hough_PIC.c: 142:   printf(" **************************************************************************** \n");
-[e ( _printf :s 2C ]
-"143
-[; ;hough_PIC.c: 143:   printf("|                               [Instructions]                               |\n");
-[e ( _printf :s 3C ]
-"144
-[; ;hough_PIC.c: 144:   printf("| Compile: arm-unknown-linux-gnueabi-gcc src/hough_ARM.c -o objs/hough_ARM.o |\n");
-[e ( _printf :s 4C ]
-"145
-[; ;hough_PIC.c: 145:   printf("| Command: ./objs/hough_ARM.o <type> <out_type> <image_name>                 |\n");
-[e ( _printf :s 5C ]
-"146
-[; ;hough_PIC.c: 146:   printf("| Warning: The PGM image must be in 'images' folder                          |\n");
-[e ( _printf :s 6C ]
-"147
-[; ;hough_PIC.c: 147:   printf("| Example: ./objs/hough_ARM.o canny binary lines                             |\n");
-[e ( _printf :s 7C ]
-"148
-[; ;hough_PIC.c: 148:   printf("| Example: ./objs/hough_ARM.o original 8bits lines                           |\n");
-[e ( _printf :s 8C ]
-"149
-[; ;hough_PIC.c: 149:   printf("|                                                                            |\n");
-[e ( _printf :s 9C ]
-"150
-[; ;hough_PIC.c: 150:   printf("| <type>       : canny or original                                           |\n");
-[e ( _printf :s 10C ]
-"151
-[; ;hough_PIC.c: 151:   printf("| <out_type>   : binary or 8bits                                             |\n");
-[e ( _printf :s 11C ]
-"152
-[; ;hough_PIC.c: 152:   printf("| <image_name> : Any PGM image                                               |\n");
-[e ( _printf :s 12C ]
-"153
-[; ;hough_PIC.c: 153:   printf("|                                                                            |\n");
-[e ( _printf :s 13C ]
-"154
-[; ;hough_PIC.c: 154:   printf("| OBS: The output image will be generated in 'results' folder                |\n");
-[e ( _printf :s 14C ]
-"155
-[; ;hough_PIC.c: 155:   printf(" **************************************************************************** \n");
-[e ( _printf :s 15C ]
-"156
-[; ;hough_PIC.c: 156:   printf("\n");
-[e ( _printf :s 16C ]
-"157
-[; ;hough_PIC.c: 157: }
-[e :UE 1637 ]
-}
-"174
-[; ;hough_PIC.c: 174: void houghTransform(Matrix *image, Matrix *accumulator, char out_type){
-[v _houghTransform `(v ~T0 @X0 1 ef3`*S1632`*S1632`uc ]
+"123
+[; ;hough_PIC.c: 123: void houghTransform(void){
+[v _houghTransform `(v ~T0 @X0 1 ef ]
 {
 [e :U _houghTransform ]
-[v _image `*S1632 ~T0 @X0 1 r1 ]
-[v _accumulator `*S1632 ~T0 @X0 1 r2 ]
-[v _out_type `uc ~T0 @X0 1 r3 ]
 [f ]
-"178
-[; ;hough_PIC.c: 178:  accumulator->rows = 180;
-[e = . *U _accumulator 1 -> 180 `i ]
-"179
-[; ;hough_PIC.c: 179:     accumulator->cols = ceilf(2*(sqrtf(image->rows*image->rows + image->cols*image->cols))) - 1;
-[e = . *U _accumulator 2 -> - ( _ceilf (1 * -> -> 2 `i `f ( _sqrtf (1 -> + * . *U _image 1 . *U _image 1 * . *U _image 2 . *U _image 2 `f -> -> 1 `i `f `i ]
-"180
-[; ;hough_PIC.c: 180:     accumulator->grayscale = image->grayscale;
-[e = . *U _accumulator 3 . *U _image 3 ]
-"181
-[; ;hough_PIC.c: 181:     strcpy(accumulator->magicNumber,image->magicNumber);
-[e ( _strcpy (2 , &U . *U _accumulator 0 -> &U . *U _image 0 `*Cuc ]
-"184
-[; ;hough_PIC.c: 184:  float rho;
+"131
+[; ;hough_PIC.c: 131:  float rho;
 [v _rho `f ~T0 @X0 1 a ]
-"185
-[; ;hough_PIC.c: 185:  int theta,i,j;
+"132
+[; ;hough_PIC.c: 132:  int theta,i,j;
 [v _theta `i ~T0 @X0 1 a ]
 [v _i `i ~T0 @X0 1 a ]
 [v _j `i ~T0 @X0 1 a ]
-"186
-[; ;hough_PIC.c: 186:  for(j=0; j<image->cols; j++){
+"133
+[; ;hough_PIC.c: 133:  for(j=0; j<(20); j++){
 {
 [e = _j -> 0 `i ]
-[e $U 1642  ]
-[e :U 1639 ]
+[e $ < _j -> 20 `i 1634  ]
+[e $U 1635  ]
+[e :U 1634 ]
 {
-"187
-[; ;hough_PIC.c: 187:   for(i=0; i<image->rows; i++){
+"134
+[; ;hough_PIC.c: 134:   for(i=0; i<(20); i++){
 {
 [e = _i -> 0 `i ]
-[e $U 1646  ]
-[e :U 1643 ]
+[e $ < _i -> 20 `i 1637  ]
+[e $U 1638  ]
+[e :U 1637 ]
 {
-"188
-[; ;hough_PIC.c: 188:    if(image->pM[ (j*image->rows) + i] > (200)){
-[e $ ! > -> *U + &U . *U _image 4 * -> -> + * _j . *U _image 1 _i `ui `ux -> -> # *U &U . *U _image 4 `ui `ux `i -> 200 `i 1647  ]
+"135
+[; ;hough_PIC.c: 135:    if(inputImage[ (j*(20)) + i] > (200)){
+[e $ ! > -> *U + &U _inputImage * -> -> + * _j -> 20 `i _i `ui `ux -> -> # *U &U _inputImage `ui `ux `i -> 200 `i 1640  ]
 {
-"189
-[; ;hough_PIC.c: 189:     for(theta=0; theta<180; theta++){
+"136
+[; ;hough_PIC.c: 136:     for(theta=0; theta<180; theta++){
 {
 [e = _theta -> 0 `i ]
-[e $ < _theta -> 180 `i 1648  ]
-[e $U 1649  ]
-[e :U 1648 ]
+[e $ < _theta -> 180 `i 1641  ]
+[e $U 1642  ]
+[e :U 1641 ]
 {
-"191
-[; ;hough_PIC.c: 191:                     rho = ( (j)*cosf((theta)*3.14159265358979323846/180.0) ) + ( (i)*sinf(theta*3.14159265358979323846/180.0) );
+"138
+[; ;hough_PIC.c: 138:                     rho = ( (j)*cosf((theta)*3.14159265358979323846/180.0) ) + ( (i)*sinf(theta*3.14159265358979323846/180.0) );
 [e = _rho + * -> _j `f ( _cosf (1 -> / * -> _theta `d .3.14159265358979323846 .180.0 `f * -> _i `f ( _sinf (1 -> / * -> _theta `d .3.14159265358979323846 .180.0 `f ]
-"193
-[; ;hough_PIC.c: 193:                     if(out_type=='b'){
-[e $ ! == -> _out_type `ui -> 98 `ui 1651  ]
-{
-"195
-[; ;hough_PIC.c: 195:                         accumulator->pM[ (int)((ceilf(rho + accumulator->cols/2) * 180.0)) + 180-theta-1] = accumulator->grayscale;
-[e = *U + &U . *U _accumulator 4 * -> -> - - + -> * -> ( _ceilf (1 + _rho -> / . *U _accumulator 2 -> 2 `i `f `d .180.0 `i -> 180 `i _theta -> 1 `i `ui `ux -> -> # *U &U . *U _accumulator 4 `ui `ux -> . *U _accumulator 3 `uc ]
-"196
-[; ;hough_PIC.c: 196:                     }
-}
-[e $U 1652  ]
-"197
-[; ;hough_PIC.c: 197:                     else{
-[e :U 1651 ]
-{
-"199
-[; ;hough_PIC.c: 199:                         accumulator->pM[ (int)((ceilf(rho + accumulator->cols/2) * 180.0)) + 180-theta-1]++;
-[e ++ *U + &U . *U _accumulator 4 * -> -> - - + -> * -> ( _ceilf (1 + _rho -> / . *U _accumulator 2 -> 2 `i `f `d .180.0 `i -> 180 `i _theta -> 1 `i `ui `ux -> -> # *U &U . *U _accumulator 4 `ui `ux -> -> 1 `i `uc ]
-"200
-[; ;hough_PIC.c: 200:                     }
-}
-[e :U 1652 ]
-"201
-[; ;hough_PIC.c: 201:     }
+"140
+[; ;hough_PIC.c: 140:                     inputImage[ (int)((ceilf(rho + (20)/2) * 180.0)) + 180-theta-1]++;
+[e ++ *U + &U _inputImage * -> -> - - + -> * -> ( _ceilf (1 + _rho -> / -> 20 `i -> 2 `i `f `d .180.0 `i -> 180 `i _theta -> 1 `i `ui `ux -> -> # *U &U _inputImage `ui `ux -> -> 1 `i `uc ]
+"141
+[; ;hough_PIC.c: 141:     }
 }
 [e ++ _theta -> 1 `i ]
-[e $ < _theta -> 180 `i 1648  ]
-[e :U 1649 ]
+[e $ < _theta -> 180 `i 1641  ]
+[e :U 1642 ]
 }
-"202
-[; ;hough_PIC.c: 202:    }
+"142
+[; ;hough_PIC.c: 142:    }
 }
-[e :U 1647 ]
-"203
-[; ;hough_PIC.c: 203:   }
+[e :U 1640 ]
+"143
+[; ;hough_PIC.c: 143:   }
 }
 [e ++ _i -> 1 `i ]
-[e :U 1646 ]
-[e $ < _i . *U _image 1 1643  ]
-[e :U 1644 ]
+[e $ < _i -> 20 `i 1637  ]
+[e :U 1638 ]
 }
-"204
-[; ;hough_PIC.c: 204:  }
+"144
+[; ;hough_PIC.c: 144:  }
 }
 [e ++ _j -> 1 `i ]
-[e :U 1642 ]
-[e $ < _j . *U _image 2 1639  ]
-[e :U 1640 ]
+[e $ < _j -> 20 `i 1634  ]
+[e :U 1635 ]
 }
-"205
-[; ;hough_PIC.c: 205: }
-[e :UE 1638 ]
+"145
+[; ;hough_PIC.c: 145: }
+[e :UE 1633 ]
 }
-[p f _printf 8388608 ]
-[a 4C 124 32 67 111 109 112 105 108 101 58 32 97 114 109 45 117 110 107 110 111 119 110 45 108 105 110 117 120 45 103 110 117 101 97 98 105 45 103 99 99 32 115 114 99 47 104 111 117 103 104 95 65 82 77 46 99 32 45 111 32 111 98 106 115 47 104 111 117 103 104 95 65 82 77 46 111 32 124 10 0 ]
-[a 14C 124 32 79 66 83 58 32 84 104 101 32 111 117 116 112 117 116 32 105 109 97 103 101 32 119 105 108 108 32 98 101 32 103 101 110 101 114 97 116 101 100 32 105 110 32 39 114 101 115 117 108 116 115 39 32 102 111 108 100 101 114 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 124 10 0 ]
-[a 5C 124 32 67 111 109 109 97 110 100 58 32 46 47 111 98 106 115 47 104 111 117 103 104 95 65 82 77 46 111 32 60 116 121 112 101 62 32 60 111 117 116 95 116 121 112 101 62 32 60 105 109 97 103 101 95 110 97 109 101 62 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 124 10 0 ]
-[a 6C 124 32 87 97 114 110 105 110 103 58 32 84 104 101 32 80 71 77 32 105 109 97 103 101 32 109 117 115 116 32 98 101 32 105 110 32 39 105 109 97 103 101 115 39 32 102 111 108 100 101 114 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 124 10 0 ]
-[a 8C 124 32 69 120 97 109 112 108 101 58 32 46 47 111 98 106 115 47 104 111 117 103 104 95 65 82 77 46 111 32 111 114 105 103 105 110 97 108 32 56 98 105 116 115 32 108 105 110 101 115 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 124 10 0 ]
-[a 7C 124 32 69 120 97 109 112 108 101 58 32 46 47 111 98 106 115 47 104 111 117 103 104 95 65 82 77 46 111 32 99 97 110 110 121 32 98 105 110 97 114 121 32 108 105 110 101 115 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 124 10 0 ]
-[a 3C 124 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 91 73 110 115 116 114 117 99 116 105 111 110 115 93 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 124 10 0 ]
-[a 10C 124 32 60 116 121 112 101 62 32 32 32 32 32 32 32 58 32 99 97 110 110 121 32 111 114 32 111 114 105 103 105 110 97 108 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 124 10 0 ]
-[a 11C 124 32 60 111 117 116 95 116 121 112 101 62 32 32 32 58 32 98 105 110 97 114 121 32 111 114 32 56 98 105 116 115 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 124 10 0 ]
-[a 12C 124 32 60 105 109 97 103 101 95 110 97 109 101 62 32 58 32 65 110 121 32 80 71 77 32 105 109 97 103 101 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 124 10 0 ]
-[a 9C 124 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 124 10 0 ]
-[a 13C 124 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 124 10 0 ]
-[a 2C 32 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 32 10 0 ]
-[a 15C 32 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 32 10 0 ]
-[a 1C 10 0 ]
-[a 16C 10 0 ]

@@ -2,18 +2,19 @@ Microchip MPLAB XC8 Compiler V2.00 ()
 
 Linker command line:
 
--W-3 --edf=/Applications/microchip/xc8/v2.00/pic/dat/en_msgs.txt -cs \
-  -h+dist/default/production/LED_.X.production.sym \
-  --cmf=dist/default/production/LED_.X.production.cmf -z -Q16F18875 \
-  -o/tmp/xcUhHf3b8 -Mdist/default/production/LED_.X.production.map -E1 \
-  -ver=XC8 --acfsm=1493 -ASTACK=02000h-023efh -pstack=STACK \
-  -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
-  -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh \
-  -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh \
-  -ABANK3=01A0h-01EFh -ABANK4=0220h-026Fh -ABANK5=02A0h-02EFh \
-  -ABANK6=0320h-036Fh -ABANK7=03A0h-03EFh -ABANK8=0420h-046Fh \
-  -ABANK9=04A0h-04EFh -ABANK10=0520h-056Fh -ABANK11=05A0h-05EFh \
-  -ABANK12=0620h-064Fh -ABIGRAM=02000h-023EFh \
+-W-3 --edf=/opt/microchip/xc8/v2.00/pic/dat/en_msgs.txt -cs \
+  -h+dist/default/production/houghTransformPIC.X.production.sym \
+  --cmf=dist/default/production/houghTransformPIC.X.production.cmf -z \
+  -Q16F18875 -o/tmp/xcXNvMfqJ --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/houghTransformPIC.X.production.map -E1 -ver=XC8 \
+  --acfsm=1493 -ASTACK=02000h-023efh -pstack=STACK -ACODE=00h-07FFhx4 \
+  -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
+  -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
+  -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh -ABANK3=01A0h-01EFh \
+  -ABANK4=0220h-026Fh -ABANK5=02A0h-02EFh -ABANK6=0320h-036Fh \
+  -ABANK7=03A0h-03EFh -ABANK8=0420h-046Fh -ABANK9=04A0h-04EFh \
+  -ABANK10=0520h-056Fh -ABANK11=05A0h-05EFh -ABANK12=0620h-064Fh \
+  -ABIGRAM=02000h-023EFh \
   -ARAM=020h-06Fh,0A0h-0EFh,0120h-016Fh,01A0h-01EFh,0220h-026Fh,02A0h-02EFh,0320h-036Fh,03A0h-03EFh,0420h-046Fh,04A0h-04EFh,0520h-056Fh,05A0h-05EFh,0620h-064Fh \
   -AABS1=020h-07Fh,0A0h-0EFh,0120h-016Fh,01A0h-01EFh,0220h-026Fh,02A0h-02EFh,0320h-036Fh,03A0h-03EFh,0420h-046Fh,04A0h-04EFh,0520h-056Fh,05A0h-05EFh,0620h-064Fh \
   -ASFR0=00h-01Fh -ASFR1=080h-09Fh -ASFR2=0100h-011Fh -ASFR3=0180h-019Fh \
@@ -30,8 +31,8 @@ Linker command line:
   -pcinit=CODE -pfunctab=ENTRY -ACONFIG=08007h-0800Bh -pconfig=CONFIG \
   -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
-  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k /tmp/xcn4JJBvb.o \
-  dist/default/production/LED_.X.production.o 
+  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k /tmp/xcXm7YSOH.o \
+  dist/default/production/houghTransformPIC.X.production.o 
 
 Object code version is 3.11
 
@@ -40,11 +41,11 @@ Machine type is 16F18875
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcn4JJBvb.o
+/tmp/xcXm7YSOH.o
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5    1000E       0
-dist/default/production/LED_.X.production.o
+dist/default/production/houghTransformPIC.X.production.o
                 cinit                               7FB      7FB        5      FF6       0
                 maintext                            7D2      7D2       29      FA4       0
                 cstackCOMMON                         72       72        2       70       1

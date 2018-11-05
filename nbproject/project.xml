@@ -3,8 +3,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>LED_</name>
-            <creation-uuid>b10f6b95-fd06-4533-a8d4-4cc8b54fac35</creation-uuid>
+            <name>houghTransformPIC</name>
+            <creation-uuid>e13a48b8-72fe-4c58-9e76-73c70c5f69b1</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>

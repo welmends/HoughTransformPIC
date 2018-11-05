@@ -239,8 +239,8 @@ config 1000E 10017 CONFIG 1000E 0
 bssCOMMON 70 73 COMMON 70 1
 maintext FA4 FF5 CODE FA4 0
 %locals
-dist/default/production/LED_.X.production.o
-/tmp/xc0Mo33dj
+dist/default/production/houghTransformPIC.X.production.o
+/tmp/xcXDDRD2C
 2333 7FB 0 CODE 0
 2336 7FB 0 CODE 0
 2348 7FB 0 CODE 0

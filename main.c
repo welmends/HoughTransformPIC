@@ -1,8 +1,8 @@
-/* 
+/*
  * File:   main.c
- * Author: elias
+ * Author: Wellington Mendes
  *
- * Created on October 19, 2018, 3:48 PM
+ * Created on 5 de Novembro de 2018, 08:39
  */
 
 // Production -> Set Configuration Bits;
@@ -52,7 +52,7 @@
 #define F_CPU 32000000/64//#define Baud_value(baud_rate) (((float)(F_CPU)/(float)baud_rate)-1)
 #define Baud_value (((float)(F_CPU)/(float)baud_rate)-1)//calculo do taxa de transmissão serial para Uart
 
-    int j=0;
+int j=0;
 
 /*
  * 
@@ -84,4 +84,3 @@ int main(void) {
     
 
 }
-

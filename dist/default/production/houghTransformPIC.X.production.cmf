@@ -14,30 +14,31 @@
 $dist/default/production/houghTransformPIC.X.production.o
 cinit CODE 0 7E7 7E7 19 2
 maintext CODE 0 7D1 7D1 A 2
-stringtext1 STRCODE 0 800 800 4 2
-stringtext2 STRCODE 0 804 804 4 2
-stringtext3 STRCODE 0 808 808 4 2
-stringtext4 STRCODE 0 80C 80C 4 2
-stringtext5 STRCODE 0 810 810 4 2
-stringtext6 STRCODE 0 814 814 4 2
-stringtext7 STRCODE 0 818 818 4 2
-stringtext8 STRCODE 0 81C 81C 4 2
-stringtext9 STRCODE 0 820 820 4 2
+stringtext1 STRCODE 0 805 805 4 2
+stringtext2 STRCODE 0 809 809 4 2
+stringtext3 STRCODE 0 80D 80D 4 2
+stringtext4 STRCODE 0 811 811 4 2
+stringtext5 STRCODE 0 815 815 4 2
+stringtext6 STRCODE 0 819 819 4 2
+stringtext7 STRCODE 0 81D 81D 4 2
+stringtext8 STRCODE 0 821 821 4 2
+stringtext9 STRCODE 0 825 825 4 2
 clrtext CODE 0 7DB 7DB C 2
-bssCOMMON COMMON 1 70 70 C 1
-stringtext10 STRCODE 0 824 824 4 2
-stringtext11 STRCODE 0 828 828 4 2
-stringtext12 STRCODE 0 82C 82C 4 2
-stringtext13 STRCODE 0 830 830 4 2
-stringtext14 STRCODE 0 834 834 4 2
-stringtext15 STRCODE 0 838 838 4 2
-stringtext16 STRCODE 0 83C 83C 4 2
-stringtext17 STRCODE 0 840 840 4 2
-stringtext18 STRCODE 0 844 844 4 2
-stringtext19 STRCODE 0 848 848 4 2
-stringtext20 STRCODE 0 84C 84C 4 2
-stringtext21 STRCODE 0 850 850 4 2
-$/tmp/xcXPioOAj.o
+bssCOMMON COMMON 1 70 70 E 1
+stringtext10 STRCODE 0 829 829 4 2
+stringtext11 STRCODE 0 82D 82D 4 2
+stringtext12 STRCODE 0 831 831 4 2
+stringtext13 STRCODE 0 835 835 4 2
+stringtext14 STRCODE 0 839 839 4 2
+stringtext15 STRCODE 0 83D 83D 4 2
+stringtext16 STRCODE 0 841 841 4 2
+stringtext17 STRCODE 0 845 845 4 2
+stringtext18 STRCODE 0 849 849 4 2
+stringtext19 STRCODE 0 84D 84D 4 2
+stringtext20 STRCODE 0 851 851 4 2
+stringtext21 STRCODE 0 855 855 4 2
+stringtext22 STRCODE 0 800 800 5 2
+$/tmp/xcX1JrluZ.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 0 8007 8007 5 2
@@ -64,9 +65,9 @@ BANK5 2A0-2EF 1
 BANK6 320-36F 1
 BANK7 3A0-3CF 1
 CONST 4-7D0 2
-CONST 854-1FFF 2
+CONST 859-1FFF 2
 ENTRY 4-7D0 2
-ENTRY 854-1FFF 2
+ENTRY 859-1FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -92,7 +93,7 @@ SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2000-225F 1
 CODE 4-7D0 2
-CODE 854-1FFF 2
+CODE 859-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -104,12 +105,11 @@ SFR7 380-39F 1
 SFR8 400-41F 1
 SFR9 480-49F 1
 BIGRAM 2000-23EF 1
-COMMON 7C-7D 1
 EEDATA F000-F0FF 2
 STRCODE 4-7D0 2
-STRCODE 854-1FFF 2
+STRCODE 859-1FFF 2
 STRING 4-7D0 2
-STRING 854-1FFF 2
+STRING 859-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -124,51 +124,51 @@ STRING 854-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/houghTransformPIC.X.production.o
-7E7 cinit CODE >2614:/tmp/xcXV8beAi
-7E7 cinit CODE >2617:/tmp/xcXV8beAi
-7E7 cinit CODE >2654:/tmp/xcXV8beAi
-7E8 cinit CODE >2655:/tmp/xcXV8beAi
-7E9 cinit CODE >2656:/tmp/xcXV8beAi
-7EA cinit CODE >2657:/tmp/xcXV8beAi
-7EB cinit CODE >2658:/tmp/xcXV8beAi
-7EC cinit CODE >2659:/tmp/xcXV8beAi
-7ED cinit CODE >2660:/tmp/xcXV8beAi
-7EE cinit CODE >2661:/tmp/xcXV8beAi
-7EF cinit CODE >2662:/tmp/xcXV8beAi
-7F2 cinit CODE >2666:/tmp/xcXV8beAi
-7F3 cinit CODE >2667:/tmp/xcXV8beAi
-7F4 cinit CODE >2668:/tmp/xcXV8beAi
-7F5 cinit CODE >2669:/tmp/xcXV8beAi
-7F6 cinit CODE >2670:/tmp/xcXV8beAi
-7F7 cinit CODE >2671:/tmp/xcXV8beAi
-7F8 cinit CODE >2672:/tmp/xcXV8beAi
-7F9 cinit CODE >2673:/tmp/xcXV8beAi
-7FA cinit CODE >2674:/tmp/xcXV8beAi
-7FD cinit CODE >2680:/tmp/xcXV8beAi
-7FD cinit CODE >2682:/tmp/xcXV8beAi
-7FE cinit CODE >2683:/tmp/xcXV8beAi
-7D1 maintext CODE >98:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
-7D1 maintext CODE >99:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
-7D4 maintext CODE >100:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
-7D5 maintext CODE >101:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
-7D6 maintext CODE >105:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
-7D7 maintext CODE >106:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
-7D9 maintext CODE >107:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
-7D9 maintext CODE >108:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
-7DB clrtext CODE >2637:/tmp/xcXV8beAi
-7DB clrtext CODE >2638:/tmp/xcXV8beAi
-7DC clrtext CODE >2639:/tmp/xcXV8beAi
-7DC clrtext CODE >2640:/tmp/xcXV8beAi
-7DD clrtext CODE >2641:/tmp/xcXV8beAi
-7DE clrtext CODE >2642:/tmp/xcXV8beAi
-7DF clrtext CODE >2643:/tmp/xcXV8beAi
-7E0 clrtext CODE >2644:/tmp/xcXV8beAi
-7E1 clrtext CODE >2645:/tmp/xcXV8beAi
-7E2 clrtext CODE >2646:/tmp/xcXV8beAi
-7E3 clrtext CODE >2647:/tmp/xcXV8beAi
-7E4 clrtext CODE >2648:/tmp/xcXV8beAi
-7E5 clrtext CODE >2649:/tmp/xcXV8beAi
-7E6 clrtext CODE >2650:/tmp/xcXV8beAi
+7E7 cinit CODE >2633:/tmp/xcXbcNMLI
+7E7 cinit CODE >2636:/tmp/xcXbcNMLI
+7E7 cinit CODE >2676:/tmp/xcXbcNMLI
+7E8 cinit CODE >2677:/tmp/xcXbcNMLI
+7E9 cinit CODE >2678:/tmp/xcXbcNMLI
+7EA cinit CODE >2679:/tmp/xcXbcNMLI
+7EB cinit CODE >2680:/tmp/xcXbcNMLI
+7EC cinit CODE >2681:/tmp/xcXbcNMLI
+7ED cinit CODE >2682:/tmp/xcXbcNMLI
+7EE cinit CODE >2683:/tmp/xcXbcNMLI
+7EF cinit CODE >2684:/tmp/xcXbcNMLI
+7F2 cinit CODE >2688:/tmp/xcXbcNMLI
+7F3 cinit CODE >2689:/tmp/xcXbcNMLI
+7F4 cinit CODE >2690:/tmp/xcXbcNMLI
+7F5 cinit CODE >2691:/tmp/xcXbcNMLI
+7F6 cinit CODE >2692:/tmp/xcXbcNMLI
+7F7 cinit CODE >2693:/tmp/xcXbcNMLI
+7F8 cinit CODE >2694:/tmp/xcXbcNMLI
+7F9 cinit CODE >2695:/tmp/xcXbcNMLI
+7FA cinit CODE >2696:/tmp/xcXbcNMLI
+7FD cinit CODE >2702:/tmp/xcXbcNMLI
+7FD cinit CODE >2704:/tmp/xcXbcNMLI
+7FE cinit CODE >2705:/tmp/xcXbcNMLI
+7D1 maintext CODE >96:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+7D1 maintext CODE >97:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+7D4 maintext CODE >98:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+7D5 maintext CODE >99:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+7D6 maintext CODE >103:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+7D7 maintext CODE >104:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+7D9 maintext CODE >105:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+7D9 maintext CODE >106:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+7DB clrtext CODE >2659:/tmp/xcXbcNMLI
+7DB clrtext CODE >2660:/tmp/xcXbcNMLI
+7DC clrtext CODE >2661:/tmp/xcXbcNMLI
+7DC clrtext CODE >2662:/tmp/xcXbcNMLI
+7DD clrtext CODE >2663:/tmp/xcXbcNMLI
+7DE clrtext CODE >2664:/tmp/xcXbcNMLI
+7DF clrtext CODE >2665:/tmp/xcXbcNMLI
+7E0 clrtext CODE >2666:/tmp/xcXbcNMLI
+7E1 clrtext CODE >2667:/tmp/xcXbcNMLI
+7E2 clrtext CODE >2668:/tmp/xcXbcNMLI
+7E3 clrtext CODE >2669:/tmp/xcXbcNMLI
+7E4 clrtext CODE >2670:/tmp/xcXbcNMLI
+7E5 clrtext CODE >2671:/tmp/xcXbcNMLI
+7E6 clrtext CODE >2672:/tmp/xcXbcNMLI
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -183,7 +183,7 @@ $dist/default/production/houghTransformPIC.X.production.o
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Hspace_0 800C 0 ABS 0 - -
-__Hspace_1 7C 0 ABS 0 - -
+__Hspace_1 7E 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
@@ -191,10 +191,10 @@ __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.productio
 __Hstrings 0 0 ABS 0 strings -
 __CFG_WDTCCS$SC 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 _LATA 16 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcXPioOAj.o
+___sp 0 0 STACK 2 stack /tmp/xcX1JrluZ.o
 _main FA2 0 CODE 0 maintext dist/default/production/houghTransformPIC.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
-start 4 0 CODE 0 init /tmp/xcXPioOAj.o
+start 4 0 CODE 0 init /tmp/xcX1JrluZ.o
 __size_of_main 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Hstringtext10 0 0 ABS 0 stringtext10 -
 __Hstringtext11 0 0 ABS 0 stringtext11 -
@@ -208,24 +208,26 @@ __Hstringtext18 0 0 ABS 0 stringtext18 -
 __Hstringtext19 0 0 ABS 0 stringtext19 -
 __Hstringtext20 0 0 ABS 0 stringtext20 -
 __Hstringtext21 0 0 ABS 0 stringtext21 -
+__Hstringtext22 0 0 ABS 0 stringtext22 -
+__Hstringtext23 0 0 ABS 0 stringtext23 -
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __CFG_SCANE$available 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab /tmp/xcXPioOAj.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcXPioOAj.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcXPioOAj.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcXPioOAj.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcXPioOAj.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcXPioOAj.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcX1JrluZ.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcX1JrluZ.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcX1JrluZ.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcX1JrluZ.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcX1JrluZ.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcX1JrluZ.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of_c1pio2 10A8 0 STRCODE 0 stringtext21 dist/default/production/houghTransformPIC.X.production.o
-__end_of_c2pio2 10A0 0 STRCODE 0 stringtext20 dist/default/production/houghTransformPIC.X.production.o
-__end_of_c3pio2 1098 0 STRCODE 0 stringtext19 dist/default/production/houghTransformPIC.X.production.o
-__end_of_c4pio2 1090 0 STRCODE 0 stringtext18 dist/default/production/houghTransformPIC.X.production.o
+__end_of_c1pio2 1008 0 STRCODE 0 stringtext22 dist/default/production/houghTransformPIC.X.production.o
+__end_of_c2pio2 10B2 0 STRCODE 0 stringtext21 dist/default/production/houghTransformPIC.X.production.o
+__end_of_c3pio2 10AA 0 STRCODE 0 stringtext20 dist/default/production/houghTransformPIC.X.production.o
+__end_of_c4pio2 10A2 0 STRCODE 0 stringtext19 dist/default/production/houghTransformPIC.X.production.o
 __CFG_FEXTOSC$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Lstringtext10 0 0 ABS 0 stringtext10 -
 __Lstringtext11 0 0 ABS 0 stringtext11 -
@@ -239,24 +241,26 @@ __Lstringtext18 0 0 ABS 0 stringtext18 -
 __Lstringtext19 0 0 ABS 0 stringtext19 -
 __Lstringtext20 0 0 ABS 0 stringtext20 -
 __Lstringtext21 0 0 ABS 0 stringtext21 -
+__Lstringtext22 0 0 ABS 0 stringtext22 -
+__Lstringtext23 0 0 ABS 0 stringtext23 -
 start_initialization FCE 0 CODE 0 cinit dist/default/production/houghTransformPIC.X.production.o
 __CFG_WDTCPS$WDTCPS_31 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
-__end_of_C0 1068 0 STRCODE 0 stringtext13 dist/default/production/houghTransformPIC.X.production.o
-__end_of_C1 1060 0 STRCODE 0 stringtext12 dist/default/production/houghTransformPIC.X.production.o
-__end_of_C2 1058 0 STRCODE 0 stringtext11 dist/default/production/houghTransformPIC.X.production.o
-__end_of_C3 1050 0 STRCODE 0 stringtext10 dist/default/production/houghTransformPIC.X.production.o
-__end_of_S1 1020 0 STRCODE 0 stringtext4 dist/default/production/houghTransformPIC.X.production.o
-__end_of_S2 1018 0 STRCODE 0 stringtext3 dist/default/production/houghTransformPIC.X.production.o
-__end_of_S3 1010 0 STRCODE 0 stringtext2 dist/default/production/houghTransformPIC.X.production.o
-__end_of_S4 1008 0 STRCODE 0 stringtext1 dist/default/production/houghTransformPIC.X.production.o
+__end_of_C0 1072 0 STRCODE 0 stringtext13 dist/default/production/houghTransformPIC.X.production.o
+__end_of_C1 106A 0 STRCODE 0 stringtext12 dist/default/production/houghTransformPIC.X.production.o
+__end_of_C2 1062 0 STRCODE 0 stringtext11 dist/default/production/houghTransformPIC.X.production.o
+__end_of_C3 105A 0 STRCODE 0 stringtext10 dist/default/production/houghTransformPIC.X.production.o
+__end_of_S1 102A 0 STRCODE 0 stringtext4 dist/default/production/houghTransformPIC.X.production.o
+__end_of_S2 1022 0 STRCODE 0 stringtext3 dist/default/production/houghTransformPIC.X.production.o
+__end_of_S3 101A 0 STRCODE 0 stringtext2 dist/default/production/houghTransformPIC.X.production.o
+__end_of_S4 1012 0 STRCODE 0 stringtext1 dist/default/production/houghTransformPIC.X.production.o
 clear_ram0 FB6 0 CODE 0 clrtext dist/default/production/houghTransformPIC.X.production.o
-__end_of_pio2_1 1030 0 STRCODE 0 stringtext6 dist/default/production/houghTransformPIC.X.production.o
-__end_of_s1pio2 1088 0 STRCODE 0 stringtext17 dist/default/production/houghTransformPIC.X.production.o
-__end_of_s2pio2 1080 0 STRCODE 0 stringtext16 dist/default/production/houghTransformPIC.X.production.o
-__end_of_s3pio2 1078 0 STRCODE 0 stringtext15 dist/default/production/houghTransformPIC.X.production.o
-__end_of_s4pio2 1070 0 STRCODE 0 stringtext14 dist/default/production/houghTransformPIC.X.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcXPioOAj.o
-__end_of_invpio2 1038 0 STRCODE 0 stringtext7 dist/default/production/houghTransformPIC.X.production.o
+__end_of_pio2_1 103A 0 STRCODE 0 stringtext6 dist/default/production/houghTransformPIC.X.production.o
+__end_of_s1pio2 109A 0 STRCODE 0 stringtext18 dist/default/production/houghTransformPIC.X.production.o
+__end_of_s2pio2 1092 0 STRCODE 0 stringtext17 dist/default/production/houghTransformPIC.X.production.o
+__end_of_s3pio2 108A 0 STRCODE 0 stringtext16 dist/default/production/houghTransformPIC.X.production.o
+__end_of_s4pio2 1082 0 STRCODE 0 stringtext15 dist/default/production/houghTransformPIC.X.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcX1JrluZ.o
+__end_of_invpio2 1042 0 STRCODE 0 stringtext7 dist/default/production/houghTransformPIC.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -353,7 +357,7 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-__end_of_pio2_1t 1028 0 STRCODE 0 stringtext5 dist/default/production/houghTransformPIC.X.production.o
+__end_of_pio2_1t 1032 0 STRCODE 0 stringtext5 dist/default/production/houghTransformPIC.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 4 0 CODE 0 init -
@@ -382,36 +386,38 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 1000 0 STRCODE 0 stringtext1 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext2 1008 0 STRCODE 0 stringtext2 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext3 1010 0 STRCODE 0 stringtext3 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext4 1018 0 STRCODE 0 stringtext4 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext5 1020 0 STRCODE 0 stringtext5 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext6 1028 0 STRCODE 0 stringtext6 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext7 1030 0 STRCODE 0 stringtext7 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext8 1038 0 STRCODE 0 stringtext8 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext9 1040 0 STRCODE 0 stringtext9 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext10 1048 0 STRCODE 0 stringtext10 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext11 1050 0 STRCODE 0 stringtext11 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext12 1058 0 STRCODE 0 stringtext12 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext13 1060 0 STRCODE 0 stringtext13 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext14 1068 0 STRCODE 0 stringtext14 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext15 1070 0 STRCODE 0 stringtext15 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext16 1078 0 STRCODE 0 stringtext16 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext17 1080 0 STRCODE 0 stringtext17 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext18 1088 0 STRCODE 0 stringtext18 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext19 1090 0 STRCODE 0 stringtext19 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext20 1098 0 STRCODE 0 stringtext20 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext21 10A0 0 STRCODE 0 stringtext21 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext1 100A 0 STRCODE 0 stringtext1 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext2 1012 0 STRCODE 0 stringtext2 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext3 101A 0 STRCODE 0 stringtext3 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext4 1022 0 STRCODE 0 stringtext4 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext5 102A 0 STRCODE 0 stringtext5 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext6 1032 0 STRCODE 0 stringtext6 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext7 103A 0 STRCODE 0 stringtext7 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext8 1042 0 STRCODE 0 stringtext8 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext9 104A 0 STRCODE 0 stringtext9 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext10 1052 0 STRCODE 0 stringtext10 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext11 105A 0 STRCODE 0 stringtext11 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext12 1062 0 STRCODE 0 stringtext12 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext13 106A 0 STRCODE 0 stringtext13 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext14 1072 0 STRCODE 0 stringtext14 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext15 107A 0 STRCODE 0 stringtext15 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext16 1082 0 STRCODE 0 stringtext16 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext17 108A 0 STRCODE 0 stringtext17 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext18 1092 0 STRCODE 0 stringtext18 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext19 109A 0 STRCODE 0 stringtext19 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext20 10A2 0 STRCODE 0 stringtext20 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext21 10AA 0 STRCODE 0 stringtext21 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext22 1000 0 STRCODE 0 stringtext22 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext23 0 0 STRCODE 0 stringtext23 dist/default/production/houghTransformPIC.X.production.o
 __CFG_WDTCWS$WDTCWS_7 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 800C 0 ABS 0 - -
-__S1 7C 0 ABS 0 - -
+__S1 7E 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXPioOAj.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcX1JrluZ.o
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Lstringtext1 0 0 ABS 0 stringtext1 -
 __Lstringtext2 0 0 ABS 0 stringtext2 -
@@ -452,8 +458,8 @@ __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 _LATAbits 16 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
-stackhi 225F 0 ABS 0 - /tmp/xcXPioOAj.o
-stacklo 2000 0 ABS 0 - /tmp/xcXPioOAj.o
+stackhi 225F 0 ABS 0 - /tmp/xcX1JrluZ.o
+stacklo 2000 0 ABS 0 - /tmp/xcX1JrluZ.o
 __pbssBIGRAM 2260 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
@@ -491,10 +497,11 @@ __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
 __Hend_init 8 0 CODE 0 end_init -
-__end_of_half 1040 0 STRCODE 0 stringtext8 dist/default/production/houghTransformPIC.X.production.o
+__end_of_half 104A 0 STRCODE 0 stringtext8 dist/default/production/houghTransformPIC.X.production.o
 __end_of_main FB6 0 CODE 0 maintext dist/default/production/houghTransformPIC.X.production.o
+__end_of_tiny 107A 0 STRCODE 0 stringtext14 dist/default/production/houghTransformPIC.X.production.o
 _TRISA 11 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
-__end_of_toint 1048 0 STRCODE 0 stringtext9 dist/default/production/houghTransformPIC.X.production.o
+__end_of_toint 1052 0 STRCODE 0 stringtext9 dist/default/production/houghTransformPIC.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
@@ -536,8 +543,8 @@ _inputImage 1 2260 0
 %SEGMENTS
 cinit 0 7E7 FCE 19 2
 maintext 0 7D1 FA2 A 2
-stringtext1 0 800 1000 54 2
 reset_vec 0 0 0 4 2
 clrtext 0 7DB FB6 C 2
-bssCOMMON 1 70 70 C 1
+bssCOMMON 1 70 70 E 1
+stringtext22 0 800 1000 59 2
 config 0 8007 1000E 5 2

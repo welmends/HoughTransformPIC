@@ -8,67 +8,70 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _LATA `Vuc ~T0 @X0 0 e@22 ]
 "956
 [; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 956:     struct {
-[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+[s S48 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S48 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
 "955
 [; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 955: typedef union {
-[u S52 `S53 1 ]
-[n S52 . . ]
+[u S47 `S48 1 ]
+[n S47 . . ]
 "967
 [; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
-[v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
-"230 /opt/microchip/xc8/v2.00/pic/include/c99/math.h
+[v _LATAbits `VS47 ~T0 @X0 0 e@22 ]
+"214 /opt/microchip/xc8/v2.00/pic/include/c99/math.h
+[; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 214: float ceilf(float);
+[v _ceilf `(f ~T0 @X0 0 ef1`f ]
+"571
+[; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 571: float sqrtf(float);
+[v _sqrtf `(f ~T0 @X0 0 ef1`f ]
+"230
 [; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 230: float cosf(float);
 [v _cosf `(f ~T0 @X0 0 ef1`f ]
 "555
 [; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 555: float sinf(float);
 [v _sinf `(f ~T0 @X0 0 ef1`f ]
-"214
-[; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 214: float ceilf(float);
-[v _ceilf `(f ~T0 @X0 0 ef1`f ]
-"19 hough_PIC.c
+"17 hough_PIC.c
 [p x FEXTOSC = OFF ]
-"20
+"18
 [p x RSTOSC = HFINT32 ]
-"21
+"19
 [p x CLKOUTEN = OFF ]
-"22
+"20
 [p x CSWEN = ON ]
-"23
+"21
 [p x FCMEN = ON ]
-"26
+"24
 [p x MCLRE = ON ]
-"27
+"25
 [p x PWRTE = OFF ]
-"28
+"26
 [p x LPBOREN = OFF ]
-"29
+"27
 [p x BOREN = ON ]
-"30
+"28
 [p x BORV = LO ]
-"31
+"29
 [p x ZCD = OFF ]
-"32
+"30
 [p x PPS1WAY = ON ]
-"33
+"31
 [p x STVREN = ON ]
-"36
+"34
 [p x WDTCPS = WDTCPS_31 ]
-"37
+"35
 [p x WDTE = OFF ]
-"38
+"36
 [p x WDTCWS = WDTCWS_7 ]
-"39
+"37
 [p x WDTCCS = SC ]
-"42
+"40
 [p x WRT = OFF ]
-"43
+"41
 [p x SCANE = available ]
-"44
+"42
 [p x LVP = ON ]
-"47
+"45
 [p x CP = OFF ]
-"48
+"46
 [p x CPD = OFF ]
 "54 /opt/microchip/xc8/v2.00/pic/include/pic16f18875.h
 [; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 54: __asm("INDF0 equ 00h");
@@ -1708,113 +1711,146 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36645
 [; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 36645: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"79 hough_PIC.c
-[; ;hough_PIC.c: 79: unsigned char inputImage[400];
+"77 hough_PIC.c
+[; ;hough_PIC.c: 77: unsigned char inputImage[400];
 [v _inputImage `uc ~T0 @X0 -> 400 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"98
-[; ;hough_PIC.c: 98: int main(void) {
+"96
+[; ;hough_PIC.c: 96: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"99
-[; ;hough_PIC.c: 99:     TRISA = 0x0F;
+"97
+[; ;hough_PIC.c: 97:     TRISA = 0x0F;
 [e = _TRISA -> -> 15 `i `uc ]
-"100
-[; ;hough_PIC.c: 100:     LATA = 0x00;
+"98
+[; ;hough_PIC.c: 98:     LATA = 0x00;
 [e = _LATA -> -> 0 `i `uc ]
-"101
-[; ;hough_PIC.c: 101:     LATAbits.LATA7 = 1;
+"99
+[; ;hough_PIC.c: 99:     LATAbits.LATA7 = 1;
 [e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-"105
-[; ;hough_PIC.c: 105:     LATAbits.LATA7 = 0;
+"103
+[; ;hough_PIC.c: 103:     LATAbits.LATA7 = 0;
 [e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-"106
-[; ;hough_PIC.c: 106:     LATAbits.LATA6 = 1;
+"104
+[; ;hough_PIC.c: 104:     LATAbits.LATA6 = 1;
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-"107
-[; ;hough_PIC.c: 107:     return 0;
+"105
+[; ;hough_PIC.c: 105:     return 0;
 [e ) -> 0 `i ]
 [e $UE 1632  ]
-"108
-[; ;hough_PIC.c: 108: }
+"106
+[; ;hough_PIC.c: 106: }
 [e :UE 1632 ]
 }
-"123
-[; ;hough_PIC.c: 123: void houghTransform(void){
+"121
+[; ;hough_PIC.c: 121: void houghTransform(void){
 [v _houghTransform `(v ~T0 @X0 1 ef ]
 {
 [e :U _houghTransform ]
 [f ]
-"131
-[; ;hough_PIC.c: 131:  float rho;
-[v _rho `f ~T0 @X0 1 a ]
-"132
-[; ;hough_PIC.c: 132:  int theta,i,j;
+"128
+[; ;hough_PIC.c: 128:  double rho,cosTheta,sinTheta;
+[v _rho `d ~T0 @X0 1 a ]
+[v _cosTheta `d ~T0 @X0 1 a ]
+[v _sinTheta `d ~T0 @X0 1 a ]
+"129
+[; ;hough_PIC.c: 129:  int rhoD,theta,j,i;
+[v _rhoD `i ~T0 @X0 1 a ]
 [v _theta `i ~T0 @X0 1 a ]
-[v _i `i ~T0 @X0 1 a ]
 [v _j `i ~T0 @X0 1 a ]
-"133
-[; ;hough_PIC.c: 133:  for(j=0; j<(20); j++){
+[v _i `i ~T0 @X0 1 a ]
+"130
+[; ;hough_PIC.c: 130:     int accu_height = ceilf(2*(sqrtf((20)*(20) + (20)*(20)))) - 1;
+[v _accu_height `i ~T0 @X0 1 a ]
+[e = _accu_height -> - ( _ceilf (1 * -> -> 2 `i `f ( _sqrtf (1 -> + * -> 20 `i -> 20 `i * -> 20 `i -> 20 `i `f -> -> 1 `i `f `i ]
+"131
+[; ;hough_PIC.c: 131:     for(theta=0; theta<180; theta++){
 {
-[e = _j -> 0 `i ]
-[e $ < _j -> 20 `i 1634  ]
+[e = _theta -> 0 `i ]
+[e $ < _theta -> 180 `i 1634  ]
 [e $U 1635  ]
 [e :U 1634 ]
 {
+"132
+[; ;hough_PIC.c: 132:         cosTheta=cosf(theta*3.14159265358979323846/180);
+[e = _cosTheta -> ( _cosf (1 -> / * -> _theta `d .3.14159265358979323846 -> -> 180 `i `d `f `d ]
+"133
+[; ;hough_PIC.c: 133:         sinTheta=sinf(theta*3.14159265358979323846/180);
+[e = _sinTheta -> ( _sinf (1 -> / * -> _theta `d .3.14159265358979323846 -> -> 180 `i `d `f `d ]
 "134
-[; ;hough_PIC.c: 134:   for(i=0; i<(20); i++){
+[; ;hough_PIC.c: 134:         for(rhoD=0; rhoD<accu_height; rhoD++){
 {
-[e = _i -> 0 `i ]
-[e $ < _i -> 20 `i 1637  ]
-[e $U 1638  ]
+[e = _rhoD -> 0 `i ]
+[e $U 1640  ]
 [e :U 1637 ]
 {
 "135
-[; ;hough_PIC.c: 135:    if(inputImage[ (j*(20)) + i] > (200)){
-[e $ ! > -> *U + &U _inputImage * -> -> + * _j -> 20 `i _i `ui `ux -> -> # *U &U _inputImage `ui `ux `i -> 200 `i 1640  ]
+[; ;hough_PIC.c: 135:             for(j=0; j<(20); j++){
 {
-"136
-[; ;hough_PIC.c: 136:     for(theta=0; theta<180; theta++){
-{
-[e = _theta -> 0 `i ]
-[e $ < _theta -> 180 `i 1641  ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 20 `i 1641  ]
 [e $U 1642  ]
 [e :U 1641 ]
 {
-"138
-[; ;hough_PIC.c: 138:                     rho = ( (j)*cosf((theta)*3.14159265358979323846/180.0) ) + ( (i)*sinf(theta*3.14159265358979323846/180.0) );
-[e = _rho + * -> _j `f ( _cosf (1 -> / * -> _theta `d .3.14159265358979323846 .180.0 `f * -> _i `f ( _sinf (1 -> / * -> _theta `d .3.14159265358979323846 .180.0 `f ]
+"136
+[; ;hough_PIC.c: 136:                 for(i=0; i<(20); i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 20 `i 1644  ]
+[e $U 1645  ]
+[e :U 1644 ]
+{
+"137
+[; ;hough_PIC.c: 137:                     if(inputImage[ (j*(20)) + i] > (200)){
+[e $ ! > -> *U + &U _inputImage * -> -> + * _j -> 20 `i _i `ui `ux -> -> # *U &U _inputImage `ui `ux `i -> 200 `i 1647  ]
+{
+"139
+[; ;hough_PIC.c: 139:                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
+[e = _rho + * -> _j `d _cosTheta * -> _i `d _sinTheta ]
 "140
-[; ;hough_PIC.c: 140:                     inputImage[ (int)((ceilf(rho + (20)/2) * 180.0)) + 180-theta-1]++;
-[e ++ *U + &U _inputImage * -> -> - - + -> * -> ( _ceilf (1 + _rho -> / -> 20 `i -> 2 `i `f `d .180.0 `i -> 180 `i _theta -> 1 `i `ui `ux -> -> # *U &U _inputImage `ui `ux -> -> 1 `i `uc ]
-"141
-[; ;hough_PIC.c: 141:     }
-}
-[e ++ _theta -> 1 `i ]
-[e $ < _theta -> 180 `i 1641  ]
-[e :U 1642 ]
-}
+[; ;hough_PIC.c: 140:                         if(ceilf(rho + accu_height/2)==rhoD){
+[e $ ! == ( _ceilf (1 -> + _rho -> / _accu_height -> 2 `i `d `f -> _rhoD `f 1648  ]
+{
 "142
-[; ;hough_PIC.c: 142:    }
+[; ;hough_PIC.c: 142:                         }
 }
-[e :U 1640 ]
+[e :U 1648 ]
 "143
-[; ;hough_PIC.c: 143:   }
+[; ;hough_PIC.c: 143:                     }
+}
+[e :U 1647 ]
+"144
+[; ;hough_PIC.c: 144:                 }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 20 `i 1637  ]
-[e :U 1638 ]
-}
-"144
-[; ;hough_PIC.c: 144:  }
-}
-[e ++ _j -> 1 `i ]
-[e $ < _j -> 20 `i 1634  ]
-[e :U 1635 ]
+[e $ < _i -> 20 `i 1644  ]
+[e :U 1645 ]
 }
 "145
-[; ;hough_PIC.c: 145: }
+[; ;hough_PIC.c: 145:             }
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 20 `i 1641  ]
+[e :U 1642 ]
+}
+"146
+[; ;hough_PIC.c: 146:         }
+}
+[e ++ _rhoD -> 1 `i ]
+[e :U 1640 ]
+[e $ < _rhoD _accu_height 1637  ]
+[e :U 1638 ]
+}
+"147
+[; ;hough_PIC.c: 147:     }
+}
+[e ++ _theta -> 1 `i ]
+[e $ < _theta -> 180 `i 1634  ]
+[e :U 1635 ]
+}
+"148
+[; ;hough_PIC.c: 148: }
 [e :UE 1633 ]
 }

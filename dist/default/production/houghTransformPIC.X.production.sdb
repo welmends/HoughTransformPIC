@@ -9,16 +9,24 @@
 [v ___rem_pio2f __rem_pio2f `(i  1 e 2 0 ]
 "26 /opt/microchip/xc8/v2.00/pic/sources/c99/common/__sindf.c
 [v ___sindf __sindf `(f  1 e 4 0 ]
+"5 /opt/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "3 /opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
 [v _ceilf ceilf `(f  1 e 4 0 ]
 "26 /opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
 [v _cosf cosf `(f  1 e 4 0 ]
 "4 /opt/microchip/xc8/v2.00/pic/sources/c99/common/fabsf.c
 [v _fabsf fabsf `(f  1 e 4 0 ]
+"4 /opt/microchip/xc8/v2.00/pic/sources/c99/common/fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"4 /opt/microchip/xc8/v2.00/pic/sources/c99/common/flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
 "15 /opt/microchip/xc8/v2.00/pic/sources/c99/common/flneg.c
 [v ___flneg __flneg `(d  1 e 4 0 ]
 "43 /opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
+"4 /opt/microchip/xc8/v2.00/pic/sources/c99/common/nanf.c
+[v _nanf nanf `(f  1 e 4 0 ]
 "26 /opt/microchip/xc8/v2.00/pic/sources/c99/common/sinf.c
 [v _sinf sinf `(f  1 e 4 0 ]
 "10 /opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
@@ -27,6 +35,8 @@
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 /opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"24 /opt/microchip/xc8/v2.00/pic/sources/c99/common/sqrtf.c
+[v _sqrtf sqrtf `(f  1 e 4 0 ]
 "15 /opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "4 /opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
@@ -37,7 +47,7 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"98 /home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+"96 /home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
 [v _main main `(i  1 e 2 0 ]
 "670 /opt/microchip/xc8/v2.00/pic/include/pic16f18875.h
 [v _TRISA TRISA `VEuc  1 e 1 @17 ]
@@ -55,10 +65,10 @@
 "967
 [u S33 . 1 `S24 1 . 1 0 ]
 [v _LATAbits LATAbits `VES33  1 e 1 @22 ]
-"79 /home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+"77 /home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
 [v _inputImage inputImage `[400]uc  1 e 400 @8800 ]
-"98
+"96
 [v _main main `(i  1 e 2 0 ]
 {
-"108
+"106
 } 0

@@ -51,6 +51,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //                                  Libraries                                 //
 ////////////////////////////////////////////////////////////////////////////////
+#include <pic16f18875.h>
 #include <xc.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -110,7 +111,7 @@ int main(void) {
  *         This occurs from the image scanning and calculation of the
  *         rho = xcos (theta) + ysin (theta) [0 < theta < 180] for pixels that
  *         display the high level (>THRESH_VALUE). It is worth mentioning that
- *         if the image passed as an input is not binarized, a threshold will
+ *         if the image passed as an input is not binary, a threshold will
  *         be applied to it with a default threshold value set in THRESH_VALUE.
  *         More information: http://homepages.inf.ed.ac.uk/rbf/HIPR2/hough.htm
  *                           PATENT US3069654A - Paul V C Hough
@@ -121,22 +122,27 @@ void houghTransform(void){
     // Calculate the height and width of the Hough accumulator
     // accu_width  = 0 to 180 degrees
     // accu_height = 2*D - 1 and D = sqrt(height^2 + width^2)
-	//accumulator->rows        = 180;
     //accumulator->cols        = ceil(2*(sqrt(ROWS*ROWS + COLS*COLS))) - 1;
 
     // Go to each pixel with hight level (>THRESH_VALUE) and calculate Rho to each Theta
-	float rho;
-	int theta,i,j;
-	for(j=0; j<COLS; j++){
-		for(i=0; i<ROWS; i++){
-			if(inputImage[ (j*ROWS) + i] > THRESH_VALUE){
-				for(theta=0; theta<180; theta++){
-					// rho = xcos(theta) + ysin(theta) [theta is in radians]
-                    rho = ( (j)*cos((theta)*M_PI/180.0) ) + ( (i)*sin(theta*M_PI/180.0) );
-                    // accumulator(theta,rho+D)++
-                    inputImage[ (int)((ceil(rho + COLS/2) * 180.0)) + 180-theta-1]++;
-				}
-			}
-		}
-	}
+	double rho,cosTheta,sinTheta;
+	int rhoD,theta,j,i;
+    int accu_height = ceil(2*(sqrt(ROWS*ROWS + COLS*COLS))) - 1;
+    for(theta=0; theta<180; theta++){
+        cosTheta=cos(theta*M_PI/180);
+        sinTheta=sin(theta*M_PI/180);
+        for(rhoD=0; rhoD<accu_height; rhoD++){
+            for(j=0; j<COLS; j++){
+                for(i=0; i<ROWS; i++){
+                    if(inputImage[ (j*ROWS) + i] > THRESH_VALUE){
+                        // rho = xcos(theta) + ysin(theta) [theta is in radians]
+                        rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
+                        if(ceil(rho + accu_height/2)==rhoD){
+                            //accumulator->pM[ (int)(rhoD*180.0) + 180-theta-1]++;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

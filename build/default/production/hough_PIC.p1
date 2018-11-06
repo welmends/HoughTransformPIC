@@ -1744,8 +1744,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;hough_PIC.c: 106: }
 [e :UE 1632 ]
 }
-"121
-[; ;hough_PIC.c: 121: void houghTransform(void){
+"119
+[; ;hough_PIC.c: 119: void houghTransform(void){
 [v _houghTransform `(v ~T0 @X0 1 ef ]
 {
 [e :U _houghTransform ]
@@ -1773,84 +1773,84 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1635  ]
 [e :U 1634 ]
 {
-"132
-[; ;hough_PIC.c: 132:         cosTheta=cosf(theta*3.14159265358979323846/180);
-[e = _cosTheta -> ( _cosf (1 -> / * -> _theta `d .3.14159265358979323846 -> -> 180 `i `d `f `d ]
 "133
-[; ;hough_PIC.c: 133:         sinTheta=sinf(theta*3.14159265358979323846/180);
-[e = _sinTheta -> ( _sinf (1 -> / * -> _theta `d .3.14159265358979323846 -> -> 180 `i `d `f `d ]
+[; ;hough_PIC.c: 133:         cosTheta=cosf(theta*3.14159265358979323846/180);
+[e = _cosTheta -> ( _cosf (1 -> / * -> _theta `d .3.14159265358979323846 -> -> 180 `i `d `f `d ]
 "134
-[; ;hough_PIC.c: 134:         for(rhoD=0; rhoD<accu_height; rhoD++){
+[; ;hough_PIC.c: 134:         sinTheta=sinf(theta*3.14159265358979323846/180);
+[e = _sinTheta -> ( _sinf (1 -> / * -> _theta `d .3.14159265358979323846 -> -> 180 `i `d `f `d ]
+"135
+[; ;hough_PIC.c: 135:         for(rhoD=0; rhoD<accu_height; rhoD++){
 {
 [e = _rhoD -> 0 `i ]
 [e $U 1640  ]
 [e :U 1637 ]
 {
-"135
-[; ;hough_PIC.c: 135:             for(j=0; j<(20); j++){
+"136
+[; ;hough_PIC.c: 136:             for(j=0; j<(20); j++){
 {
 [e = _j -> 0 `i ]
 [e $ < _j -> 20 `i 1641  ]
 [e $U 1642  ]
 [e :U 1641 ]
 {
-"136
-[; ;hough_PIC.c: 136:                 for(i=0; i<(20); i++){
+"137
+[; ;hough_PIC.c: 137:                 for(i=0; i<(20); i++){
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 20 `i 1644  ]
 [e $U 1645  ]
 [e :U 1644 ]
 {
-"137
-[; ;hough_PIC.c: 137:                     if(inputImage[ (j*(20)) + i] > (200)){
+"138
+[; ;hough_PIC.c: 138:                     if(inputImage[ (j*(20)) + i] > (200)){
 [e $ ! > -> *U + &U _inputImage * -> -> + * _j -> 20 `i _i `ui `ux -> -> # *U &U _inputImage `ui `ux `i -> 200 `i 1647  ]
 {
-"139
-[; ;hough_PIC.c: 139:                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
-[e = _rho + * -> _j `d _cosTheta * -> _i `d _sinTheta ]
 "140
-[; ;hough_PIC.c: 140:                         if(ceilf(rho + accu_height/2)==rhoD){
+[; ;hough_PIC.c: 140:                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
+[e = _rho + * -> _j `d _cosTheta * -> _i `d _sinTheta ]
+"142
+[; ;hough_PIC.c: 142:                         if(ceilf(rho + accu_height/2)==rhoD){
 [e $ ! == ( _ceilf (1 -> + _rho -> / _accu_height -> 2 `i `d `f -> _rhoD `f 1648  ]
 {
-"142
-[; ;hough_PIC.c: 142:                         }
+"145
+[; ;hough_PIC.c: 145:                         }
 }
 [e :U 1648 ]
-"143
-[; ;hough_PIC.c: 143:                     }
+"146
+[; ;hough_PIC.c: 146:                     }
 }
 [e :U 1647 ]
-"144
-[; ;hough_PIC.c: 144:                 }
+"147
+[; ;hough_PIC.c: 147:                 }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 20 `i 1644  ]
 [e :U 1645 ]
 }
-"145
-[; ;hough_PIC.c: 145:             }
+"148
+[; ;hough_PIC.c: 148:             }
 }
 [e ++ _j -> 1 `i ]
 [e $ < _j -> 20 `i 1641  ]
 [e :U 1642 ]
 }
-"146
-[; ;hough_PIC.c: 146:         }
+"149
+[; ;hough_PIC.c: 149:         }
 }
 [e ++ _rhoD -> 1 `i ]
 [e :U 1640 ]
 [e $ < _rhoD _accu_height 1637  ]
 [e :U 1638 ]
 }
-"147
-[; ;hough_PIC.c: 147:     }
+"150
+[; ;hough_PIC.c: 150:     }
 }
 [e ++ _theta -> 1 `i ]
 [e $ < _theta -> 180 `i 1634  ]
 [e :U 1635 ]
 }
-"148
-[; ;hough_PIC.c: 148: }
+"151
+[; ;hough_PIC.c: 151: }
 [e :UE 1633 ]
 }

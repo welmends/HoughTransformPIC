@@ -21626,18 +21626,14 @@ int main(void) {
     LATAbits.LATA6 = 1;
     return 0;
 }
-# 121 "hough_PIC.c"
+# 119 "hough_PIC.c"
 void houghTransform(void){
-
-
-
-
-
-
+# 128 "hough_PIC.c"
  double rho,cosTheta,sinTheta;
  int rhoD,theta,j,i;
     int accu_height = ceilf(2*(sqrtf((20)*(20) + (20)*(20)))) - 1;
     for(theta=0; theta<180; theta++){
+
         cosTheta=cosf(theta*3.14159265358979323846/180);
         sinTheta=sinf(theta*3.14159265358979323846/180);
         for(rhoD=0; rhoD<accu_height; rhoD++){
@@ -21646,7 +21642,9 @@ void houghTransform(void){
                     if(inputImage[ (j*(20)) + i] > (200)){
 
                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
+
                         if(ceilf(rho + accu_height/2)==rhoD){
+
 
                         }
                     }

@@ -46,6 +46,127 @@
 
 
 
+# 1 "/opt/microchip/xc8/v2.00/pic/include/xc.h" 1 3
+# 18 "/opt/microchip/xc8/v2.00/pic/include/xc.h" 3
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+
+# 1 "/opt/microchip/xc8/v2.00/pic/include/c99/xc8debug.h" 1 3
+
+
+
+# 1 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 1 3
+
+
+
+# 1 "/opt/microchip/xc8/v2.00/pic/include/c99/musl_xc8.h" 1 3
+# 5 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 2 3
+
+
+
+
+
+# 1 "/opt/microchip/xc8/v2.00/pic/include/c99/features.h" 1 3
+# 11 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 2 3
+# 21 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 3
+# 1 "/opt/microchip/xc8/v2.00/pic/include/c99/bits/alltypes.h" 1 3
+# 22 "/opt/microchip/xc8/v2.00/pic/include/c99/bits/alltypes.h" 3
+typedef long int wchar_t;
+# 127 "/opt/microchip/xc8/v2.00/pic/include/c99/bits/alltypes.h" 3
+typedef unsigned size_t;
+# 22 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 2 3
+
+int atoi (const char *);
+long atol (const char *);
+long long atoll (const char *);
+double atof (const char *);
+
+float strtof (const char *restrict, char **restrict);
+double strtod (const char *restrict, char **restrict);
+long double strtold (const char *restrict, char **restrict);
+
+
+
+
+
+long strtol (const char *restrict, char **restrict, int);
+unsigned long strtoul (const char *restrict, char **restrict, int);
+long long strtoll (const char *restrict, char **restrict, int);
+unsigned long long strtoull (const char *restrict, char **restrict, int);
+
+int rand (void);
+void srand (unsigned);
+# 52 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 3
+          void abort (void);
+int atexit (void (*) (void));
+          void exit (int);
+          void _Exit (int);
+# 65 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 3
+void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+
+
+
+
+
+__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
+
+int abs (int);
+long labs (long);
+long long llabs (long long);
+
+typedef struct { int quot, rem; } div_t;
+typedef struct { long quot, rem; } ldiv_t;
+typedef struct { long long quot, rem; } lldiv_t;
+
+div_t div (int, int);
+ldiv_t ldiv (long, long);
+lldiv_t lldiv (long long, long long);
+
+
+typedef struct { unsigned int quot, rem; } udiv_t;
+typedef struct { unsigned long quot, rem; } uldiv_t;
+udiv_t udiv (unsigned int, unsigned int);
+uldiv_t uldiv (unsigned long, unsigned long);
+# 104 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 3
+size_t __ctype_get_mb_cur_max(void);
+# 5 "/opt/microchip/xc8/v2.00/pic/include/c99/xc8debug.h" 2 3
+
+
+
+
+
+
+
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+# 24 "/opt/microchip/xc8/v2.00/pic/include/xc.h" 2 3
+
+
+
+# 1 "/opt/microchip/xc8/v2.00/pic/include/pic.h" 1 3
+
+
+
+
+# 1 "/opt/microchip/xc8/v2.00/pic/include/htc.h" 1 3
+
+
+
+# 1 "/opt/microchip/xc8/v2.00/pic/include/xc.h" 1 3
+# 5 "/opt/microchip/xc8/v2.00/pic/include/htc.h" 2 3
+# 6 "/opt/microchip/xc8/v2.00/pic/include/pic.h" 2 3
+
+
+
+
+
+
+
+# 1 "/opt/microchip/xc8/v2.00/pic/include/pic_chip_select.h" 1 3
+# 1919 "/opt/microchip/xc8/v2.00/pic/include/pic_chip_select.h" 3
 # 1 "/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h" 1 3
 # 44 "/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h" 3
 # 1 "/opt/microchip/xc8/v2.00/pic/include/__at.h" 1 3
@@ -20664,127 +20785,7 @@ extern volatile __bit nWRITE1 __attribute__((address(0xC7A)));
 
 
 extern volatile __bit nWRITE2 __attribute__((address(0xCCA)));
-# 55 "hough_PIC.c" 2
-# 1 "/opt/microchip/xc8/v2.00/pic/include/xc.h" 1 3
-# 18 "/opt/microchip/xc8/v2.00/pic/include/xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-
-# 1 "/opt/microchip/xc8/v2.00/pic/include/c99/xc8debug.h" 1 3
-
-
-
-# 1 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 1 3
-
-
-
-# 1 "/opt/microchip/xc8/v2.00/pic/include/c99/musl_xc8.h" 1 3
-# 5 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 2 3
-
-
-
-
-
-# 1 "/opt/microchip/xc8/v2.00/pic/include/c99/features.h" 1 3
-# 11 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 2 3
-# 21 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 3
-# 1 "/opt/microchip/xc8/v2.00/pic/include/c99/bits/alltypes.h" 1 3
-# 22 "/opt/microchip/xc8/v2.00/pic/include/c99/bits/alltypes.h" 3
-typedef long int wchar_t;
-# 127 "/opt/microchip/xc8/v2.00/pic/include/c99/bits/alltypes.h" 3
-typedef unsigned size_t;
-# 22 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 2 3
-
-int atoi (const char *);
-long atol (const char *);
-long long atoll (const char *);
-double atof (const char *);
-
-float strtof (const char *restrict, char **restrict);
-double strtod (const char *restrict, char **restrict);
-long double strtold (const char *restrict, char **restrict);
-
-
-
-
-
-long strtol (const char *restrict, char **restrict, int);
-unsigned long strtoul (const char *restrict, char **restrict, int);
-long long strtoll (const char *restrict, char **restrict, int);
-unsigned long long strtoull (const char *restrict, char **restrict, int);
-
-int rand (void);
-void srand (unsigned);
-# 52 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 3
-          void abort (void);
-int atexit (void (*) (void));
-          void exit (int);
-          void _Exit (int);
-# 65 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 3
-void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
-
-
-
-
-
-__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
-
-int abs (int);
-long labs (long);
-long long llabs (long long);
-
-typedef struct { int quot, rem; } div_t;
-typedef struct { long quot, rem; } ldiv_t;
-typedef struct { long long quot, rem; } lldiv_t;
-
-div_t div (int, int);
-ldiv_t ldiv (long, long);
-lldiv_t lldiv (long long, long long);
-
-
-typedef struct { unsigned int quot, rem; } udiv_t;
-typedef struct { unsigned long quot, rem; } uldiv_t;
-udiv_t udiv (unsigned int, unsigned int);
-uldiv_t uldiv (unsigned long, unsigned long);
-# 104 "/opt/microchip/xc8/v2.00/pic/include/c99/stdlib.h" 3
-size_t __ctype_get_mb_cur_max(void);
-# 5 "/opt/microchip/xc8/v2.00/pic/include/c99/xc8debug.h" 2 3
-
-
-
-
-
-
-
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-# 24 "/opt/microchip/xc8/v2.00/pic/include/xc.h" 2 3
-
-
-
-# 1 "/opt/microchip/xc8/v2.00/pic/include/pic.h" 1 3
-
-
-
-
-# 1 "/opt/microchip/xc8/v2.00/pic/include/htc.h" 1 3
-
-
-
-# 1 "/opt/microchip/xc8/v2.00/pic/include/xc.h" 1 3
-# 5 "/opt/microchip/xc8/v2.00/pic/include/htc.h" 2 3
-# 6 "/opt/microchip/xc8/v2.00/pic/include/pic.h" 2 3
-
-
-
-
-
-
-
-# 1 "/opt/microchip/xc8/v2.00/pic/include/pic_chip_select.h" 1 3
+# 1920 "/opt/microchip/xc8/v2.00/pic/include/pic_chip_select.h" 2 3
 # 14 "/opt/microchip/xc8/v2.00/pic/include/pic.h" 2 3
 # 30 "/opt/microchip/xc8/v2.00/pic/include/pic.h" 3
 #pragma intrinsic(__nop)
@@ -20820,7 +20821,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "/opt/microchip/xc8/v2.00/pic/include/xc.h" 2 3
-# 56 "hough_PIC.c" 2
+# 55 "hough_PIC.c" 2
+
 # 1 "/opt/microchip/xc8/v2.00/pic/include/c99/stdio.h" 1 3
 # 24 "/opt/microchip/xc8/v2.00/pic/include/c99/stdio.h" 3
 # 1 "/opt/microchip/xc8/v2.00/pic/include/c99/bits/alltypes.h" 1 3
@@ -21608,27 +21610,40 @@ double y1(double);
 double yn(int, double);
 # 60 "hough_PIC.c" 2
 # 77 "hough_PIC.c"
-unsigned char inputImage[400];
+unsigned char inputImage[400] = {
+255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,128,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,255,
+255,255,255,255,128,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,255,255,
+255,255,255,255,255, 0 ,255,255,255,255, 0 ,255,255,255,255,255,255,255,255,255,
+255,255,255,255,255,255, 0 ,255,255, 0 ,255,255,255,255,255,255,255,255,255,255,
+255,255,255,255,255,255,255, 0 , 0 ,255,255,255,255,255,255,255,255,255,255,255,
+255,255,255,255,255,255,255, 0 , 0 ,255,255,255,255,255,255,255,255,255,255,255,
+255,255,255,255,255,255, 0 ,255,255, 0 ,255,255,255,255,255,255,255,255,255,255,
+255,255,255,255,255, 0 ,255,255,255,255, 0 ,255,255,255,255,255,255,255,255,255,
+255,255,255,255,128,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,128,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255
+};
 
 
 
 
 void houghTransform();
-# 96 "hough_PIC.c"
+# 117 "hough_PIC.c"
 int main(void) {
-    TRISA = 0x0F;
-    LATA = 0x00;
-    LATAbits.LATA7 = 1;
-
-
-
-    LATAbits.LATA7 = 0;
-    LATAbits.LATA6 = 1;
-    return 0;
+# 129 "hough_PIC.c"
 }
-# 119 "hough_PIC.c"
+# 142 "hough_PIC.c"
 void houghTransform(void){
-# 128 "hough_PIC.c"
+# 151 "hough_PIC.c"
  double rho,cosTheta,sinTheta;
  int rhoD,theta,j,i;
     int accu_height = ceilf(2*(sqrtf((20)*(20) + (20)*(20)))) - 1;

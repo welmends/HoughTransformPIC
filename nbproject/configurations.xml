@@ -18,6 +18,7 @@
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
+      <itemPath>MyConfig.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -236,8 +237,8 @@
         <property key="uart10io.output" value="window"/>
         <property key="uart10io.outputfile" value=""/>
         <property key="uart10io.uartioenabled" value="false"/>
-        <property key="uart1io.output" value="file"/>
-        <property key="uart1io.outputfile" value="../../Desktop/elias.txt"/>
+        <property key="uart1io.output" value="window"/>
+        <property key="uart1io.outputfile" value="out.txt"/>
         <property key="uart1io.uartioenabled" value="true"/>
         <property key="uart2io.output" value="window"/>
         <property key="uart2io.outputfile" value=""/>

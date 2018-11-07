@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v2.00/pic/dat/en_msgs.txt -cs \
   -h+dist/default/production/houghTransformPIC.X.production.sym \
   --cmf=dist/default/production/houghTransformPIC.X.production.cmf -z \
-  -Q16F18875 -o/tmp/xcXXiHGyH --defsym=__MPLAB_BUILD=1 \
+  -Q16F18875 -o/tmp/xcXtZP2gX --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/houghTransformPIC.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=02000h-0225fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -31,7 +31,7 @@ Linker command line:
   -pcinit=CODE -pfunctab=ENTRY -ACONFIG=08007h-0800Bh -pconfig=CONFIG \
   -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
-  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k /tmp/xcXJkyhJF.o \
+  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k /tmp/xcX7HRbc9.o \
   dist/default/production/houghTransformPIC.X.production.o 
 
 Object code version is 3.11
@@ -41,14 +41,14 @@ Machine type is 16F18875
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXJkyhJF.o
+/tmp/xcX7HRbc9.o
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5    1000E       0
 dist/default/production/houghTransformPIC.X.production.o
-                cinit                               7E7      7E7       19      FCE       0
-                maintext                            7D1      7D1        A      FA2       0
-                clrtext                             7DB      7DB        C      FB6       0
+                cinit                               7E1      7E1       1F      FC2       0
+                maintext                            643      643        2      C86       0
+                inittext                            645      645        C      C8A       0
                 bssCOMMON                            70       70        E       70       1
                 stringtext22                        800      800        5     1000       0
                 stringtext21                        855      855        4     1000       0
@@ -72,16 +72,18 @@ dist/default/production/houghTransformPIC.X.production.o
                 stringtext3                         80D      80D        4     1000       0
                 stringtext2                         809      809        4     1000       0
                 stringtext1                         805      805        4     1000       0
+                idataBIGRAM                         651      651      190      CA2       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              2        2        2         0
-                cinit                               7E7      7E7       19         0
+                cinit                               7E1      7E1       1F         0
                 reset_vec                             0        0        2         0
-                maintext                            7D1      7D1        A         0
-                clrtext                             7DB      7DB        C         0
+                maintext                            643      643        2         0
+                inittext                            645      645        C         0
+                idataBIGRAM                         651      651      190         0
 
         CLASS   STRCODE        
                 stringtext22                        800      800        5         0
@@ -271,9 +273,10 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE        2
                 bssCOMMON                      000070  00000E  00007E        70       1  COMMON      1
-                maintext                       0007D1  00000A  0007DB       FA2       0  CODE        2
-                clrtext                        0007DB  00000C  0007E7       FB6       0  CODE        2
-                cinit                          0007E7  000019  000800       FCE       0  CODE        2
+                maintext                       000643  000002  000645       C86       0  CODE        2
+                inittext                       000645  00000C  000651       C8A       0  CODE        2
+                idataBIGRAM                    000651  000190  0007E1       CA2       0  CODE        2
+                cinit                          0007E1  00001F  000800       FC2       0  CODE        2
                 stringtext22                   000800  000059  000859      1000       0  STRCODE     2
                 config                         008007  000005  00800C     1000E       0  CONFIG      2
 
@@ -290,12 +293,12 @@ UNUSED ADDRESS RANGES
         BANK6            00320-0036F              50           1
         BANK7            003A0-003CF              30           1
         BIGRAM           02000-023EF             3F0           1
-        CODE             00004-007D0             7CD           2
+        CODE             00004-00642             63F           2
                          00859-01FFF             800
-        CONST            00004-007D0             100           2
+        CONST            00004-00642             100           2
                          00859-01FFF             100
         EEDATA           0F000-0F0FF             100           2
-        ENTRY            00004-007D0             100           2
+        ENTRY            00004-00642             100           2
                          00859-01FFF             100
         IDLOC            08000-08003               4           2
         RAM              00020-0006F              50           1
@@ -339,16 +342,13 @@ UNUSED ADDRESS RANGES
         SFR8             00400-0041F              20           1
         SFR9             00480-0049F              20           1
         STACK            02000-0225F             260           1
-        STRCODE          00004-007D0             7CD           2
+        STRCODE          00004-00642             63F           2
                          00859-01FFF            17A7
-        STRING           00004-007D0             100           2
+        STRING           00004-00642             100           2
                          00859-01FFF             100
 
                                   Symbol Table
 
-_LATA                    (abs)        00016
-_LATAbits                (abs)        00016
-_TRISA                   (abs)        00011
 __CFG_BOREN$ON           (abs)        00000
 __CFG_BORV$LO            (abs)        00000
 __CFG_CLKOUTEN$OFF       (abs)        00000
@@ -415,8 +415,10 @@ __HcstackCOMMON          cstackCOMMON 00000
 __Heeprom_data           eeprom_data  00000
 __Hend_init              end_init     00004
 __Hfunctab               functab      00000
+__HidataBIGRAM           idataBIGRAM  00000
 __Hidloc                 idloc        00000
 __Hinit                  init         00002
+__Hinittext              inittext     00000
 __Hintentry              intentry     00002
 __Hmaintext              maintext     00000
 __Hpowerup               powerup      00000
@@ -519,7 +521,7 @@ __Lbank8                 bank8        00000
 __Lbank9                 bank9        00000
 __Lbigram                bigram       00000
 __LbssCOMMON             bssCOMMON    00000
-__Lcinit                 cinit        007E7
+__Lcinit                 cinit        007E1
 __Lclrtext               clrtext      00000
 __Lcode                  code         00000
 __Lcommon                common       00000
@@ -528,8 +530,10 @@ __LcstackCOMMON          cstackCOMMON 00000
 __Leeprom_data           eeprom_data  00000
 __Lend_init              end_init     00002
 __Lfunctab               functab      00000
+__LidataBIGRAM           idataBIGRAM  00000
 __Lidloc                 idloc        00000
 __Linit                  init         00002
+__Linittext              inittext     00000
 __Lintentry              intentry     00002
 __Lmaintext              maintext     00000
 __Lpowerup               powerup      00000
@@ -619,7 +623,7 @@ __end_of_c3pio2          stringtext20 00855
 __end_of_c4pio2          stringtext19 00851
 __end_of_half            stringtext8  00825
 __end_of_invpio2         stringtext7  00821
-__end_of_main            maintext     007DB
+__end_of_main            maintext     00645
 __end_of_pio2_1          stringtext6  0081D
 __end_of_pio2_1t         stringtext5  00819
 __end_of_s1pio2          stringtext18 0084D
@@ -628,11 +632,12 @@ __end_of_s3pio2          stringtext16 00845
 __end_of_s4pio2          stringtext15 00841
 __end_of_tiny            stringtext14 0083D
 __end_of_toint           stringtext9  00829
-__initialization         cinit        007E7
-__pbssBIGRAM             (abs)        02260
+__initialization         cinit        007E1
 __pbssCOMMON             bssCOMMON    00070
 __pcstackCOMMON          cstackCOMMON 00000
-__pmaintext              maintext     007D1
+__pdataBIGRAM            (abs)        02260
+__pidataBIGRAM           idataBIGRAM  00651
+__pmaintext              maintext     00643
 __pstringtext1           stringtext1  00805
 __pstringtext10          stringtext10 00829
 __pstringtext11          stringtext11 0082D
@@ -658,10 +663,10 @@ __pstringtext8           stringtext8  00821
 __pstringtext9           stringtext9  00825
 __size_of_main           (abs)        00000
 _inputImage              (abs)        02260
-_main                    maintext     007D1
+_main                    maintext     00643
 btemp                    (abs)        0007E
-clear_ram0               clrtext      007DB
 end_of_initialization    cinit        007FD
+init_ram                 inittext     00645
 intlevel0                functab      00000
 intlevel1                functab      00000
 intlevel2                functab      00000
@@ -672,7 +677,7 @@ reset_vec                reset_vec    00000
 stackhi                  (abs)        0225F
 stacklo                  (abs)        02000
 start                    init         00002
-start_initialization     cinit        007E7
+start_initialization     cinit        007E1
 wtemp0                   (abs)        0007E
 
 
@@ -680,15 +685,15 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 96 in file "hough_PIC.c"
+		line 117 in file "hough_PIC.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  2   20[None  ] int 
+                  2   14[None  ] int 
  Registers used:
-		wreg, status,2
+		None
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -711,9 +716,9 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 hough_PIC.c
-		_main          		CODE           	07D1	0000	11
+		_main          		CODE           	0643	0000	3
 
-hough_PIC.c estimated size: 11
+hough_PIC.c estimated size: 3
 
 shared
 		_S1            		STRCODE        	0000	0000	0
@@ -725,7 +730,7 @@ shared
 		_c3pio2        		STRCODE        	0000	0000	0
 		_c4pio2        		STRCODE        	0000	0000	0
 		_s1pio2        		STRCODE        	0000	0000	0
-		__initialization		CODE           	07E7	0000	23
+		__initialization		CODE           	07E1	0000	29
 		_s2pio2        		STRCODE        	0000	0000	0
 		_s3pio2        		STRCODE        	0000	0000	0
 		_s4pio2        		STRCODE        	0000	0000	0
@@ -740,5 +745,5 @@ shared
 		_C3            		STRCODE        	0000	0000	0
 		_invpio2       		STRCODE        	0000	0000	0
 
-shared estimated size: 23
+shared estimated size: 29
 

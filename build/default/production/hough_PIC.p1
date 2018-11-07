@@ -1,22 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"670 /opt/microchip/xc8/v2.00/pic/include/pic16f18875.h
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 670: extern volatile unsigned char TRISA __attribute__((address(0x011)));
-[v _TRISA `Vuc ~T0 @X0 0 e@17 ]
-"950
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 950: extern volatile unsigned char LATA __attribute__((address(0x016)));
-[v _LATA `Vuc ~T0 @X0 0 e@22 ]
-"956
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 956:     struct {
-[s S48 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S48 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"955
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 955: typedef union {
-[u S47 `S48 1 ]
-[n S47 . . ]
-"967
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
-[v _LATAbits `VS47 ~T0 @X0 0 e@22 ]
 "214 /opt/microchip/xc8/v2.00/pic/include/c99/math.h
 [; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 214: float ceilf(float);
 [v _ceilf `(f ~T0 @X0 0 ef1`f ]
@@ -1712,145 +1695,530 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 36645: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "77 hough_PIC.c
-[; ;hough_PIC.c: 77: unsigned char inputImage[400];
+[; ;hough_PIC.c: 77: unsigned char inputImage[400] = {
 [v _inputImage `uc ~T0 @X0 -> 400 `i e ]
+[i _inputImage
+:U ..
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 128 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 128 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 128 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 0 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 128 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+..
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"96
-[; ;hough_PIC.c: 96: int main(void) {
+"117
+[; ;hough_PIC.c: 117: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"97
-[; ;hough_PIC.c: 97:     TRISA = 0x0F;
-[e = _TRISA -> -> 15 `i `uc ]
-"98
-[; ;hough_PIC.c: 98:     LATA = 0x00;
-[e = _LATA -> -> 0 `i `uc ]
-"99
-[; ;hough_PIC.c: 99:     LATAbits.LATA7 = 1;
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-"103
-[; ;hough_PIC.c: 103:     LATAbits.LATA7 = 0;
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-"104
-[; ;hough_PIC.c: 104:     LATAbits.LATA6 = 1;
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-"105
-[; ;hough_PIC.c: 105:     return 0;
-[e ) -> 0 `i ]
-[e $UE 1632  ]
-"106
-[; ;hough_PIC.c: 106: }
+"129
+[; ;hough_PIC.c: 129: }
 [e :UE 1632 ]
 }
-"119
-[; ;hough_PIC.c: 119: void houghTransform(void){
+"142
+[; ;hough_PIC.c: 142: void houghTransform(void){
 [v _houghTransform `(v ~T0 @X0 1 ef ]
 {
 [e :U _houghTransform ]
 [f ]
-"128
-[; ;hough_PIC.c: 128:  double rho,cosTheta,sinTheta;
+"151
+[; ;hough_PIC.c: 151:  double rho,cosTheta,sinTheta;
 [v _rho `d ~T0 @X0 1 a ]
 [v _cosTheta `d ~T0 @X0 1 a ]
 [v _sinTheta `d ~T0 @X0 1 a ]
-"129
-[; ;hough_PIC.c: 129:  int rhoD,theta,j,i;
+"152
+[; ;hough_PIC.c: 152:  int rhoD,theta,j,i;
 [v _rhoD `i ~T0 @X0 1 a ]
 [v _theta `i ~T0 @X0 1 a ]
 [v _j `i ~T0 @X0 1 a ]
 [v _i `i ~T0 @X0 1 a ]
-"130
-[; ;hough_PIC.c: 130:     int accu_height = ceilf(2*(sqrtf((20)*(20) + (20)*(20)))) - 1;
+"153
+[; ;hough_PIC.c: 153:     int accu_height = ceilf(2*(sqrtf((20)*(20) + (20)*(20)))) - 1;
 [v _accu_height `i ~T0 @X0 1 a ]
 [e = _accu_height -> - ( _ceilf (1 * -> -> 2 `i `f ( _sqrtf (1 -> + * -> 20 `i -> 20 `i * -> 20 `i -> 20 `i `f -> -> 1 `i `f `i ]
-"131
-[; ;hough_PIC.c: 131:     for(theta=0; theta<180; theta++){
+"154
+[; ;hough_PIC.c: 154:     for(theta=0; theta<180; theta++){
 {
 [e = _theta -> 0 `i ]
 [e $ < _theta -> 180 `i 1634  ]
 [e $U 1635  ]
 [e :U 1634 ]
 {
-"133
-[; ;hough_PIC.c: 133:         cosTheta=cosf(theta*3.14159265358979323846/180);
+"156
+[; ;hough_PIC.c: 156:         cosTheta=cosf(theta*3.14159265358979323846/180);
 [e = _cosTheta -> ( _cosf (1 -> / * -> _theta `d .3.14159265358979323846 -> -> 180 `i `d `f `d ]
-"134
-[; ;hough_PIC.c: 134:         sinTheta=sinf(theta*3.14159265358979323846/180);
+"157
+[; ;hough_PIC.c: 157:         sinTheta=sinf(theta*3.14159265358979323846/180);
 [e = _sinTheta -> ( _sinf (1 -> / * -> _theta `d .3.14159265358979323846 -> -> 180 `i `d `f `d ]
-"135
-[; ;hough_PIC.c: 135:         for(rhoD=0; rhoD<accu_height; rhoD++){
+"158
+[; ;hough_PIC.c: 158:         for(rhoD=0; rhoD<accu_height; rhoD++){
 {
 [e = _rhoD -> 0 `i ]
 [e $U 1640  ]
 [e :U 1637 ]
 {
-"136
-[; ;hough_PIC.c: 136:             for(j=0; j<(20); j++){
+"159
+[; ;hough_PIC.c: 159:             for(j=0; j<(20); j++){
 {
 [e = _j -> 0 `i ]
 [e $ < _j -> 20 `i 1641  ]
 [e $U 1642  ]
 [e :U 1641 ]
 {
-"137
-[; ;hough_PIC.c: 137:                 for(i=0; i<(20); i++){
+"160
+[; ;hough_PIC.c: 160:                 for(i=0; i<(20); i++){
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 20 `i 1644  ]
 [e $U 1645  ]
 [e :U 1644 ]
 {
-"138
-[; ;hough_PIC.c: 138:                     if(inputImage[ (j*(20)) + i] > (200)){
+"161
+[; ;hough_PIC.c: 161:                     if(inputImage[ (j*(20)) + i] > (200)){
 [e $ ! > -> *U + &U _inputImage * -> -> + * _j -> 20 `i _i `ui `ux -> -> # *U &U _inputImage `ui `ux `i -> 200 `i 1647  ]
 {
-"140
-[; ;hough_PIC.c: 140:                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
+"163
+[; ;hough_PIC.c: 163:                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
 [e = _rho + * -> _j `d _cosTheta * -> _i `d _sinTheta ]
-"142
-[; ;hough_PIC.c: 142:                         if(ceilf(rho + accu_height/2)==rhoD){
+"165
+[; ;hough_PIC.c: 165:                         if(ceilf(rho + accu_height/2)==rhoD){
 [e $ ! == ( _ceilf (1 -> + _rho -> / _accu_height -> 2 `i `d `f -> _rhoD `f 1648  ]
 {
-"145
-[; ;hough_PIC.c: 145:                         }
+"168
+[; ;hough_PIC.c: 168:                         }
 }
 [e :U 1648 ]
-"146
-[; ;hough_PIC.c: 146:                     }
+"169
+[; ;hough_PIC.c: 169:                     }
 }
 [e :U 1647 ]
-"147
-[; ;hough_PIC.c: 147:                 }
+"170
+[; ;hough_PIC.c: 170:                 }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 20 `i 1644  ]
 [e :U 1645 ]
 }
-"148
-[; ;hough_PIC.c: 148:             }
+"171
+[; ;hough_PIC.c: 171:             }
 }
 [e ++ _j -> 1 `i ]
 [e $ < _j -> 20 `i 1641  ]
 [e :U 1642 ]
 }
-"149
-[; ;hough_PIC.c: 149:         }
+"172
+[; ;hough_PIC.c: 172:         }
 }
 [e ++ _rhoD -> 1 `i ]
 [e :U 1640 ]
 [e $ < _rhoD _accu_height 1637  ]
 [e :U 1638 ]
 }
-"150
-[; ;hough_PIC.c: 150:     }
+"173
+[; ;hough_PIC.c: 173:     }
 }
 [e ++ _theta -> 1 `i ]
 [e $ < _theta -> 180 `i 1634  ]
 [e :U 1635 ]
 }
-"151
-[; ;hough_PIC.c: 151: }
+"174
+[; ;hough_PIC.c: 174: }
 [e :UE 1633 ]
 }

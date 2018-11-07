@@ -7,7 +7,7 @@
 # 1 "/opt/microchip/xc8/v2.00/pic/include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "hough_PIC.c" 2
-# 17 "hough_PIC.c"
+# 18 "hough_PIC.c"
 #pragma config FEXTOSC = OFF
 #pragma config RSTOSC = HFINT32
 #pragma config CLKOUTEN = OFF
@@ -20821,7 +20821,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "/opt/microchip/xc8/v2.00/pic/include/xc.h" 2 3
-# 55 "hough_PIC.c" 2
+# 56 "hough_PIC.c" 2
 
 # 1 "/opt/microchip/xc8/v2.00/pic/include/c99/stdio.h" 1 3
 # 24 "/opt/microchip/xc8/v2.00/pic/include/c99/stdio.h" 3
@@ -20959,107 +20959,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 57 "hough_PIC.c" 2
+# 58 "hough_PIC.c" 2
 
-# 1 "/opt/microchip/xc8/v2.00/pic/include/c99/time.h" 1 3
-# 33 "/opt/microchip/xc8/v2.00/pic/include/c99/time.h" 3
-# 1 "/opt/microchip/xc8/v2.00/pic/include/c99/bits/alltypes.h" 1 3
-# 80 "/opt/microchip/xc8/v2.00/pic/include/c99/bits/alltypes.h" 3
-typedef long long time_t;
-# 291 "/opt/microchip/xc8/v2.00/pic/include/c99/bits/alltypes.h" 3
-typedef void * timer_t;
-
-
-
-
-typedef int clockid_t;
-
-
-
-
-typedef long clock_t;
-# 311 "/opt/microchip/xc8/v2.00/pic/include/c99/bits/alltypes.h" 3
-struct timespec { time_t tv_sec; long tv_nsec; };
-
-
-
-
-
-typedef int pid_t;
-# 409 "/opt/microchip/xc8/v2.00/pic/include/c99/bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 34 "/opt/microchip/xc8/v2.00/pic/include/c99/time.h" 2 3
-
-
-
-
-
-
-struct tm {
- int tm_sec;
- int tm_min;
- int tm_hour;
- int tm_mday;
- int tm_mon;
- int tm_year;
- int tm_wday;
- int tm_yday;
- int tm_isdst;
- long __tm_gmtoff;
- const char *__tm_zone;
-};
-
-clock_t clock (void);
-time_t time (time_t *);
-double difftime (time_t, time_t);
-time_t mktime (struct tm *);
-size_t strftime (char *restrict, size_t, const char *restrict, const struct tm *restrict);
-struct tm *gmtime (const time_t *);
-struct tm *localtime (const time_t *);
-char *asctime (const struct tm *);
-char *ctime (const time_t *);
-int timespec_get(struct timespec *, int);
-# 73 "/opt/microchip/xc8/v2.00/pic/include/c99/time.h" 3
-size_t strftime_l (char * restrict, size_t, const char * restrict, const struct tm * restrict, locale_t);
-
-struct tm *gmtime_r (const time_t *restrict, struct tm *restrict);
-struct tm *localtime_r (const time_t *restrict, struct tm *restrict);
-char *asctime_r (const struct tm *restrict, char *restrict);
-char *ctime_r (const time_t *, char *);
-
-void tzset (void);
-
-struct itimerspec {
- struct timespec it_interval;
- struct timespec it_value;
-};
-# 102 "/opt/microchip/xc8/v2.00/pic/include/c99/time.h" 3
-int nanosleep (const struct timespec *, struct timespec *);
-int clock_getres (clockid_t, struct timespec *);
-int clock_gettime (clockid_t, struct timespec *);
-int clock_settime (clockid_t, const struct timespec *);
-int clock_nanosleep (clockid_t, int, const struct timespec *, struct timespec *);
-int clock_getcpuclockid (pid_t, clockid_t *);
-
-struct sigevent;
-int timer_create (clockid_t, struct sigevent *restrict, timer_t *restrict);
-int timer_delete (timer_t);
-int timer_settime (timer_t, int, const struct itimerspec *restrict, struct itimerspec *restrict);
-int timer_gettime (timer_t, struct itimerspec *);
-int timer_getoverrun (timer_t);
-
-extern char *tzname[2];
-
-
-
-
-
-char *strptime (const char *restrict, const char *restrict, struct tm *restrict);
-extern int daylight;
-extern long timezone;
-extern int getdate_err;
-struct tm *getdate (const char *);
-# 59 "hough_PIC.c" 2
 # 1 "/opt/microchip/xc8/v2.00/pic/include/c99/math.h" 1 3
 # 10 "/opt/microchip/xc8/v2.00/pic/include/c99/math.h" 3
 # 1 "/opt/microchip/xc8/v2.00/pic/include/c99/stdint.h" 1 3
@@ -21609,7 +21510,7 @@ double y0(double);
 double y1(double);
 double yn(int, double);
 # 60 "hough_PIC.c" 2
-# 77 "hough_PIC.c"
+# 79 "hough_PIC.c"
 unsigned char inputImage[400] = {
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
@@ -21636,35 +21537,57 @@ unsigned char inputImage[400] = {
 
 
 
-void houghTransform();
-# 117 "hough_PIC.c"
+void houghTransform(void);
+# 119 "hough_PIC.c"
 int main(void) {
-# 129 "hough_PIC.c"
+
+    TRISA = 0x0F;
+    LATA = 0x00;
+    LATAbits.LATA7 = 1;
+
+    houghTransform();
+
+    LATAbits.LATA7 = 0;
+    LATAbits.LATA6 = 1;
+    return 0;
+
 }
-# 142 "hough_PIC.c"
+# 144 "hough_PIC.c"
 void houghTransform(void){
-# 151 "hough_PIC.c"
- double rho,cosTheta,sinTheta;
- int rhoD,theta,j,i;
-    int accu_height = ceilf(2*(sqrtf((20)*(20) + (20)*(20)))) - 1;
-    for(theta=0; theta<180; theta++){
+
+
+
+
+
+    int rhoD,theta,j,i;
+    float rho,cosTheta,sinTheta;
+    unsigned char accumulator_pixel;
+
+    for(theta=0; theta<(180); theta++){
 
         cosTheta=cosf(theta*3.14159265358979323846/180);
-        sinTheta=sinf(theta*3.14159265358979323846/180);
-        for(rhoD=0; rhoD<accu_height; rhoD++){
+
+        sinTheta=cosf(90 - (theta*3.14159265358979323846/180));
+
+        for(rhoD=0; rhoD<(56); rhoD++){
+
+            accumulator_pixel = 0;
             for(j=0; j<(20); j++){
                 for(i=0; i<(20); i++){
-                    if(inputImage[ (j*(20)) + i] > (200)){
+                    if(inputImage[ (j*(20)) + i] < (200)){
 
                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
+                        rho=0;
 
-                        if(ceilf(rho + accu_height/2)==rhoD){
 
+                        if(ceilf(rho + (56)/2)==rhoD){
 
+                            accumulator_pixel++;
                         }
                     }
                 }
             }
+
         }
     }
 }

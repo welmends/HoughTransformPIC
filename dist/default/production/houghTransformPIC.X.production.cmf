@@ -11,64 +11,81 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production/houghTransformPIC.X.production.o
-cinit CODE 0 7E1 7E1 1F 2
-idataBIGRAM CODE 0 651 651 190 2
-maintext CODE 0 643 643 2 2
-inittext CODE 0 645 645 C 2
-stringtext1 STRCODE 0 805 805 4 2
-stringtext2 STRCODE 0 809 809 4 2
-stringtext3 STRCODE 0 80D 80D 4 2
-stringtext4 STRCODE 0 811 811 4 2
-stringtext5 STRCODE 0 815 815 4 2
-stringtext6 STRCODE 0 819 819 4 2
-stringtext7 STRCODE 0 81D 81D 4 2
-stringtext8 STRCODE 0 821 821 4 2
-stringtext9 STRCODE 0 825 825 4 2
-bssCOMMON COMMON 1 70 70 E 1
-stringtext10 STRCODE 0 829 829 4 2
-stringtext11 STRCODE 0 82D 82D 4 2
-stringtext12 STRCODE 0 831 831 4 2
-stringtext13 STRCODE 0 835 835 4 2
-stringtext14 STRCODE 0 839 839 4 2
-stringtext15 STRCODE 0 83D 83D 4 2
-stringtext16 STRCODE 0 841 841 4 2
-stringtext17 STRCODE 0 845 845 4 2
-stringtext18 STRCODE 0 849 849 4 2
-stringtext19 STRCODE 0 84D 84D 4 2
-stringtext20 STRCODE 0 851 851 4 2
-stringtext21 STRCODE 0 855 855 4 2
-stringtext22 STRCODE 0 800 800 5 2
-$/tmp/xcX7HRbc9.o
+$/tmp/xcXJiyUxd.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 0 8007 8007 5 2
+$dist/default/production/houghTransformPIC.X.production.o
+cinit CODE 0 7E2 7E2 1E 2
+text1 CODE 0 45 45 29A 2
+text2 CODE 0 2DF 2DF 503 2
+text3 CODE 0 1362 1362 233 2
+text4 CODE 0 C30 C30 3D0 2
+text5 CODE 0 80B 80B 23 2
+text6 CODE 0 1D6D 1D6D B4 2
+text7 CODE 0 1CD8 1CD8 95 2
+text8 CODE 0 1CCA 1CCA E 2
+text9 CODE 0 1167 1167 1FB 2
+text10 CODE 0 1595 1595 26B 2
+text11 CODE 0 1F 1F 26 2
+text12 CODE 0 9BE 9BE 272 2
+text13 CODE 0 107F 107F E8 2
+text14 CODE 0 100C 100C 22 2
+text15 CODE 0 102E 102E 51 2
+text16 CODE 0 1E21 1E21 1DF 2
+idataBIGRAM CODE 0 82E 82E 190 2
+maintext CODE 0 11 11 E 2
+cstackCOMMON COMMON 1 70 70 E 1
+cstackBANK0 BANK0 1 20 20 50 1
+cstackBANK1 BANK1 1 A0 A0 42 1
+cstackBANK2 BANK2 1 120 120 3B 1
+inittext CODE 0 5 5 C 2
+stringtext1 STRCODE 0 1800 1800 4 2
+stringtext2 STRCODE 0 1804 1804 4 2
+stringtext3 STRCODE 0 1808 1808 4 2
+stringtext4 STRCODE 0 180C 180C 4 2
+stringtext5 STRCODE 0 1810 1810 4 2
+stringtext6 STRCODE 0 1814 1814 4 2
+stringtext7 STRCODE 0 1818 1818 4 2
+stringtext8 STRCODE 0 181C 181C 4 2
+stringtext9 STRCODE 0 1820 1820 4 2
+bssBANK1 BANK1 1 E2 E2 C 1
+stringtext10 STRCODE 0 1824 1824 4 2
+stringtext11 STRCODE 0 1828 1828 4 2
+stringtext12 STRCODE 0 182C 182C 4 2
+stringtext13 STRCODE 0 1830 1830 4 2
+stringtext14 STRCODE 0 1834 1834 4 2
+stringtext15 STRCODE 0 1838 1838 4 2
+stringtext16 STRCODE 0 183C 183C 4 2
+stringtext17 STRCODE 0 1840 1840 4 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 20-6F 1
-RAM A0-EF 1
-RAM 120-16F 1
+RAM EE-EF 1
+RAM 15B-16F 1
 RAM 1A0-1EF 1
 RAM 220-26F 1
 RAM 2A0-2EF 1
 RAM 320-36F 1
 RAM 3A0-3CF 1
-BANK0 20-6F 1
-BANK1 A0-EF 1
-BANK2 120-16F 1
+BANK1 EE-EF 1
+BANK2 15B-16F 1
 BANK3 1A0-1EF 1
 BANK4 220-26F 1
 BANK5 2A0-2EF 1
 BANK6 320-36F 1
 BANK7 3A0-3CF 1
-CONST 4-642 2
-CONST 859-1FFF 2
-ENTRY 4-642 2
-ENTRY 859-1FFF 2
+CONST 4-4 2
+CONST 800-80A 2
+CONST 1000-100B 2
+CONST 1844-1CC9 2
+ENTRY 4-4 2
+ENTRY 800-80A 2
+ENTRY 1000-100B 2
+ENTRY 1844-1CC9 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -92,9 +109,11 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-STACK 2000-225F 1
-CODE 4-642 2
-CODE 859-1FFF 2
+STACK 20DB-225F 1
+CODE 4-4 2
+CODE 800-80A 2
+CODE 1000-100B 2
+CODE 1844-1CC9 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -107,10 +126,14 @@ SFR8 400-41F 1
 SFR9 480-49F 1
 BIGRAM 2000-23EF 1
 EEDATA F000-F0FF 2
-STRCODE 4-642 2
-STRCODE 859-1FFF 2
-STRING 4-642 2
-STRING 859-1FFF 2
+STRCODE 4-4 2
+STRCODE 800-80A 2
+STRCODE 1000-100B 2
+STRCODE 1844-1CC9 2
+STRING 4-4 2
+STRING 800-80A 2
+STRING 1000-100B 2
+STRING 1844-1CC9 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -125,53 +148,659 @@ STRING 859-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/houghTransformPIC.X.production.o
-7E1 cinit CODE >3034:/tmp/xcXKSEYxh
-7E1 cinit CODE >3037:/tmp/xcXKSEYxh
-7E1 cinit CODE >3077:/tmp/xcXKSEYxh
-7E2 cinit CODE >3078:/tmp/xcXKSEYxh
-7E3 cinit CODE >3079:/tmp/xcXKSEYxh
-7E4 cinit CODE >3080:/tmp/xcXKSEYxh
-7E5 cinit CODE >3081:/tmp/xcXKSEYxh
-7E6 cinit CODE >3082:/tmp/xcXKSEYxh
-7E7 cinit CODE >3083:/tmp/xcXKSEYxh
-7E8 cinit CODE >3084:/tmp/xcXKSEYxh
-7E9 cinit CODE >3085:/tmp/xcXKSEYxh
-7EA cinit CODE >3086:/tmp/xcXKSEYxh
-7EB cinit CODE >3087:/tmp/xcXKSEYxh
-7EC cinit CODE >3088:/tmp/xcXKSEYxh
-7EF cinit CODE >3093:/tmp/xcXKSEYxh
-7F0 cinit CODE >3094:/tmp/xcXKSEYxh
-7F1 cinit CODE >3095:/tmp/xcXKSEYxh
-7F2 cinit CODE >3096:/tmp/xcXKSEYxh
-7F3 cinit CODE >3097:/tmp/xcXKSEYxh
-7F4 cinit CODE >3098:/tmp/xcXKSEYxh
-7F5 cinit CODE >3099:/tmp/xcXKSEYxh
-7F6 cinit CODE >3100:/tmp/xcXKSEYxh
-7F7 cinit CODE >3101:/tmp/xcXKSEYxh
-7F8 cinit CODE >3102:/tmp/xcXKSEYxh
-7F9 cinit CODE >3103:/tmp/xcXKSEYxh
-7FA cinit CODE >3104:/tmp/xcXKSEYxh
-7FB cinit CODE >3105:/tmp/xcXKSEYxh
-7FC cinit CODE >3106:/tmp/xcXKSEYxh
-7FD cinit CODE >3112:/tmp/xcXKSEYxh
-7FD cinit CODE >3114:/tmp/xcXKSEYxh
-7FE cinit CODE >3115:/tmp/xcXKSEYxh
-643 maintext CODE >117:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
-643 maintext CODE >129:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
-645 inittext CODE >3060:/tmp/xcXKSEYxh
-645 inittext CODE >3061:/tmp/xcXKSEYxh
-646 inittext CODE >3062:/tmp/xcXKSEYxh
-646 inittext CODE >3063:/tmp/xcXKSEYxh
-647 inittext CODE >3064:/tmp/xcXKSEYxh
-648 inittext CODE >3065:/tmp/xcXKSEYxh
-649 inittext CODE >3066:/tmp/xcXKSEYxh
-64A inittext CODE >3067:/tmp/xcXKSEYxh
-64B inittext CODE >3068:/tmp/xcXKSEYxh
-64C inittext CODE >3069:/tmp/xcXKSEYxh
-64D inittext CODE >3070:/tmp/xcXKSEYxh
-64E inittext CODE >3071:/tmp/xcXKSEYxh
-64F inittext CODE >3072:/tmp/xcXKSEYxh
-650 inittext CODE >3073:/tmp/xcXKSEYxh
+7E2 cinit CODE >3030:/tmp/xcXXAokci
+7E2 cinit CODE >3033:/tmp/xcXXAokci
+7E2 cinit CODE >3070:/tmp/xcXXAokci
+7E3 cinit CODE >3071:/tmp/xcXXAokci
+7E4 cinit CODE >3072:/tmp/xcXXAokci
+7E5 cinit CODE >3073:/tmp/xcXXAokci
+7E6 cinit CODE >3074:/tmp/xcXXAokci
+7E7 cinit CODE >3075:/tmp/xcXXAokci
+7E8 cinit CODE >3076:/tmp/xcXXAokci
+7E9 cinit CODE >3077:/tmp/xcXXAokci
+7EA cinit CODE >3078:/tmp/xcXXAokci
+7EB cinit CODE >3079:/tmp/xcXXAokci
+7EC cinit CODE >3080:/tmp/xcXXAokci
+7ED cinit CODE >3081:/tmp/xcXXAokci
+7F0 cinit CODE >3086:/tmp/xcXXAokci
+7F1 cinit CODE >3087:/tmp/xcXXAokci
+7F2 cinit CODE >3088:/tmp/xcXXAokci
+7F3 cinit CODE >3089:/tmp/xcXXAokci
+7F4 cinit CODE >3090:/tmp/xcXXAokci
+7F5 cinit CODE >3091:/tmp/xcXXAokci
+7F6 cinit CODE >3092:/tmp/xcXXAokci
+7F7 cinit CODE >3093:/tmp/xcXXAokci
+7F8 cinit CODE >3094:/tmp/xcXXAokci
+7F9 cinit CODE >3095:/tmp/xcXXAokci
+7FA cinit CODE >3096:/tmp/xcXXAokci
+7FB cinit CODE >3097:/tmp/xcXXAokci
+7FC cinit CODE >3098:/tmp/xcXXAokci
+7FD cinit CODE >3104:/tmp/xcXXAokci
+7FD cinit CODE >3106:/tmp/xcXXAokci
+7FE cinit CODE >3107:/tmp/xcXXAokci
+1E21 text16 CODE >8:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E21 text16 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E27 text16 CODE >27:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E2B text16 CODE >28:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E2F text16 CODE >29:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E31 text16 CODE >30:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E31 text16 CODE >33:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E36 text16 CODE >35:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E3B text16 CODE >37:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E44 text16 CODE >38:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E44 text16 CODE >40:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E45 text16 CODE >42:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E46 text16 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E47 text16 CODE >44:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E47 text16 CODE >46:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E50 text16 CODE >47:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E50 text16 CODE >49:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E55 text16 CODE >50:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E59 text16 CODE >51:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E5D text16 CODE >52:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E5F text16 CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E5F text16 CODE >56:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E64 text16 CODE >58:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E69 text16 CODE >60:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E72 text16 CODE >61:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E72 text16 CODE >63:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E73 text16 CODE >65:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E74 text16 CODE >66:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E75 text16 CODE >67:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E75 text16 CODE >69:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E7D text16 CODE >70:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E7D text16 CODE >75:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E85 text16 CODE >76:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E8D text16 CODE >77:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E91 text16 CODE >78:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E95 text16 CODE >79:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E9F text16 CODE >80:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1E9F text16 CODE >83:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EA4 text16 CODE >84:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EAC text16 CODE >85:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EB6 text16 CODE >86:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EB6 text16 CODE >89:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1ECB text16 CODE >92:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1ED3 text16 CODE >93:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EDB text16 CODE >94:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EE3 text16 CODE >96:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EE4 text16 CODE >97:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EE5 text16 CODE >100:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EEA text16 CODE >101:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EF1 text16 CODE >102:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EF8 text16 CODE >103:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EFC text16 CODE >104:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EFE text16 CODE >105:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1EFE text16 CODE >106:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F06 text16 CODE >107:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F06 text16 CODE >112:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F18 text16 CODE >115:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F19 text16 CODE >116:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F22 text16 CODE >117:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F22 text16 CODE >118:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F27 text16 CODE >97:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F27 text16 CODE >119:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F2E text16 CODE >122:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F36 text16 CODE >123:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F38 text16 CODE >124:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F38 text16 CODE >127:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F39 text16 CODE >128:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F40 text16 CODE >129:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F44 text16 CODE >130:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F46 text16 CODE >131:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F46 text16 CODE >132:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F4D text16 CODE >133:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F52 text16 CODE >127:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F52 text16 CODE >134:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F57 text16 CODE >139:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F58 text16 CODE >140:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F5C text16 CODE >141:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F70 text16 CODE >142:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F72 text16 CODE >143:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F73 text16 CODE >144:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F73 text16 CODE >145:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F77 text16 CODE >146:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F7A text16 CODE >147:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F7B text16 CODE >148:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F7C text16 CODE >149:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F7C text16 CODE >150:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F81 text16 CODE >151:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F89 text16 CODE >152:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1F8D text16 CODE >153:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FA5 text16 CODE >154:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FAA text16 CODE >155:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FAB text16 CODE >156:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FAB text16 CODE >159:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FB8 text16 CODE >160:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FBD text16 CODE >161:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FC5 text16 CODE >162:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FC5 text16 CODE >165:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FD3 text16 CODE >166:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FD6 text16 CODE >167:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FDE text16 CODE >169:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FDF text16 CODE >170:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FDF text16 CODE >173:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FE4 text16 CODE >175:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FE8 text16 CODE >176:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FE9 text16 CODE >177:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FEA text16 CODE >179:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FEA text16 CODE >180:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FEE text16 CODE >181:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FEE text16 CODE >182:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FF2 text16 CODE >183:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FF6 text16 CODE >184:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+1FFF text16 CODE >185:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+102E text15 CODE >4:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fleq.c
+102E text15 CODE >7:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fleq.c
+1043 text15 CODE >8:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fleq.c
+104B text15 CODE >9:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fleq.c
+105F text15 CODE >10:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fleq.c
+1067 text15 CODE >11:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fleq.c
+107E text15 CODE >12:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fleq.c
+100C text14 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
+100C text14 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
+100F text14 CODE >44:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
+100F text14 CODE >45:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
+1013 text14 CODE >46:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
+1017 text14 CODE >47:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
+101C text14 CODE >48:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
+1021 text14 CODE >49:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
+1028 text14 CODE >52:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
+102D text14 CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
+107F text13 CODE >3:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+107F text13 CODE >5:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+1090 text13 CODE >6:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+10AB text13 CODE >9:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+10B8 text13 CODE >10:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+10B9 text13 CODE >11:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+10BE text13 CODE >12:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+10D6 text13 CODE >13:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+10EA text13 CODE >14:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+10EB text13 CODE >16:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+1102 text13 CODE >17:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+110B text13 CODE >18:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+111B text13 CODE >19:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+111C text13 CODE >21:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+1133 text13 CODE >22:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+113C text13 CODE >23:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+1153 text13 CODE >24:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+115D text13 CODE >25:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+115D text13 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+1166 text13 CODE >27:/opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
+9BE text12 CODE >10:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9BE text12 CODE >21:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9C4 text12 CODE >22:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9C8 text12 CODE >23:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9CC text12 CODE >24:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9CE text12 CODE >25:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9CE text12 CODE >28:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9D3 text12 CODE >30:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9D8 text12 CODE >32:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9E1 text12 CODE >33:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9E1 text12 CODE >35:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9E2 text12 CODE >37:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9E3 text12 CODE >38:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9E4 text12 CODE >39:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9E4 text12 CODE >41:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9ED text12 CODE >42:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9ED text12 CODE >44:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9F2 text12 CODE >46:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9F8 text12 CODE >47:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9FA text12 CODE >48:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9FA text12 CODE >49:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+9FE text12 CODE >50:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A02 text12 CODE >51:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A04 text12 CODE >52:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A04 text12 CODE >55:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A09 text12 CODE >57:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A0E text12 CODE >59:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A17 text12 CODE >60:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A17 text12 CODE >62:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A18 text12 CODE >64:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A19 text12 CODE >65:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A1A text12 CODE >66:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A1A text12 CODE >68:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A22 text12 CODE >69:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A22 text12 CODE >75:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A28 text12 CODE >77:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A2C text12 CODE >78:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A31 text12 CODE >79:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A31 text12 CODE >81:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A35 text12 CODE >82:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A39 text12 CODE >83:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A3D text12 CODE >84:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A41 text12 CODE >85:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A45 text12 CODE >86:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A49 text12 CODE >87:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A4D text12 CODE >88:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A51 text12 CODE >89:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A55 text12 CODE >90:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A59 text12 CODE >91:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A5D text12 CODE >92:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A61 text12 CODE >93:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A65 text12 CODE >94:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A69 text12 CODE >95:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A6E text12 CODE >96:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A6E text12 CODE >98:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A6F text12 CODE >100:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A8B text12 CODE >101:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+A99 text12 CODE >102:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AA1 text12 CODE >103:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AA5 text12 CODE >104:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AA6 text12 CODE >105:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AA6 text12 CODE >106:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AA7 text12 CODE >109:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AAB text12 CODE >110:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AB0 text12 CODE >111:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AB1 text12 CODE >112:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AB1 text12 CODE >113:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AB4 text12 CODE >114:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AB4 text12 CODE >115:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AB8 text12 CODE >116:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+ABA text12 CODE >117:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+ABA text12 CODE >118:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AC2 text12 CODE >119:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AC7 text12 CODE >106:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AC7 text12 CODE >120:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+ACF text12 CODE >121:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+ACF text12 CODE >124:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AD3 text12 CODE >127:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AD8 text12 CODE >128:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AE2 text12 CODE >129:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AE2 text12 CODE >132:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AEA text12 CODE >134:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AEE text12 CODE >135:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AF2 text12 CODE >136:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AF7 text12 CODE >137:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AF8 text12 CODE >138:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AF8 text12 CODE >139:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AFB text12 CODE >140:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AFB text12 CODE >141:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+AFF text12 CODE >142:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B01 text12 CODE >143:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B01 text12 CODE >144:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B09 text12 CODE >145:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B0E text12 CODE >146:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B0E text12 CODE >148:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B0F text12 CODE >149:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B0F text12 CODE >153:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B25 text12 CODE >154:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B5C text12 CODE >155:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B60 text12 CODE >156:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B62 text12 CODE >157:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B67 text12 CODE >158:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B70 text12 CODE >159:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B70 text12 CODE >160:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B71 text12 CODE >161:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B71 text12 CODE >162:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B79 text12 CODE >163:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B79 text12 CODE >166:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B86 text12 CODE >167:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B90 text12 CODE >168:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B90 text12 CODE >171:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B91 text12 CODE >172:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B98 text12 CODE >173:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B9C text12 CODE >174:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B9D text12 CODE >175:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+B9D text12 CODE >176:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BA1 text12 CODE >177:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BA3 text12 CODE >178:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BA4 text12 CODE >179:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BA4 text12 CODE >180:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BA7 text12 CODE >181:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BA7 text12 CODE >182:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BAC text12 CODE >183:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BAF text12 CODE >184:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BB0 text12 CODE >171:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BB0 text12 CODE >185:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BB6 text12 CODE >186:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BB6 text12 CODE >192:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BB7 text12 CODE >193:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BBB text12 CODE >194:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BC1 text12 CODE >195:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BC3 text12 CODE >196:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BC4 text12 CODE >197:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BC4 text12 CODE >198:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BC8 text12 CODE >199:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BCB text12 CODE >200:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BCC text12 CODE >201:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BCD text12 CODE >202:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BCD text12 CODE >203:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BD2 text12 CODE >204:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BDA text12 CODE >205:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BDE text12 CODE >206:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BF6 text12 CODE >207:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+BFB text12 CODE >208:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C00 text12 CODE >209:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C01 text12 CODE >210:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C01 text12 CODE >211:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C01 text12 CODE >215:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C0C text12 CODE >216:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C14 text12 CODE >218:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C19 text12 CODE >219:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C1B text12 CODE >220:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C1C text12 CODE >221:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C1C text12 CODE >225:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C20 text12 CODE >226:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C21 text12 CODE >227:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C22 text12 CODE >229:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C22 text12 CODE >230:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C26 text12 CODE >231:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C26 text12 CODE >232:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C2A text12 CODE >233:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C2E text12 CODE >234:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C2F text12 CODE >235:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+C2F text12 CODE >237:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+1F text11 CODE >4:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+20 text11 CODE >5:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+22 text11 CODE >6:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+2A text11 CODE >50:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+2A text11 CODE >51:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+2E text11 CODE >52:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+32 text11 CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+32 text11 CODE >54:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+37 text11 CODE >55:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+39 text11 CODE >56:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+3F text11 CODE >59:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+44 text11 CODE >60:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+1595 text10 CODE >8:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1595 text10 CODE >17:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+159B text10 CODE >18:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+159F text10 CODE >19:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15A3 text10 CODE >20:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15A5 text10 CODE >21:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15A5 text10 CODE >24:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15AA text10 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15AF text10 CODE >28:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15B8 text10 CODE >29:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15B8 text10 CODE >31:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15B9 text10 CODE >33:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15BA text10 CODE >34:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15BA text10 CODE >36:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15C3 text10 CODE >37:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15C3 text10 CODE >39:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15C8 text10 CODE >40:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15CC text10 CODE >41:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15D0 text10 CODE >42:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15D2 text10 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15D2 text10 CODE >45:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15D7 text10 CODE >48:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15DC text10 CODE >50:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15E5 text10 CODE >51:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15E5 text10 CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15E6 text10 CODE >54:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15E7 text10 CODE >55:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15E7 text10 CODE >57:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15F0 text10 CODE >58:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15F0 text10 CODE >65:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+15FB text10 CODE >66:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1605 text10 CODE >67:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1605 text10 CODE >119:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1612 text10 CODE >120:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+161F text10 CODE >121:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+162C text10 CODE >122:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1639 text10 CODE >123:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1646 text10 CODE >124:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1653 text10 CODE >125:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1660 text10 CODE >126:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+166D text10 CODE >127:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+167A text10 CODE >128:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1681 text10 CODE >129:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+168E text10 CODE >130:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1695 text10 CODE >131:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+16A2 text10 CODE >132:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+16A9 text10 CODE >133:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+16B0 text10 CODE >134:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+16BD text10 CODE >135:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+16C4 text10 CODE >136:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+16D1 text10 CODE >137:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+16D8 text10 CODE >138:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+16E5 text10 CODE >139:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+16EC text10 CODE >140:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+16F9 text10 CODE >141:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+170E text10 CODE >145:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1725 text10 CODE >146:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+172C text10 CODE >149:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1737 text10 CODE >152:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1738 text10 CODE >153:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+173F text10 CODE >154:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1743 text10 CODE >155:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1745 text10 CODE >156:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1745 text10 CODE >157:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+174C text10 CODE >158:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1751 text10 CODE >152:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1751 text10 CODE >159:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1756 text10 CODE >163:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1757 text10 CODE >164:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+175B text10 CODE >165:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+176F text10 CODE >166:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1771 text10 CODE >167:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1772 text10 CODE >168:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1772 text10 CODE >169:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1776 text10 CODE >170:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1779 text10 CODE >171:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+177A text10 CODE >172:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+177B text10 CODE >173:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+177B text10 CODE >174:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1780 text10 CODE >175:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1788 text10 CODE >176:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+178C text10 CODE >177:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17A4 text10 CODE >178:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17A9 text10 CODE >179:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17AA text10 CODE >180:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17AA text10 CODE >183:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17B7 text10 CODE >184:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17C0 text10 CODE >185:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17C1 text10 CODE >187:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17CF text10 CODE >188:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17D8 text10 CODE >190:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17D9 text10 CODE >191:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17DA text10 CODE >192:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17DA text10 CODE >194:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17DF text10 CODE >195:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17E7 text10 CODE >196:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17EB text10 CODE >197:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17ED text10 CODE >198:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17ED text10 CODE >199:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17F2 text10 CODE >200:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17F2 text10 CODE >201:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17F6 text10 CODE >203:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+17FF text10 CODE >205:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+1167 text9 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__cosdf.c
+1167 text9 CODE >31:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__cosdf.c
+119A text9 CODE >32:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__cosdf.c
+11CC text9 CODE >33:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__cosdf.c
+1232 text9 CODE >34:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__cosdf.c
+1361 text9 CODE >35:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__cosdf.c
+1CCA text8 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c99/common/flneg.c
+1CCA text8 CODE >17:/opt/microchip/xc8/v2.00/pic/sources/c99/common/flneg.c
+1CD3 text8 CODE >18:/opt/microchip/xc8/v2.00/pic/sources/c99/common/flneg.c
+1CD6 text8 CODE >19:/opt/microchip/xc8/v2.00/pic/sources/c99/common/flneg.c
+1CD7 text8 CODE >20:/opt/microchip/xc8/v2.00/pic/sources/c99/common/flneg.c
+1CD8 text7 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1CD8 text7 CODE >47:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1CEC text7 CODE >48:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1CF6 text7 CODE >49:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D09 text7 CODE >50:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D0A text7 CODE >51:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D12 text7 CODE >52:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D14 text7 CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D18 text7 CODE >54:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D1F text7 CODE >55:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D2A text7 CODE >56:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D2A text7 CODE >57:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D3A text7 CODE >59:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D3B text7 CODE >60:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D41 text7 CODE >61:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D4B text7 CODE >62:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D4C text7 CODE >63:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D53 text7 CODE >64:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D55 text7 CODE >62:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D55 text7 CODE >65:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D5C text7 CODE >66:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D5C text7 CODE >67:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D61 text7 CODE >68:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D6C text7 CODE >70:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fltol.c
+1D6D text6 CODE >10:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1D6E text6 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1D77 text6 CODE >16:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1D86 text6 CODE >17:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1D87 text6 CODE >18:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1D87 text6 CODE >19:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1D8F text6 CODE >20:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1D8F text6 CODE >21:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1D97 text6 CODE >22:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DA1 text6 CODE >23:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DA5 text6 CODE >24:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DA6 text6 CODE >25:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DAA text6 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DB2 text6 CODE >24:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DB2 text6 CODE >27:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DB9 text6 CODE >28:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DBA text6 CODE >29:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DBE text6 CODE >30:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DC6 text6 CODE >31:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DCD text6 CODE >28:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DCD text6 CODE >32:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DD4 text6 CODE >33:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DD5 text6 CODE >34:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DD7 text6 CODE >35:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DDF text6 CODE >33:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DDF text6 CODE >36:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DEA text6 CODE >37:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DEE text6 CODE >38:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DF6 text6 CODE >39:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1DF8 text6 CODE >40:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1E0C text6 CODE >41:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1E15 text6 CODE >42:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1E17 text6 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+1E20 text6 CODE >44:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
+80B text5 CODE >4:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fabsf.c
+80B text5 CODE >6:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fabsf.c
+81C text5 CODE >7:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fabsf.c
+824 text5 CODE >8:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fabsf.c
+82D text5 CODE >9:/opt/microchip/xc8/v2.00/pic/sources/c99/common/fabsf.c
+C30 text4 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+C30 text4 CODE >45:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+C41 text4 CODE >56:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+C54 text4 CODE >57:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+C60 text4 CODE >58:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+C68 text4 CODE >59:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+CA4 text4 CODE >60:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+CA9 text4 CODE >61:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+CA9 text4 CODE >64:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+CB5 text4 CODE >65:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+CC9 text4 CODE >66:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+D3B text4 CODE >67:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+D50 text4 CODE >68:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+E1A text4 CODE >69:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+E21 text4 CODE >70:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+E3F text4 CODE >71:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+E4D text4 CODE >72:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+E4D text4 CODE >73:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+E53 text4 CODE >74:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+E53 text4 CODE >83:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+E67 text4 CODE >84:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+ED9 text4 CODE >85:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+EEE text4 CODE >86:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+FBA text4 CODE >88:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+FC0 text4 CODE >89:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+FE0 text4 CODE >90:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+FEE text4 CODE >91:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+FEE text4 CODE >92:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+FFA text4 CODE >93:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+FFF text4 CODE >94:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
+1362 text3 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__sindf.c
+1362 text3 CODE >31:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__sindf.c
+1395 text3 CODE >32:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__sindf.c
+13C7 text3 CODE >33:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__sindf.c
+142D text3 CODE >34:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__sindf.c
+145F text3 CODE >35:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__sindf.c
+1594 text3 CODE >36:/opt/microchip/xc8/v2.00/pic/sources/c99/common/__sindf.c
+2DF text2 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+2DF text2 CODE >36:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+2F8 text2 CODE >37:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+315 text2 CODE >38:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+31D text2 CODE >40:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+329 text2 CODE >41:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+331 text2 CODE >44:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+33C text2 CODE >45:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+33C text2 CODE >46:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+353 text2 CODE >47:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+353 text2 CODE >48:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+360 text2 CODE >49:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+36C text2 CODE >50:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+435 text2 CODE >51:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+435 text2 CODE >52:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+43C text2 CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+499 text2 CODE >54:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+499 text2 CODE >55:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+502 text2 CODE >56:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+503 text2 CODE >57:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+503 text2 CODE >58:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+510 text2 CODE >59:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+51C text2 CODE >60:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+5CB text2 CODE >61:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+5CB text2 CODE >62:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+5D2 text2 CODE >63:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+63B text2 CODE >64:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+63B text2 CODE >65:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+6A4 text2 CODE >66:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+6A5 text2 CODE >67:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+6A5 text2 CODE >70:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+6AE text2 CODE >71:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+6EF text2 CODE >74:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+70C text2 CODE >75:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+70D text2 CODE >76:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+72B text2 CODE >77:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+75C text2 CODE >78:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+794 text2 CODE >79:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+794 text2 CODE >80:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+7B2 text2 CODE >81:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+7E1 text2 CODE >82:/opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
+45 text1 CODE >144:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+45 text1 CODE >154:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+59 text1 CODE >156:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+C2 text1 CODE >158:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+14B text1 CODE >160:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+15E text1 CODE >162:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+160 text1 CODE >163:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+173 text1 CODE >164:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+187 text1 CODE >165:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+1AD text1 CODE >167:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+226 text1 CODE >168:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+22E text1 CODE >171:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+282 text1 CODE >173:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+289 text1 CODE >174:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+28A text1 CODE >175:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+28A text1 CODE >176:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+29F text1 CODE >177:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+2B4 text1 CODE >179:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+2C9 text1 CODE >180:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+2DE text1 CODE >181:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+11 maintext CODE >119:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+11 maintext CODE >121:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+14 maintext CODE >122:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+15 maintext CODE >123:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+16 maintext CODE >125:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+19 maintext CODE >127:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+1B maintext CODE >128:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+1D maintext CODE >129:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+1D maintext CODE >131:/home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+5 inittext CODE >3053:/tmp/xcXXAokci
+5 inittext CODE >3054:/tmp/xcXXAokci
+6 inittext CODE >3055:/tmp/xcXXAokci
+6 inittext CODE >3056:/tmp/xcXXAokci
+7 inittext CODE >3057:/tmp/xcXXAokci
+8 inittext CODE >3058:/tmp/xcXXAokci
+9 inittext CODE >3059:/tmp/xcXXAokci
+A inittext CODE >3060:/tmp/xcXXAokci
+B inittext CODE >3061:/tmp/xcXXAokci
+C inittext CODE >3062:/tmp/xcXXAokci
+D inittext CODE >3063:/tmp/xcXXAokci
+E inittext CODE >3064:/tmp/xcXXAokci
+F inittext CODE >3065:/tmp/xcXXAokci
+10 inittext CODE >3066:/tmp/xcXXAokci
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -185,18 +814,43 @@ $dist/default/production/houghTransformPIC.X.production.o
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+houghTransform@sinTheta 143 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
 __Hspace_0 800C 0 ABS 0 - -
-__Hspace_1 7E 0 ABS 0 - -
+__Hspace_1 15B 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+_C0 3060 0 STRCODE 0 stringtext13 dist/default/production/houghTransformPIC.X.production.o
+_C1 3058 0 STRCODE 0 stringtext12 dist/default/production/houghTransformPIC.X.production.o
+_C2 3050 0 STRCODE 0 stringtext11 dist/default/production/houghTransformPIC.X.production.o
+_C3 3048 0 STRCODE 0 stringtext10 dist/default/production/houghTransformPIC.X.production.o
+_S1 3018 0 STRCODE 0 stringtext4 dist/default/production/houghTransformPIC.X.production.o
+_S2 3010 0 STRCODE 0 stringtext3 dist/default/production/houghTransformPIC.X.production.o
+_S3 3008 0 STRCODE 0 stringtext2 dist/default/production/houghTransformPIC.X.production.o
+_S4 3000 0 STRCODE 0 stringtext1 dist/default/production/houghTransformPIC.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 __CFG_WDTCCS$SC 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcX7HRbc9.o
-_main C86 0 CODE 0 maintext dist/default/production/houghTransformPIC.X.production.o
+ceilf@F514 EA 0 BANK1 1 bssBANK1 dist/default/production/houghTransformPIC.X.production.o
+_LATA 16 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXJiyUxd.o
+_cosf 5BE 0 CODE 0 text2 dist/default/production/houghTransformPIC.X.production.o
+_half 3038 0 STRCODE 0 stringtext8 dist/default/production/houghTransformPIC.X.production.o
+_main 22 0 CODE 0 maintext dist/default/production/houghTransformPIC.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
-start 4 0 CODE 0 init /tmp/xcX7HRbc9.o
+start 4 0 CODE 0 init /tmp/xcXJiyUxd.o
+___flmul@aexp 32 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___flmul@bexp 33 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___flmul@prod 34 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___flmul@sign 2D 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___flmul@temp 38 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+__size_of___cosdf 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__size_of___fladd 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__size_of___fldiv 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__size_of___flmul 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__size_of___flneg 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__size_of___fltol 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__size_of_cosf 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Hstringtext10 0 0 ABS 0 stringtext10 -
 __Hstringtext11 0 0 ABS 0 stringtext11 -
@@ -206,33 +860,67 @@ __Hstringtext14 0 0 ABS 0 stringtext14 -
 __Hstringtext15 0 0 ABS 0 stringtext15 -
 __Hstringtext16 0 0 ABS 0 stringtext16 -
 __Hstringtext17 0 0 ABS 0 stringtext17 -
-__Hstringtext18 0 0 ABS 0 stringtext18 -
-__Hstringtext19 0 0 ABS 0 stringtext19 -
-__Hstringtext20 0 0 ABS 0 stringtext20 -
-__Hstringtext21 0 0 ABS 0 stringtext21 -
-__Hstringtext22 0 0 ABS 0 stringtext22 -
-__Hstringtext23 0 0 ABS 0 stringtext23 -
-__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__size_of___sindf 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __CFG_SCANE$available 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+___rem_pio2f@F520 E6 0 BANK1 1 bssBANK1 dist/default/production/houghTransformPIC.X.production.o
+___rem_pio2f@sign C0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+?___wmul 70 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
+houghTransform@cosTheta 13F 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+__end_of_houghTransform 5BE 0 CODE 0 text1 dist/default/production/houghTransformPIC.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab /tmp/xcX7HRbc9.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcX7HRbc9.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcX7HRbc9.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcX7HRbc9.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcX7HRbc9.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcX7HRbc9.o
-__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+houghTransform@rho 14F 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXJiyUxd.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXJiyUxd.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXJiyUxd.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXJiyUxd.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXJiyUxd.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXJiyUxd.o
 wtemp0 7E 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+houghTransform@i 159 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+houghTransform@j 157 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-__pidataBIGRAM CA2 0 CODE 0 idataBIGRAM dist/default/production/houghTransformPIC.X.production.o
+__pidataBIGRAM 105C 0 CODE 0 idataBIGRAM dist/default/production/houghTransformPIC.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
+___sindf@r AC 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___sindf@s C0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___sindf@w B0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___sindf@x A0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___sindf@z C4 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___wmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
+__end_of__Umul8_16 8A 0 CODE 0 text11 dist/default/production/houghTransformPIC.X.production.o
+__size_of__Umul8_16 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__end_of___fleq 20FE 0 CODE 0 text15 dist/default/production/houghTransformPIC.X.production.o
+__end_of___wmul 205C 0 CODE 0 text14 dist/default/production/houghTransformPIC.X.production.o
+houghTransform@accumulator_pixel 13E 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+houghTransform@rhoD 153 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of_c1pio2 1008 0 STRCODE 0 stringtext22 dist/default/production/houghTransformPIC.X.production.o
-__end_of_c2pio2 10B2 0 STRCODE 0 stringtext21 dist/default/production/houghTransformPIC.X.production.o
-__end_of_c3pio2 10AA 0 STRCODE 0 stringtext20 dist/default/production/houghTransformPIC.X.production.o
-__end_of_c4pio2 10A2 0 STRCODE 0 stringtext19 dist/default/production/houghTransformPIC.X.production.o
+___fldiv@aexp 53 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___fldiv@bexp 52 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___fldiv@sign 4B 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+__end_of_c1pio2 3088 0 STRCODE 0 stringtext17 dist/default/production/houghTransformPIC.X.production.o
+__end_of_c2pio2 3080 0 STRCODE 0 stringtext16 dist/default/production/houghTransformPIC.X.production.o
+__end_of_c3pio2 3078 0 STRCODE 0 stringtext15 dist/default/production/houghTransformPIC.X.production.o
+__end_of_c4pio2 3070 0 STRCODE 0 stringtext14 dist/default/production/houghTransformPIC.X.production.o
+__Umul8_16 3E 0 CODE 0 text11 dist/default/production/houghTransformPIC.X.production.o
 __CFG_FEXTOSC$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__end_of___cosdf 26C4 0 CODE 0 text9 dist/default/production/houghTransformPIC.X.production.o
+__end_of___fladd 1860 0 CODE 0 text12 dist/default/production/houghTransformPIC.X.production.o
+__end_of___fldiv 4000 0 CODE 0 text16 dist/default/production/houghTransformPIC.X.production.o
+__end_of___flmul 3000 0 CODE 0 text10 dist/default/production/houghTransformPIC.X.production.o
+__end_of___flneg 39B0 0 CODE 0 text8 dist/default/production/houghTransformPIC.X.production.o
+__end_of___fltol 3ADA 0 CODE 0 text7 dist/default/production/houghTransformPIC.X.production.o
+___rem_pio2f 1860 0 CODE 0 text4 dist/default/production/houghTransformPIC.X.production.o
+__end_of___sindf 2B2A 0 CODE 0 text3 dist/default/production/houghTransformPIC.X.production.o
+__Umul8_16@multiplicand 70 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
 __LidataBIGRAM 0 0 ABS 0 idataBIGRAM -
+__size_of_ceilf 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__size_of_fabsf 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+___fladd@a 5C 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___fladd@b 58 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___fldiv@a 3A 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___fldiv@b 3E 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___flmul@a 24 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___flmul@b 20 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
 __Lstringtext10 0 0 ABS 0 stringtext10 -
 __Lstringtext11 0 0 ABS 0 stringtext11 -
 __Lstringtext12 0 0 ABS 0 stringtext12 -
@@ -241,29 +929,22 @@ __Lstringtext14 0 0 ABS 0 stringtext14 -
 __Lstringtext15 0 0 ABS 0 stringtext15 -
 __Lstringtext16 0 0 ABS 0 stringtext16 -
 __Lstringtext17 0 0 ABS 0 stringtext17 -
-__Lstringtext18 0 0 ABS 0 stringtext18 -
-__Lstringtext19 0 0 ABS 0 stringtext19 -
-__Lstringtext20 0 0 ABS 0 stringtext20 -
-__Lstringtext21 0 0 ABS 0 stringtext21 -
-__Lstringtext22 0 0 ABS 0 stringtext22 -
-__Lstringtext23 0 0 ABS 0 stringtext23 -
-start_initialization FC2 0 CODE 0 cinit dist/default/production/houghTransformPIC.X.production.o
+start_initialization FC4 0 CODE 0 cinit dist/default/production/houghTransformPIC.X.production.o
 __CFG_WDTCPS$WDTCPS_31 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
-__end_of_C0 1072 0 STRCODE 0 stringtext13 dist/default/production/houghTransformPIC.X.production.o
-__end_of_C1 106A 0 STRCODE 0 stringtext12 dist/default/production/houghTransformPIC.X.production.o
-__end_of_C2 1062 0 STRCODE 0 stringtext11 dist/default/production/houghTransformPIC.X.production.o
-__end_of_C3 105A 0 STRCODE 0 stringtext10 dist/default/production/houghTransformPIC.X.production.o
-__end_of_S1 102A 0 STRCODE 0 stringtext4 dist/default/production/houghTransformPIC.X.production.o
-__end_of_S2 1022 0 STRCODE 0 stringtext3 dist/default/production/houghTransformPIC.X.production.o
-__end_of_S3 101A 0 STRCODE 0 stringtext2 dist/default/production/houghTransformPIC.X.production.o
-__end_of_S4 1012 0 STRCODE 0 stringtext1 dist/default/production/houghTransformPIC.X.production.o
-__end_of_pio2_1 103A 0 STRCODE 0 stringtext6 dist/default/production/houghTransformPIC.X.production.o
-__end_of_s1pio2 109A 0 STRCODE 0 stringtext18 dist/default/production/houghTransformPIC.X.production.o
-__end_of_s2pio2 1092 0 STRCODE 0 stringtext17 dist/default/production/houghTransformPIC.X.production.o
-__end_of_s3pio2 108A 0 STRCODE 0 stringtext16 dist/default/production/houghTransformPIC.X.production.o
-__end_of_s4pio2 1082 0 STRCODE 0 stringtext15 dist/default/production/houghTransformPIC.X.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcX7HRbc9.o
-__end_of_invpio2 1042 0 STRCODE 0 stringtext7 dist/default/production/houghTransformPIC.X.production.o
+__end_of_C0 3068 0 STRCODE 0 stringtext13 dist/default/production/houghTransformPIC.X.production.o
+__end_of_C1 3060 0 STRCODE 0 stringtext12 dist/default/production/houghTransformPIC.X.production.o
+__end_of_C2 3058 0 STRCODE 0 stringtext11 dist/default/production/houghTransformPIC.X.production.o
+__end_of_C3 3050 0 STRCODE 0 stringtext10 dist/default/production/houghTransformPIC.X.production.o
+__end_of_S1 3020 0 STRCODE 0 stringtext4 dist/default/production/houghTransformPIC.X.production.o
+__end_of_S2 3018 0 STRCODE 0 stringtext3 dist/default/production/houghTransformPIC.X.production.o
+__end_of_S3 3010 0 STRCODE 0 stringtext2 dist/default/production/houghTransformPIC.X.production.o
+__end_of_S4 3008 0 STRCODE 0 stringtext1 dist/default/production/houghTransformPIC.X.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+__pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+__pcstackBANK2 120 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+__end_of_pio2_1 3030 0 STRCODE 0 stringtext6 dist/default/production/houghTransformPIC.X.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXJiyUxd.o
+__end_of_invpio2 3038 0 STRCODE 0 stringtext7 dist/default/production/houghTransformPIC.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -321,8 +1002,16 @@ __Hbank28 0 0 BANK28 1 bank28 -
 __Hbank29 0 0 BANK29 1 bank29 -
 __Hbank30 0 0 BANK30 1 bank30 -
 __Hbank31 0 0 BANK31 1 bank31 -
+__size_of___xxtofl 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
+___cosdf@r AC 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___cosdf@w BC 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___cosdf@x A0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___cosdf@z C0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___xxtofl@arg 7A 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
+___xxtofl@exp 79 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
+___xxtofl@val 70 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10018 0 CONFIG 0 config -
 __Lbank0 0 0 ABS 0 bank0 -
@@ -335,7 +1024,7 @@ __Lbank6 0 0 ABS 0 bank6 -
 __Lbank7 0 0 ABS 0 bank7 -
 __Lbank8 0 0 ABS 0 bank8 -
 __Lbank9 0 0 ABS 0 bank9 -
-__Lcinit FC2 0 CODE 0 cinit -
+__Lcinit FC4 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
@@ -360,9 +1049,10 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-init_ram C8A 0 CODE 0 inittext dist/default/production/houghTransformPIC.X.production.o
+init_ram A 0 CODE 0 inittext dist/default/production/houghTransformPIC.X.production.o
+___flmul@grs 2E 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
 __Linittext 0 0 ABS 0 inittext -
-__end_of_pio2_1t 1032 0 STRCODE 0 stringtext5 dist/default/production/houghTransformPIC.X.production.o
+__end_of_pio2_1t 3028 0 STRCODE 0 stringtext5 dist/default/production/houghTransformPIC.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 4 0 CODE 0 init -
@@ -391,39 +1081,58 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 100A 0 STRCODE 0 stringtext1 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext2 1012 0 STRCODE 0 stringtext2 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext3 101A 0 STRCODE 0 stringtext3 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext4 1022 0 STRCODE 0 stringtext4 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext5 102A 0 STRCODE 0 stringtext5 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext6 1032 0 STRCODE 0 stringtext6 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext7 103A 0 STRCODE 0 stringtext7 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext8 1042 0 STRCODE 0 stringtext8 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext9 104A 0 STRCODE 0 stringtext9 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext10 1052 0 STRCODE 0 stringtext10 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext11 105A 0 STRCODE 0 stringtext11 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext12 1062 0 STRCODE 0 stringtext12 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext13 106A 0 STRCODE 0 stringtext13 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext14 1072 0 STRCODE 0 stringtext14 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext15 107A 0 STRCODE 0 stringtext15 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext16 1082 0 STRCODE 0 stringtext16 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext17 108A 0 STRCODE 0 stringtext17 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext18 1092 0 STRCODE 0 stringtext18 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext19 109A 0 STRCODE 0 stringtext19 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext20 10A2 0 STRCODE 0 stringtext20 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext21 10AA 0 STRCODE 0 stringtext21 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext22 1000 0 STRCODE 0 stringtext22 dist/default/production/houghTransformPIC.X.production.o
-__pstringtext23 0 0 STRCODE 0 stringtext23 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext1 3000 0 STRCODE 0 stringtext1 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext2 3008 0 STRCODE 0 stringtext2 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext3 3010 0 STRCODE 0 stringtext3 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext4 3018 0 STRCODE 0 stringtext4 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext5 3020 0 STRCODE 0 stringtext5 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext6 3028 0 STRCODE 0 stringtext6 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext7 3030 0 STRCODE 0 stringtext7 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext8 3038 0 STRCODE 0 stringtext8 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext9 3040 0 STRCODE 0 stringtext9 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext10 3048 0 STRCODE 0 stringtext10 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext11 3050 0 STRCODE 0 stringtext11 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext12 3058 0 STRCODE 0 stringtext12 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext13 3060 0 STRCODE 0 stringtext13 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext14 3068 0 STRCODE 0 stringtext14 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext15 3070 0 STRCODE 0 stringtext15 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext16 3078 0 STRCODE 0 stringtext16 dist/default/production/houghTransformPIC.X.production.o
+__pstringtext17 3080 0 STRCODE 0 stringtext17 dist/default/production/houghTransformPIC.X.production.o
+___fleq 205C 0 CODE 0 text15 dist/default/production/houghTransformPIC.X.production.o
+___wmul 2018 0 CODE 0 text14 dist/default/production/houghTransformPIC.X.production.o
 __CFG_WDTCWS$WDTCWS_7 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__LcstackBANK2 0 0 ABS 0 cstackBANK2 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 800C 0 ABS 0 - -
-__S1 7E 0 ABS 0 - -
+__S1 15B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
+cosf@__xc8_float_word 124 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+_c1pio2 3080 0 STRCODE 0 stringtext17 dist/default/production/houghTransformPIC.X.production.o
+_c2pio2 3078 0 STRCODE 0 stringtext16 dist/default/production/houghTransformPIC.X.production.o
+_c3pio2 3070 0 STRCODE 0 stringtext15 dist/default/production/houghTransformPIC.X.production.o
+_c4pio2 3068 0 STRCODE 0 stringtext14 dist/default/production/houghTransformPIC.X.production.o
+___cosdf$751 B0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___cosdf$752 B4 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___cosdf$753 B8 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
 __HidataBIGRAM 0 0 ABS 0 idataBIGRAM -
+___rem_pio2f$754 C6 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+__size_of_houghTransform 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+___xxtofl 3ADA 0 CODE 0 text6 dist/default/production/houghTransformPIC.X.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcX7HRbc9.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXJiyUxd.o
+__end_of___xxtofl 3C42 0 CODE 0 text6 dist/default/production/houghTransformPIC.X.production.o
+___rem_pio2f@n D2 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___rem_pio2f@t CE 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___rem_pio2f@u C2 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___rem_pio2f@x AB 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___rem_pio2f@y AF 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+__size_of___fleq 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__size_of___wmul 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__LbssBANK1 0 0 ABS 0 bssBANK1 -
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Lstringtext1 0 0 ABS 0 stringtext1 -
 __Lstringtext2 0 0 ABS 0 stringtext2 -
@@ -434,6 +1143,24 @@ __Lstringtext6 0 0 ABS 0 stringtext6 -
 __Lstringtext7 0 0 ABS 0 stringtext7 -
 __Lstringtext8 0 0 ABS 0 stringtext8 -
 __Lstringtext9 0 0 ABS 0 stringtext9 -
+_houghTransform$748 147 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+_houghTransform$749 14B 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+fabsf@u 74 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
+fabsf@x 70 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
+___fladd@signs 6C 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+__ptext10 2B2A 0 CODE 0 text10 dist/default/production/houghTransformPIC.X.production.o
+__ptext11 3E 0 CODE 0 text11 dist/default/production/houghTransformPIC.X.production.o
+__ptext12 137C 0 CODE 0 text12 dist/default/production/houghTransformPIC.X.production.o
+__ptext13 20FE 0 CODE 0 text13 dist/default/production/houghTransformPIC.X.production.o
+__ptext14 2018 0 CODE 0 text14 dist/default/production/houghTransformPIC.X.production.o
+__ptext15 205C 0 CODE 0 text15 dist/default/production/houghTransformPIC.X.production.o
+__ptext16 3C42 0 CODE 0 text16 dist/default/production/houghTransformPIC.X.production.o
+___cosdf 22CE 0 CODE 0 text9 dist/default/production/houghTransformPIC.X.production.o
+___fladd 137C 0 CODE 0 text12 dist/default/production/houghTransformPIC.X.production.o
+___fldiv 3C42 0 CODE 0 text16 dist/default/production/houghTransformPIC.X.production.o
+___flmul 2B2A 0 CODE 0 text10 dist/default/production/houghTransformPIC.X.production.o
+___flneg 3994 0 CODE 0 text8 dist/default/production/houghTransformPIC.X.production.o
+___fltol 39B0 0 CODE 0 text7 dist/default/production/houghTransformPIC.X.production.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -456,37 +1183,87 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext C86 0 CODE 0 maintext dist/default/production/houghTransformPIC.X.production.o
+___sindf 26C4 0 CODE 0 text3 dist/default/production/houghTransformPIC.X.production.o
+__pmaintext 22 0 CODE 0 maintext dist/default/production/houghTransformPIC.X.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+_pio2_1 3028 0 STRCODE 0 stringtext6 dist/default/production/houghTransformPIC.X.production.o
+__Umul8_16@multiplier 78 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
+?_cosf D6 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __Hinittext 0 0 ABS 0 inittext -
-stackhi 225F 0 ABS 0 - /tmp/xcX7HRbc9.o
-stacklo 2000 0 ABS 0 - /tmp/xcX7HRbc9.o
+___wmul@multiplier 70 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
+_LATAbits 16 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+___fldiv@grs 4E 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___fldiv@rem 47 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+__end_of___rem_pio2f 2000 0 CODE 0 text4 dist/default/production/houghTransformPIC.X.production.o
+___fldiv@new_exp 4C 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+stackhi 225F 0 ABS 0 - /tmp/xcXJiyUxd.o
+stacklo 20DB 0 ABS 0 - /tmp/xcXJiyUxd.o
+___fladd@grs 6F 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___fleq@ff1 B4 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___fleq@ff2 B8 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/production/houghTransformPIC.X.production.o
 __CFG_LPBOREN$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__HcstackBANK2 0 0 ABS 0 cstackBANK2 -
+__Umul8_16@product 74 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
 __Lend_init 4 0 CODE 0 end_init -
 __CFG_LVP$ON 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __CFG_CSWEN$ON 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+___fltol@exp1 AA 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
 __CFG_ZCD$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 end_of_initialization FFA 0 CODE 0 cinit dist/default/production/houghTransformPIC.X.production.o
+ceilf@e AE 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+ceilf@m AA 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+ceilf@u B0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+ceilf@x A0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
 __Hintentry 4 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __CFG_RSTOSC$HFINT32 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 _inputImage 2260 0 ABS 1 - dist/default/production/houghTransformPIC.X.production.o
 __Lstrings 0 0 ABS 0 strings -
+?___cosdf A0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+?___fladd 58 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+?___fldiv 3A 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+?___flmul 20 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+?___flneg 54 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+?___fltol A0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___sindf$755 B4 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___sindf$756 B8 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___sindf$757 BC 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+?___sindf A0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
+__HbssBANK1 0 0 ABS 0 bssBANK1 -
+_invpio2 3030 0 STRCODE 0 stringtext7 dist/default/production/houghTransformPIC.X.production.o
+___flneg@f1 54 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+__ptext1 8A 0 CODE 0 text1 dist/default/production/houghTransformPIC.X.production.o
+__ptext2 5BE 0 CODE 0 text2 dist/default/production/houghTransformPIC.X.production.o
+__ptext3 26C4 0 CODE 0 text3 dist/default/production/houghTransformPIC.X.production.o
+__ptext4 1860 0 CODE 0 text4 dist/default/production/houghTransformPIC.X.production.o
+__ptext5 1016 0 CODE 0 text5 dist/default/production/houghTransformPIC.X.production.o
+__ptext6 3ADA 0 CODE 0 text6 dist/default/production/houghTransformPIC.X.production.o
+__ptext7 39B0 0 CODE 0 text7 dist/default/production/houghTransformPIC.X.production.o
+__ptext8 3994 0 CODE 0 text8 dist/default/production/houghTransformPIC.X.production.o
+__ptext9 22CE 0 CODE 0 text9 dist/default/production/houghTransformPIC.X.production.o
+?__Umul8_16 70 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
+?___xxtofl 70 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
+___fladd@aexp 6D 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+___fladd@bexp 6E 0 BANK0 1 cstackBANK0 dist/default/production/houghTransformPIC.X.production.o
+__Umul8_16@word_mpld 76 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
+___fltol@sign1 A9 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
+houghTransform@theta 155 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
 __Hstringtext1 0 0 ABS 0 stringtext1 -
 __Hstringtext2 0 0 ABS 0 stringtext2 -
 __Hstringtext3 0 0 ABS 0 stringtext3 -
@@ -496,24 +1273,51 @@ __Hstringtext6 0 0 ABS 0 stringtext6 -
 __Hstringtext7 0 0 ABS 0 stringtext7 -
 __Hstringtext8 0 0 ABS 0 stringtext8 -
 __Hstringtext9 0 0 ABS 0 stringtext9 -
+_pio2_1t 3020 0 STRCODE 0 stringtext5 dist/default/production/houghTransformPIC.X.production.o
+cosf@ix 13A 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+___fltol@f1 A0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __end_of__initialization FFA 0 CODE 0 cinit dist/default/production/houghTransformPIC.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
+?_ceilf A0 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+?_fabsf 70 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
-__pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
+?___rem_pio2f AB 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
 __Hend_init 8 0 CODE 0 end_init -
-__end_of_half 104A 0 STRCODE 0 stringtext8 dist/default/production/houghTransformPIC.X.production.o
-__end_of_main C8A 0 CODE 0 maintext dist/default/production/houghTransformPIC.X.production.o
-__end_of_tiny 107A 0 STRCODE 0 stringtext14 dist/default/production/houghTransformPIC.X.production.o
-__end_of_toint 1052 0 STRCODE 0 stringtext9 dist/default/production/houghTransformPIC.X.production.o
+__end_of_cosf FC4 0 CODE 0 text2 dist/default/production/houghTransformPIC.X.production.o
+__end_of_half 3040 0 STRCODE 0 stringtext8 dist/default/production/houghTransformPIC.X.production.o
+__end_of_main 3E 0 CODE 0 maintext dist/default/production/houghTransformPIC.X.production.o
+__end_of_ceilf 22CE 0 CODE 0 text13 dist/default/production/houghTransformPIC.X.production.o
+__end_of_fabsf 105C 0 CODE 0 text5 dist/default/production/houghTransformPIC.X.production.o
+_TRISA 11 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+__end_of_toint 3048 0 STRCODE 0 stringtext9 dist/default/production/houghTransformPIC.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
+_ceilf 20FE 0 CODE 0 text13 dist/default/production/houghTransformPIC.X.production.o
+_fabsf 1016 0 CODE 0 text5 dist/default/production/houghTransformPIC.X.production.o
+fabsf@F453 E2 0 BANK1 1 bssBANK1 dist/default/production/houghTransformPIC.X.production.o
+__size_of___rem_pio2f 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
 __pdataBIGRAM 2260 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
-__initialization FC2 0 CODE 0 cinit dist/default/production/houghTransformPIC.X.production.o
+___rem_pio2f@fn CA 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___rem_pio2f@ix BC 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+___rem_pio2f@ty B8 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+__initialization FC4 0 CODE 0 cinit dist/default/production/houghTransformPIC.X.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+___xxtofl@sign 78 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
+__pbssBANK1 E2 0 BANK1 1 bssBANK1 dist/default/production/houghTransformPIC.X.production.o
+cosf@sign 130 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+cosf@n 120 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+cosf@x D6 0 BANK1 1 cstackBANK1 dist/default/production/houghTransformPIC.X.production.o
+cosf@y 136 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production/houghTransformPIC.X.production.o
+___wmul@product 74 0 COMMON 1 cstackCOMMON dist/default/production/houghTransformPIC.X.production.o
+_houghTransform 8A 0 CODE 0 text1 dist/default/production/houghTransformPIC.X.production.o
+_cosf$526 128 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+_cosf$527 12C 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
+_cosf$750 132 0 BANK2 1 cstackBANK2 dist/default/production/houghTransformPIC.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -546,11 +1350,30 @@ _inputImage 1 2260 0
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7E1 FC2 1F 2
-idataBIGRAM 0 651 CA2 190 2
-maintext 0 643 C86 2 2
-inittext 0 645 C8A C 2
+cinit 0 7E2 FC4 1E 2
+text1 0 45 8A 29A 2
+text2 0 2DF 5BE 503 2
+text3 0 1362 26C4 233 2
+text4 0 C30 1860 3D0 2
+text5 0 80B 1016 23 2
+text6 0 1D6D 3ADA B4 2
+text7 0 1CD8 39B0 95 2
+text8 0 1CCA 3994 E 2
+text9 0 1167 22CE 1FB 2
+text10 0 1595 2B2A 26B 2
+text11 0 1F 3E 26 2
+text12 0 9BE 137C 272 2
+text13 0 107F 20FE E8 2
+text14 0 100C 2018 22 2
+text15 0 102E 205C 51 2
+text16 0 1E21 3C42 1DF 2
+idataBIGRAM 0 82E 105C 190 2
+maintext 0 11 22 E 2
+cstackCOMMON 1 70 70 E 1
+cstackBANK0 1 20 20 50 1
+cstackBANK1 1 A0 A0 4E 1
+cstackBANK2 1 120 120 3B 1
+inittext 0 5 A C 2
+stringtext1 0 1800 3000 44 2
 reset_vec 0 0 0 4 2
-bssCOMMON 1 70 70 E 1
-stringtext22 0 800 1000 59 2
 config 0 8007 1000E 5 2

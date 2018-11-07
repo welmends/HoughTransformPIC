@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v2.00/pic/dat/en_msgs.txt -cs \
   -h+dist/default/production/houghTransformPIC.X.production.sym \
   --cmf=dist/default/production/houghTransformPIC.X.production.cmf -z \
-  -Q16F18875 -o/tmp/xcX94nb2a --defsym=__MPLAB_BUILD=1 \
+  -Q16F18875 -o/tmp/xcXzGOxM9 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/houghTransformPIC.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=020DBh-0225fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -31,7 +31,7 @@ Linker command line:
   -pcinit=CODE -pfunctab=ENTRY -ACONFIG=08007h-0800Bh -pconfig=CONFIG \
   -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
-  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k /tmp/xcXJiyUxd.o \
+  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k /tmp/xcXKC3C7o.o \
   dist/default/production/houghTransformPIC.X.production.o 
 
 Object code version is 3.11
@@ -41,7 +41,7 @@ Machine type is 16F18875
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXJiyUxd.o
+/tmp/xcXKC3C7o.o
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5    1000E       0
@@ -917,7 +917,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 119 in file "hough_PIC.c"
+		line 141 in file "hough_PIC.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -946,7 +946,7 @@ Total ram usage:        0 bytes
 
  *************** function _houghTransform *****************
  Defined at:
-		line 144 in file "hough_PIC.c"
+		line 166 in file "hough_PIC.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

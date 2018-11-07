@@ -10,44 +10,65 @@
  * @date $Date:$ Created on 04/11/2018 and Last Update on 07/11/2018
  */
 
-// Production -> Set Configuration Bits;
-// PIC16F18875 Configuration Bit Settings
-// 'C' source line config statements
-//======= PIC16F18875 Configurations =======//
-// CONFIG1
-#pragma config FEXTOSC = OFF     // External Oscillator mode selection bits (Oscillator not enabled)
-#pragma config RSTOSC = HFINT32  // Power-up default value for COSC bits (HFINTOSC with OSCFRQ= 32 MHz and CDIV = 1:1)
-#pragma config CLKOUTEN = OFF    // Clock Out Enable bit (CLKOUT function is disabled; i/o or oscillator function on OSC2)
-#pragma config CSWEN = ON        // Clock Switch Enable bit (Writing to NOSC and NDIV is allowed)
-#pragma config FCMEN = ON        // Fail-Safe Clock Monitor Enable bit (FSCM timer enabled)
+////////////////////////////////////////////////////////////////////////////////
+//                  PIC16F18875 - CONFIGURATION BIT SETTINGS                  //
+////////////////////////////////////////////////////////////////////////////////
+//===== CONFIG1 =====//
+//External Oscillator mode selection bits (Oscillator not enabled)
+#pragma config FEXTOSC = OFF
+//Power-up default value for COSC bits (HFINTOSC with OSCFRQ= 32 MHz and CDIV = 1:1)
+#pragma config RSTOSC = HFINT32
+//Clock Out Enable bit (CLKOUT function is disabled; i/o or oscillator function on OSC2)
+#pragma config CLKOUTEN = OFF
+//Clock Switch Enable bit (Writing to NOSC and NDIV is allowed)
+#pragma config CSWEN = ON
+//Fail-Safe Clock Monitor Enable bit (FSCM timer enabled)
+#pragma config FCMEN = ON
 
-// CONFIG2
-#pragma config MCLRE = ON        // Master Clear Enable bit (MCLR pin is Master Clear function)
-#pragma config PWRTE = OFF       // Power-up Timer Enable bit (PWRT disabled)
-#pragma config LPBOREN = OFF     // Low-Power BOR enable bit (ULPBOR disabled)
-#pragma config BOREN = ON        // Brown-out reset enable bits (Brown-out Reset Enabled, SBOREN bit is ignored)
-#pragma config BORV = LO         // Brown-out Reset Voltage Selection (Brown-out Reset Voltage (VBOR) set to 1.9V on LF, and 2.45V on F Devices)
-#pragma config ZCD = OFF         // Zero-cross detect disable (Zero-cross detect circuit is disabled at POR.)
-#pragma config PPS1WAY = ON      // Peripheral Pin Select one-way control (The PPSLOCK bit can be cleared and set only once in software)
-#pragma config STVREN = ON       // Stack Overflow/Underflow Reset Enable bit (Stack Overflow or Underflow will cause a reset)
+//===== CONFIG2 =====//
+//Master Clear Enable bit (MCLR pin is Master Clear function)
+#pragma config MCLRE = ON
+//Power-up Timer Enable bit (PWRT disabled)
+#pragma config PWRTE = OFF
+//Low-Power BOR enable bit (ULPBOR disabled)
+#pragma config LPBOREN = OFF
+//Brown-out reset enable bits (Brown-out Reset Enabled, SBOREN bit is ignored)
+#pragma config BOREN = ON
+//Brown-out Reset Voltage Selection (Brown-out Reset Voltage (VBOR) set to 1.9V on LF, and 2.45V on F Devices)
+#pragma config BORV = LO
+//Zero-cross detect disable (Zero-cross detect circuit is disabled at POR.)
+#pragma config ZCD = OFF
+//Peripheral Pin Select one-way control (The PPSLOCK bit can be cleared and set only once in software)
+#pragma config PPS1WAY = ON
+//Stack Overflow/Underflow Reset Enable bit (Stack Overflow or Underflow will cause a reset)
+#pragma config STVREN = ON
 
-// CONFIG3
-#pragma config WDTCPS = WDTCPS_31// WDT Period Select bits (Divider ratio 1:65536; software control of WDTPS)
-#pragma config WDTE = OFF        // WDT operating mode (WDT Disabled, SWDTEN is ignored)
-#pragma config WDTCWS = WDTCWS_7 // WDT Window Select bits (window always open (100%); software control; keyed access not required)
-#pragma config WDTCCS = SC       // WDT input clock selector (Software Control)
+//===== CONFIG3 =====//
+//WDT Period Select bits (Divider ratio 1:65536; software control of WDTPS)
+#pragma config WDTCPS = WDTCPS_31
+//WDT operating mode (WDT Disabled, SWDTEN is ignored)
+#pragma config WDTE = OFF
+//WDT Window Select bits (window always open (100%); software control; keyed access not required)
+#pragma config WDTCWS = WDTCWS_7
+//WDT input clock selector (Software Control)
+#pragma config WDTCCS = SC
 
-// CONFIG4
-#pragma config WRT = OFF         // UserNVM self-write protection bits (Write protection off)
-#pragma config SCANE = available // Scanner Enable bit (Scanner module is available for use)
-#pragma config LVP = ON          // Low Voltage Programming Enable bit (Low Voltage programming enabled. MCLR/Vpp pin function is MCLR.)
+//===== CONFIG4 =====//
+//UserNVM self-write protection bits (Write protection off)
+#pragma config WRT = OFF
+//Scanner Enable bit (Scanner module is available for use)
+#pragma config SCANE = available
+//Low Voltage Programming Enable bit (Low Voltage programming enabled. MCLR/Vpp pin function is MCLR.)
+#pragma config LVP = ON
 
-// CONFIG5
-#pragma config CP = OFF          // UserNVM Program memory code protection bit (Program Memory code protection disabled)
-#pragma config CPD = OFF         // DataNVM code protection bit (Data EEPROM code protection disabled)
+//===== CONFIG5 =====//
+//UserNVM Program memory code protection bit (Program Memory code protection disabled)
+#pragma config CP = OFF
+//DataNVM code protection bit (Data EEPROM code protection disabled)
+#pragma config CPD = OFF
 
-// #pragma config statements should precede project file includes.
-// Use project enums instead of #define for ON and OFF.
+//OBS1: #pragma config statements should precede project file includes.
+//OBS2: Use project enums instead of #define for ON and OFF.
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                  Libraries                                 //
@@ -63,20 +84,21 @@
 ////////////////////////////////////////////////////////////////////////////////
 #define _XTAL_FREQ 32000000
 #define F_CPU 32000000/64//#define Baud_value(baud_rate) (((float)(F_CPU)/(float)baud_rate)-1)
-#define Baud_value (((float)(F_CPU)/(float)baud_rate)-1)//calculo do taxa de transmissão serial para Uart
+#define Baud_value (((float)(F_CPU)/(float)baud_rate)-1)//calculus for UART serial tramission rate
 
 // Since the inputImage is default, we calculate the Accumulator size
 // The width and height of the Hough accumulator must be:
-#define ACCU_WIDTH      (180)// accu_width  = 0 to 180 degrees
-#define ACCU_HEIGHT     (56) // accu_height = ceil(2*D) - 1 and D = sqrt(height^2 + width^2)
-#define ROWS            (20) //Default size for rows of inputImage
-#define COLS            (20) //Default size for cols of inputImage
-#define THRESH_VALUE    (200)//Standard thresh value
+#define ACCU_WIDTH      (180) //ACCU_WIDTH  = 0 to 180 degrees
+#define ACCU_HEIGHT     (56)  //ACCU_HEIGHT = ceil(2*D) - 1 and D = sqrt(WIDTH^2 + HEIGHT^2)
+#define WIDTH           (20)  //Default input image width
+#define HEIGHT          (20)  //Default input image height
+#define THRESH_VALUE    (200) //Standard thresh value
 
 ////////////////////////////////////////////////////////////////////////////////
 //                              Global Variables                              //
 ////////////////////////////////////////////////////////////////////////////////
-unsigned char inputImage[400] = {//Input image stored
+//Input image stored in 'unsigned char inputImage[400]' (20x20 = 400 bytes)
+unsigned char inputImage[400] = {
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
@@ -122,7 +144,7 @@ int main(void) {
     LATA = 0x00;
     LATAbits.LATA7 = 1;// Start process - Bit LATA7 HIGH
     
-    houghTransform();
+    houghTransform();  // Processing
     
     LATAbits.LATA7 = 0;
     LATAbits.LATA6 = 1;// End process   - Bit LATA6 HIGH
@@ -160,9 +182,9 @@ void houghTransform(void){
         for(rhoD=0; rhoD<ACCU_HEIGHT; rhoD++){
             //Accumulator pixel reset
             accumulator_pixel = 0;
-            for(j=0; j<COLS; j++){
-                for(i=0; i<ROWS; i++){
-                    if(inputImage[ (j*ROWS) + i] < THRESH_VALUE){
+            for(j=0; j<WIDTH; j++){
+                for(i=0; i<HEIGHT; i++){
+                    if(inputImage[ (j*HEIGHT) + i] < THRESH_VALUE){
                         //rho = xcos(theta) + ysin(theta) [theta is in radians]
                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
                         rho=0;

@@ -9,34 +9,55 @@
 # 1 "hough_PIC.c" 2
 # 18 "hough_PIC.c"
 #pragma config FEXTOSC = OFF
+
 #pragma config RSTOSC = HFINT32
+
 #pragma config CLKOUTEN = OFF
+
 #pragma config CSWEN = ON
+
 #pragma config FCMEN = ON
 
 
+
 #pragma config MCLRE = ON
+
 #pragma config PWRTE = OFF
+
 #pragma config LPBOREN = OFF
+
 #pragma config BOREN = ON
+
 #pragma config BORV = LO
+
 #pragma config ZCD = OFF
+
 #pragma config PPS1WAY = ON
+
 #pragma config STVREN = ON
 
 
+
 #pragma config WDTCPS = WDTCPS_31
+
 #pragma config WDTE = OFF
+
 #pragma config WDTCWS = WDTCWS_7
+
 #pragma config WDTCCS = SC
 
 
+
 #pragma config WRT = OFF
+
 #pragma config SCANE = available
+
 #pragma config LVP = ON
 
 
+
 #pragma config CP = OFF
+
 #pragma config CPD = OFF
 
 
@@ -20821,7 +20842,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "/opt/microchip/xc8/v2.00/pic/include/xc.h" 2 3
-# 56 "hough_PIC.c" 2
+# 77 "hough_PIC.c" 2
 
 # 1 "/opt/microchip/xc8/v2.00/pic/include/c99/stdio.h" 1 3
 # 24 "/opt/microchip/xc8/v2.00/pic/include/c99/stdio.h" 3
@@ -20959,7 +20980,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 58 "hough_PIC.c" 2
+# 79 "hough_PIC.c" 2
 
 # 1 "/opt/microchip/xc8/v2.00/pic/include/c99/math.h" 1 3
 # 10 "/opt/microchip/xc8/v2.00/pic/include/c99/math.h" 3
@@ -21509,8 +21530,8 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 60 "hough_PIC.c" 2
-# 79 "hough_PIC.c"
+# 81 "hough_PIC.c" 2
+# 101 "hough_PIC.c"
 unsigned char inputImage[400] = {
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
@@ -21538,7 +21559,7 @@ unsigned char inputImage[400] = {
 
 
 void houghTransform(void);
-# 119 "hough_PIC.c"
+# 141 "hough_PIC.c"
 int main(void) {
 
     TRISA = 0x0F;
@@ -21552,7 +21573,7 @@ int main(void) {
     return 0;
 
 }
-# 144 "hough_PIC.c"
+# 166 "hough_PIC.c"
 void houghTransform(void){
 
 

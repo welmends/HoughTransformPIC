@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V2.00 build -1524193055 
-                                                                                               Wed Nov  7 23:38:03 2018
+                                                                                               Wed Nov  7 23:53:04 2018
 
 Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 20180527130849
      1  0000                     
@@ -2380,7 +2380,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   2312                           global __pidataBIGRAM
   2313                           __pidataBIGRAM:
   2314  082E                     	file	"hough_PIC.c"
-  2315                           	line	79
+  2315                           	line	101
   2316                           
   2317                           ;initializer for _inputImage
   2318                           	retlw	0FFh
@@ -3090,7 +3090,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   3022                           __CFG_CP$OFF equ 0x0
   3023  0000                     global __CFG_CPD$OFF
   3024                           __CFG_CPD$OFF equ 0x0
-  3025  0000                     	file	"/tmp/xcXXAokci"
+  3025  0000                     	file	"/tmp/xcXToNLR3"
   3026                           	line	#
   3027                           psect cinit,class=CODE,delta=2
   3028                           global start_initialization
@@ -3099,7 +3099,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   3031                           global __initialization
   3032                           __initialization:
   3033  07E2                     	file	"hough_PIC.c"
-  3034                           	line	79
+  3034                           	line	101
   3035                           DABS 1,8800,0,_inputImage	;BIGRAM
   3036                           psect	bssBANK1,class=BANK1,space=1,noexec
   3037                           global __pbssBANK1
@@ -3113,7 +3113,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   3045                           ceilf@F514:
   3046  00EA                            ds      4
   3047  00EA                     
-  3048                           	file	"/tmp/xcXXAokci"
+  3048                           	file	"/tmp/xcXToNLR3"
   3049                           	line	#
   3050                           psect inittext,class=CODE,delta=2
   3051                           global init_ram,btemp
@@ -4101,7 +4101,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4033                           
   4034 ;; *************** function _main *****************
   4035 ;; Defined at:
-  4036 ;;		line 119 in file "hough_PIC.c"
+  4036 ;;		line 141 in file "hough_PIC.c"
   4037 ;; Parameters:    Size  Location     Type
   4038 ;;		None
   4039 ;; Auto vars:     Size  Location     Type
@@ -4134,12 +4134,12 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4061 ;;
   4062                           psect	maintext,global,class=CODE,delta=2,merge=1,split=1,group=0
   4063                           	file	"hough_PIC.c"
-  4064                           	line	119
+  4064                           	line	141
   4065                           global __pmaintext
   4066                           __pmaintext:	;psect for function _main
   4067  0011                     psect	maintext
   4068                           	file	"hough_PIC.c"
-  4069                           	line	119
+  4069                           	line	141
   4070                           	global	__size_of_main
   4071                           	__size_of_main	equ	__end_of_main-_main
   4072  000E                     	
@@ -4147,45 +4147,45 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4074  0011                     ;incstack = 0
   4075                           	opt	stack 11
   4076                           ; Regs used in _main: [wreg-fsr1h+status,2+status,0+pclath+cstack]
-  4077                           	line	121
+  4077                           	line	143
   4078                           	
   4079                           l2492:	
-  4080  0011                     ;hough_PIC.c: 121:     TRISA = 0x0F;
+  4080  0011                     ;hough_PIC.c: 143:     TRISA = 0x0F;
   4081                           	movlw	low(0Fh)
   4082  0011  300F               	movlb 0	; select bank0
   4083  0012  0020               	movwf	(17)	;volatile
-  4084  0013  0091               	line	122
+  4084  0013  0091               	line	144
   4085                           	
   4086                           l2494:	
-  4087  0014                     ;hough_PIC.c: 122:     LATA = 0x00;
+  4087  0014                     ;hough_PIC.c: 144:     LATA = 0x00;
   4088                           	clrf	(22)	;volatile
-  4089  0014  0196               	line	123
+  4089  0014  0196               	line	145
   4090                           	
   4091                           l2496:	
-  4092  0015                     ;hough_PIC.c: 123:     LATAbits.LATA7 = 1;
+  4092  0015                     ;hough_PIC.c: 145:     LATAbits.LATA7 = 1;
   4093                           	bsf	(22),7	;volatile
-  4094  0015  1796               	line	125
+  4094  0015  1796               	line	147
   4095                           	
   4096                           l2498:	
-  4097  0016                     ;hough_PIC.c: 125:     houghTransform();
+  4097  0016                     ;hough_PIC.c: 147:     houghTransform();
   4098                           	fcall	_houghTransform
-  4099  0016  3180  2045  3180   	line	127
+  4099  0016  3180  2045  3180   	line	149
   4100                           	
   4101                           l2500:	
-  4102  0019                     ;hough_PIC.c: 127:     LATAbits.LATA7 = 0;
+  4102  0019                     ;hough_PIC.c: 149:     LATAbits.LATA7 = 0;
   4103                           	movlb 0	; select bank0
   4104  0019  0020               	bcf	(22),7	;volatile
-  4105  001A  1396               	line	128
+  4105  001A  1396               	line	150
   4106                           	
   4107                           l2502:	
-  4108  001B                     ;hough_PIC.c: 128:     LATAbits.LATA6 = 1;
+  4108  001B                     ;hough_PIC.c: 150:     LATAbits.LATA6 = 1;
   4109                           	bsf	(22),6	;volatile
   4110  001B  1716               	goto	l19
-  4111  001C  281D               	line	129
+  4111  001C  281D               	line	151
   4112                           	
   4113                           l2504:	
-  4114  001D                     	line	131
-  4115                           ;hough_PIC.c: 129:     return 0;;	Return value of _main is never used
+  4114  001D                     	line	153
+  4115                           ;hough_PIC.c: 151:     return 0;;	Return value of _main is never used
   4116                           	
   4117                           l19:	
   4118  001D                     	global	start
@@ -4198,7 +4198,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4125                           
   4126 ;; *************** function _houghTransform *****************
   4127 ;; Defined at:
-  4128 ;;		line 144 in file "hough_PIC.c"
+  4128 ;;		line 166 in file "hough_PIC.c"
   4129 ;; Parameters:    Size  Location     Type
   4130 ;;		None
   4131 ;; Auto vars:     Size  Location     Type
@@ -4246,12 +4246,12 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4168 ;; This function uses a non-reentrant model
   4169 ;;
   4170                           psect	text1,local,class=CODE,delta=2,merge=1,group=0
-  4171                           	line	144
+  4171                           	line	166
   4172                           global __ptext1
   4173                           __ptext1:	;psect for function _houghTransform
   4174  0045                     psect	text1
   4175                           	file	"hough_PIC.c"
-  4176                           	line	144
+  4176                           	line	166
   4177                           	global	__size_of_houghTransform
   4178                           	__size_of_houghTransform	equ	__end_of_houghTransform-_houghTransform
   4179  029A                     	
@@ -4259,11 +4259,11 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4181  0045                     ;incstack = 0
   4182                           	opt	stack 11
   4183                           ; Regs used in _houghTransform: [wreg-fsr1h+status,2+status,0+pclath+cstack]
-  4184                           	line	154
+  4184                           	line	176
   4185                           	
   4186                           l2442:	
-  4187  0045                     ;hough_PIC.c: 150:     int rhoD,theta,j,i;;hough_PIC.c: 151:     float rho,cosTheta,sinT
-                                 heta;;hough_PIC.c: 152:     unsigned char accumulator_pixel;;hough_PIC.c: 154:     for(t
+  4187  0045                     ;hough_PIC.c: 172:     int rhoD,theta,j,i;;hough_PIC.c: 173:     float rho,cosTheta,sinT
+                                 heta;;hough_PIC.c: 174:     unsigned char accumulator_pixel;;hough_PIC.c: 176:     for(t
                                  heta=0; theta<(180); theta++){
   4188                           	movlb 2	; select bank2
   4189  0045  0022               	clrf	(houghTransform@theta)^0100h
@@ -4295,10 +4295,10 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4215  0058                     	goto	l32
   4216  0058  2ADE               	
   4217                           l22:	
-  4218  0059                     	line	156
+  4218  0059                     	line	178
   4219                           	
   4220                           l2448:	
-  4221  0059                     ;hough_PIC.c: 156:         cosTheta=cosf(theta*3.14159265358979323846/180);
+  4221  0059                     ;hough_PIC.c: 178:         cosTheta=cosf(theta*3.14159265358979323846/180);
   4222                           	movlw	0x43
   4223  0059  3043               	movlb 0	; select bank0
   4224  005A  0020               	movwf	(___fldiv@a+3)
@@ -4371,7 +4371,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4291  009F  00C7               
   4292                           	
   4293                           l2450:	
-  4294  00A0                     ;hough_PIC.c: 156:         cosTheta=cosf(theta*3.14159265358979323846/180);
+  4294  00A0                     ;hough_PIC.c: 178:         cosTheta=cosf(theta*3.14159265358979323846/180);
   4295                           	movf	(_houghTransform$748+3)^0100h,w
   4296  00A0  084A               	movlb 1	; select bank1
   4297  00A1  0021               	movwf	(cosf@x+3)^080h
@@ -4406,10 +4406,10 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4326  00BF  0856               	movlb 2	; select bank2
   4327  00C0  0022               	movwf	(houghTransform@cosTheta)^0100h
   4328  00C1  00BF               
-  4329                           	line	158
+  4329                           	line	180
   4330                           	
   4331                           l2452:	
-  4332  00C2                     ;hough_PIC.c: 158:         sinTheta=cosf(90 - (theta*3.14159265358979323846/180));
+  4332  00C2                     ;hough_PIC.c: 180:         sinTheta=cosf(90 - (theta*3.14159265358979323846/180));
   4333                           	movlw	0x42
   4334  00C2  3042               	movlb 0	; select bank0
   4335  00C3  0020               	movwf	(___fladd@b+3)
@@ -4511,7 +4511,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4431  0126  0858               	movlb 2	; select bank2
   4432  0127  0022               	movwf	(_houghTransform$749)^0100h
   4433  0128  00CB               
-  4434                           ;hough_PIC.c: 158:         sinTheta=cosf(90 - (theta*3.14159265358979323846/180));
+  4434                           ;hough_PIC.c: 180:         sinTheta=cosf(90 - (theta*3.14159265358979323846/180));
   4435                           	movf	(_houghTransform$749+3)^0100h,w
   4436  0129  084E               	movlb 1	; select bank1
   4437  012A  0021               	movwf	(cosf@x+3)^080h
@@ -4546,10 +4546,10 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4466  0148  0856               	movlb 2	; select bank2
   4467  0149  0022               	movwf	(houghTransform@sinTheta)^0100h
   4468  014A  00C3               
-  4469                           	line	160
+  4469                           	line	182
   4470                           	
   4471                           l2454:	
-  4472  014B                     ;hough_PIC.c: 160:         for(rhoD=0; rhoD<(56); rhoD++){
+  4472  014B                     ;hough_PIC.c: 182:         for(rhoD=0; rhoD<(56); rhoD++){
   4473                           	clrf	(houghTransform@rhoD)^0100h
   4474  014B  01D3               	clrf	(houghTransform@rhoD+1)^0100h
   4475  014C  01D4               	
@@ -4579,14 +4579,14 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4499  015D                     	goto	l2490
   4500  015D  2AC9               	
   4501                           l24:	
-  4502  015E                     	line	162
+  4502  015E                     	line	184
   4503                           	
   4504                           l2460:	
-  4505  015E                     ;hough_PIC.c: 162:             accumulator_pixel = 0;
+  4505  015E                     ;hough_PIC.c: 184:             accumulator_pixel = 0;
   4506                           	movlb 2	; select bank2
   4507  015E  0022               	clrf	(houghTransform@accumulator_pixel)^0100h
-  4508  015F  01BE               	line	163
-  4509                           ;hough_PIC.c: 163:             for(j=0; j<(20); j++){
+  4508  015F  01BE               	line	185
+  4509                           ;hough_PIC.c: 185:             for(j=0; j<(20); j++){
   4510                           	clrf	(houghTransform@j)^0100h
   4511  0160  01D7               	clrf	(houghTransform@j+1)^0100h
   4512  0161  01D8               	
@@ -4616,10 +4616,10 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4536  0172                     	goto	l2488
   4537  0172  2AB4               	
   4538                           l26:	
-  4539  0173                     	line	164
+  4539  0173                     	line	186
   4540                           	
   4541                           l2466:	
-  4542  0173                     ;hough_PIC.c: 164:                 for(i=0; i<(20); i++){
+  4542  0173                     ;hough_PIC.c: 186:                 for(i=0; i<(20); i++){
   4543                           	movlb 2	; select bank2
   4544  0173  0022               	clrf	(houghTransform@i)^0100h
   4545  0174  01D9               	clrf	(houghTransform@i+1)^0100h
@@ -4650,10 +4650,10 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4570  0186                     	goto	l2486
   4571  0186  2A9F               	
   4572                           l28:	
-  4573  0187                     	line	165
+  4573  0187                     	line	187
   4574                           	
   4575                           l2472:	
-  4576  0187                     ;hough_PIC.c: 165:                     if(inputImage[ (j*(20)) + i] < (200)){
+  4576  0187                     ;hough_PIC.c: 187:                     if(inputImage[ (j*(20)) + i] < (200)){
   4577                           	movlb 2	; select bank2
   4578  0187  0022               	movf	(houghTransform@j+1)^0100h,w
   4579  0188  0858               	movwf	(___wmul@multiplier+1)
@@ -4692,10 +4692,10 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4612  01AB  29AD               u3371:
   4613  01AC                     	goto	l2482
   4614  01AC  2A8A               u3370:
-  4615  01AD                     	line	167
+  4615  01AD                     	line	189
   4616                           	
   4617                           l2474:	
-  4618  01AD                     ;hough_PIC.c: 167:                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
+  4618  01AD                     ;hough_PIC.c: 189:                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
   4619                           	movlb 2	; select bank2
   4620  01AD  0022               	movf	(houghTransform@sinTheta+3)^0100h,w
   4621  01AE  0846               	movlb 0	; select bank0
@@ -4814,10 +4814,10 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4734  0223  0858               	movlb 2	; select bank2
   4735  0224  0022               	movwf	(houghTransform@rho)^0100h
   4736  0225  00CF               
-  4737                           	line	168
+  4737                           	line	190
   4738                           	
   4739                           l2476:	
-  4740  0226                     ;hough_PIC.c: 168:                         rho=0;
+  4740  0226                     ;hough_PIC.c: 190:                         rho=0;
   4741                           	movlw	0x0
   4742  0226  3000               	movwf	(houghTransform@rho+3)^0100h
   4743  0227  00D2               	movlw	0x0
@@ -4827,10 +4827,10 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4747  022B  00D0               	movlw	0x0
   4748  022C  3000               	movwf	(houghTransform@rho)^0100h
   4749  022D  00CF               
-  4750                           	line	171
+  4750                           	line	193
   4751                           	
   4752                           l2478:	
-  4753  022E                     ;hough_PIC.c: 171:                         if(ceilf(rho + (56)/2)==rhoD){
+  4753  022E                     ;hough_PIC.c: 193:                         if(ceilf(rho + (56)/2)==rhoD){
   4754                           	movf	(houghTransform@rho+3)^0100h,w
   4755  022E  0852               	movlb 0	; select bank0
   4756  022F  0020               	movwf	(___fladd@a+3)
@@ -4914,10 +4914,10 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4834  0280  2A82               u3381:
   4835  0281                     	goto	l2482
   4836  0281  2A8A               u3380:
-  4837  0282                     	line	173
+  4837  0282                     	line	195
   4838                           	
   4839                           l2480:	
-  4840  0282                     ;hough_PIC.c: 173:                             accumulator_pixel++;
+  4840  0282                     ;hough_PIC.c: 195:                             accumulator_pixel++;
   4841                           	movlw	low(01h)
   4842  0282  3001               	movlb 1	; select bank1
   4843  0283  0021               	movwf	(??_houghTransform+0)^080h+0
@@ -4925,19 +4925,19 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4845  0285  085E               	movlb 2	; select bank2
   4846  0286  0022               	addwf	(houghTransform@accumulator_pixel)^0100h,f
   4847  0287  07BE               	goto	l2482
-  4848  0288  2A8A               	line	174
-  4849                           ;hough_PIC.c: 174:                         }
+  4848  0288  2A8A               	line	196
+  4849                           ;hough_PIC.c: 196:                         }
   4850                           	
   4851                           l31:	
   4852  0289                     	goto	l2482
-  4853  0289  2A8A               	line	175
-  4854                           ;hough_PIC.c: 175:                     }
+  4853  0289  2A8A               	line	197
+  4854                           ;hough_PIC.c: 197:                     }
   4855                           	
   4856                           l30:	
-  4857  028A                     	line	176
+  4857  028A                     	line	198
   4858                           	
   4859                           l2482:	
-  4860  028A                     ;hough_PIC.c: 176:                 }
+  4860  028A                     ;hough_PIC.c: 198:                 }
   4861                           	movlw	01h
   4862  028A  3001               	movlb 2	; select bank2
   4863  028B  0022               	addwf	(houghTransform@i)^0100h,f
@@ -4967,10 +4967,10 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4887  029E                     	goto	l2486
   4888  029E  2A9F               	
   4889                           l29:	
-  4890  029F                     	line	177
+  4890  029F                     	line	199
   4891                           	
   4892                           l2486:	
-  4893  029F                     ;hough_PIC.c: 177:             }
+  4893  029F                     ;hough_PIC.c: 199:             }
   4894                           	movlw	01h
   4895  029F  3001               	movlb 2	; select bank2
   4896  02A0  0022               	addwf	(houghTransform@j)^0100h,f
@@ -4998,10 +4998,10 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4918  02B3                     	goto	l2488
   4919  02B3  2AB4               	
   4920                           l27:	
-  4921  02B4                     	line	179
+  4921  02B4                     	line	201
   4922                           	
   4923                           l2488:	
-  4924  02B4                     ;hough_PIC.c: 179:         }
+  4924  02B4                     ;hough_PIC.c: 201:         }
   4925                           	movlw	01h
   4926  02B4  3001               	movlb 2	; select bank2
   4927  02B5  0022               	addwf	(houghTransform@rhoD)^0100h,f
@@ -5029,10 +5029,10 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4949  02C8                     	goto	l2490
   4950  02C8  2AC9               	
   4951                           l25:	
-  4952  02C9                     	line	180
+  4952  02C9                     	line	202
   4953                           	
   4954                           l2490:	
-  4955  02C9                     ;hough_PIC.c: 180:     }
+  4955  02C9                     ;hough_PIC.c: 202:     }
   4956                           	movlw	01h
   4957  02C9  3001               	movlb 2	; select bank2
   4958  02CA  0022               	addwf	(houghTransform@theta)^0100h,f
@@ -5060,7 +5060,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   4980  02DD                     	goto	l32
   4981  02DD  2ADE               	
   4982                           l23:	
-  4983  02DE                     	line	181
+  4983  02DE                     	line	203
   4984                           	
   4985                           l32:	
   4986  02DE                     	return
@@ -14614,7 +14614,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.00 build -1524193055 
-Symbol Table                                                                                   Wed Nov  7 23:38:03 2018
+Symbol Table                                                                                   Wed Nov  7 23:53:04 2018
 
               houghTransform@rho 014F               houghTransform@rhoD 0153                     ___fldiv@aexp 0053  
                    ___fldiv@bexp 0052                     ___fldiv@sign 004B                      __CFG_CP$OFF 0000  

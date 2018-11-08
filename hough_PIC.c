@@ -209,7 +209,7 @@ void putch(unsigned char data) {
  * @brief: This method performs all the calculus related to the Hough Transform.
  *         This occurs from the image scanning and calculation of the
  *         rho = xcos (theta) + ysin (theta) [0 < theta < 180] for pixels that
- *         display the low level (THRESH_VALUE==0).
+ *         display the high level (THRESH_VALUE==1).
  *         In this version we made some adjustments to the algorithm return the 
  *         value of each accumulator matrix pixel in each iteration and transmit 
  *         each pixel in UART serial output. This increases the algorithm 
@@ -222,7 +222,7 @@ void putch(unsigned char data) {
  */
 void houghTransform(void){
     // Calculate each pixel of Accumulator by calculating rho of each image 
-    // pixel with low level (THRESH_VALUE==0) and comparing with current value 
+    // pixel with high level (THRESH_VALUE==1) and comparing with current value 
     // of rhoD by adding with ACCU_HEIGHT/2 (or D).
     // OBS.: This is an adjustment to avoid storage of the accumulator.
 	

@@ -172,18 +172,18 @@
 [v _houghTransform houghTransform `(v  1 e 1 0 ]
 {
 "230
-[v houghTransform@sinTheta sinTheta `f  1 a 4 38 ]
-[v houghTransform@cosTheta cosTheta `f  1 a 4 34 ]
-[v houghTransform@rho rho `f  1 a 4 30 ]
+[v houghTransform@sinTheta sinTheta `f  1 a 4 8 ]
+[v houghTransform@cosTheta cosTheta `f  1 a 4 4 ]
+[v houghTransform@rho rho `f  1 a 4 0 ]
 "229
-[v houghTransform@theta theta `i  1 a 2 59 ]
-[v houghTransform@i i `i  1 a 2 57 ]
-[v houghTransform@j j `i  1 a 2 55 ]
-[v houghTransform@rhoD rhoD `i  1 a 2 53 ]
+[v houghTransform@theta theta `i  1 a 2 25 ]
+[v houghTransform@i i `i  1 a 2 23 ]
+[v houghTransform@j j `i  1 a 2 21 ]
+[v houghTransform@rhoD rhoD `i  1 a 2 19 ]
 "232
-[v houghTransform@inputImage inputImage `*.25uc  1 a 2 50 ]
+[v houghTransform@inputImage inputImage `*.25uc  1 a 2 12 ]
 "231
-[v houghTransform@accumulator_pixel accumulator_pixel `uc  1 a 1 52 ]
+[v houghTransform@accumulator_pixel accumulator_pixel `uc  1 a 1 14 ]
 "267
 } 0
 "5 /opt/microchip/xc8/v2.00/pic/sources/c99/common/printf.c
@@ -335,53 +335,53 @@
 [v _cosf cosf `(f  1 e 4 0 ]
 {
 "30
-[v cosf@ix ix `ul  1 a 4 26 ]
+[v cosf@ix ix `ul  1 a 4 64 ]
 "28
-[v cosf@y y `d  1 a 4 22 ]
+[v cosf@y y `d  1 a 4 60 ]
 [u S628 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "33
-[v cosf@__xc8_float_word __xc8_float_word `S628  1 a 4 4 ]
+[v cosf@__xc8_float_word __xc8_float_word `S628  1 a 4 42 ]
 "29
-[v cosf@n n `l  1 a 4 0 ]
+[v cosf@n n `l  1 a 4 38 ]
 "31
-[v cosf@sign sign `ui  1 a 2 16 ]
+[v cosf@sign sign `ui  1 a 2 54 ]
 "26
-[v cosf@x x `f  1 p 4 54 ]
+[v cosf@x x `f  1 p 4 30 ]
 "82
 } 0
 "26 /opt/microchip/xc8/v2.00/pic/sources/c99/common/__sindf.c
 [v ___sindf __sindf `(f  1 e 4 0 ]
 {
 "28
-[v ___sindf@z z `d  1 a 4 36 ]
-[v ___sindf@s s `d  1 a 4 32 ]
-[v ___sindf@w w `d  1 a 4 16 ]
-[v ___sindf@r r `d  1 a 4 12 ]
+[v ___sindf@z z `d  1 a 4 24 ]
+[v ___sindf@s s `d  1 a 4 20 ]
+[v ___sindf@w w `d  1 a 4 4 ]
+[v ___sindf@r r `d  1 a 4 0 ]
 "26
-[v ___sindf@x x `d  1 p 4 0 ]
+[v ___sindf@x x `d  1 p 4 54 ]
 "36
 } 0
 "43 /opt/microchip/xc8/v2.00/pic/sources/c99/common/__rem_pio2f.c
 [v ___rem_pio2f __rem_pio2f `(i  1 e 2 0 ]
 {
 "49
-[v ___rem_pio2f@n n `l  1 a 4 50 ]
+[v ___rem_pio2f@n n `l  1 a 4 26 ]
 "54
-[v ___rem_pio2f@t t `f  1 a 4 46 ]
+[v ___rem_pio2f@t t `f  1 a 4 22 ]
 "47
-[v ___rem_pio2f@fn fn `d  1 a 4 42 ]
+[v ___rem_pio2f@fn fn `d  1 a 4 18 ]
 [u S628 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "45
-[v ___rem_pio2f@u u `S628  1 a 4 34 ]
+[v ___rem_pio2f@u u `S628  1 a 4 10 ]
 "48
-[v ___rem_pio2f@ix ix `ul  1 a 4 28 ]
+[v ___rem_pio2f@ix ix `ul  1 a 4 4 ]
 "46
-[v ___rem_pio2f@ty ty `[1]d  1 a 4 24 ]
+[v ___rem_pio2f@ty ty `[1]d  1 a 4 0 ]
 "50
-[v ___rem_pio2f@sign sign `i  1 a 2 32 ]
+[v ___rem_pio2f@sign sign `i  1 a 2 8 ]
 "43
-[v ___rem_pio2f@x x `f  1 p 4 11 ]
-[v ___rem_pio2f@y y `*.5d  1 p 1 15 ]
+[v ___rem_pio2f@x x `f  1 p 4 65 ]
+[v ___rem_pio2f@y y `*.4d  1 p 1 69 ]
 "44
 [v ___rem_pio2f@F520 F520 `S628  1 s 4 F520 ]
 "94
@@ -417,27 +417,27 @@
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 10 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 9 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 64 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 63 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 0 ]
+[v ___fltol@f1 f1 `d  1 p 4 54 ]
 "70
 } 0
 "15 /opt/microchip/xc8/v2.00/pic/sources/c99/common/flneg.c
 [v ___flneg __flneg `(d  1 e 4 0 ]
 {
-[v ___flneg@f1 f1 `d  1 p 4 52 ]
+[v ___flneg@f1 f1 `d  1 p 4 26 ]
 "20
 } 0
 "26 /opt/microchip/xc8/v2.00/pic/sources/c99/common/__cosdf.c
 [v ___cosdf __cosdf `(f  1 e 4 0 ]
 {
 "28
-[v ___cosdf@z z `d  1 a 4 32 ]
-[v ___cosdf@w w `d  1 a 4 28 ]
-[v ___cosdf@r r `d  1 a 4 12 ]
+[v ___cosdf@z z `d  1 a 4 20 ]
+[v ___cosdf@w w `d  1 a 4 16 ]
+[v ___cosdf@r r `d  1 a 4 0 ]
 "26
-[v ___cosdf@x x `d  1 p 4 0 ]
+[v ___cosdf@x x `d  1 p 4 54 ]
 "35
 } 0
 "8 /opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
@@ -483,16 +483,16 @@
 [v ___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
-[v ___fladd@grs grs `uc  1 a 1 79 ]
+[v ___fladd@grs grs `uc  1 a 1 53 ]
 "15
-[v ___fladd@bexp bexp `uc  1 a 1 78 ]
+[v ___fladd@bexp bexp `uc  1 a 1 52 ]
 "16
-[v ___fladd@aexp aexp `uc  1 a 1 77 ]
+[v ___fladd@aexp aexp `uc  1 a 1 51 ]
 "13
-[v ___fladd@signs signs `uc  1 a 1 76 ]
+[v ___fladd@signs signs `uc  1 a 1 50 ]
 "10
-[v ___fladd@b b `d  1 p 4 56 ]
-[v ___fladd@a a `d  1 p 4 60 ]
+[v ___fladd@b b `d  1 p 4 30 ]
+[v ___fladd@a a `d  1 p 4 34 ]
 "237
 } 0
 "3 /opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
@@ -500,13 +500,13 @@
 {
 [u S628 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "5
-[v ceilf@u u `S628  1 a 4 16 ]
+[v ceilf@u u `S628  1 a 4 70 ]
 "7
-[v ceilf@m m `ul  1 a 4 10 ]
+[v ceilf@m m `ul  1 a 4 64 ]
 "6
-[v ceilf@e e `i  1 a 2 14 ]
+[v ceilf@e e `i  1 a 2 68 ]
 "3
-[v ceilf@x x `f  1 p 4 0 ]
+[v ceilf@x x `f  1 p 4 54 ]
 "4
 [v ceilf@F514 F514 `S628  1 s 4 F514 ]
 "27
@@ -524,8 +524,8 @@
 "4 /opt/microchip/xc8/v2.00/pic/sources/c99/common/fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 {
-[v ___fleq@ff1 ff1 `d  1 p 4 20 ]
-[v ___fleq@ff2 ff2 `d  1 p 4 24 ]
+[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
+[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
 "12
 } 0
 "8 /opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c

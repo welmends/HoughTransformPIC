@@ -237,8 +237,8 @@ void houghTransform(void){
             //Avoid calculating these same values for cosine
             cosTheta = cos(theta*M_PI/180);
             //Avoid calculating these same values for sine
-            //OBS.: sin(x) = cos(90-x) (Do this to save program space) (Bad approximation)
-            sinTheta = cos(90 - (theta*M_PI/180));
+            //OBS.: sin(x) = cos(90-x) (Do this to save program space)
+            sinTheta = cos((90-theta)*M_PI/180);
             //Accumulator pixel reset
             accumulator_pixel = 0;
             for(j=0; j<WIDTH; j++){

@@ -2295,8 +2295,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;hough_PIC.c: 238:             cosTheta = cosf(theta*3.14159265358979323846/180);
 [e = _cosTheta ( _cosf (1 -> / * -> _theta `d .3.14159265358979323846 -> -> 180 `i `d `f ]
 "241
-[; ;hough_PIC.c: 241:             sinTheta = cosf(90 - (theta*3.14159265358979323846/180));
-[e = _sinTheta ( _cosf (1 -> - -> -> 90 `i `d / * -> _theta `d .3.14159265358979323846 -> -> 180 `i `d `f ]
+[; ;hough_PIC.c: 241:             sinTheta = cosf((90-theta)*3.14159265358979323846/180);
+[e = _sinTheta ( _cosf (1 -> / * -> - -> 90 `i _theta `d .3.14159265358979323846 -> -> 180 `i `d `f ]
 "243
 [; ;hough_PIC.c: 243:             accumulator_pixel = 0;
 [e = _accumulator_pixel -> -> 0 `i `uc ]

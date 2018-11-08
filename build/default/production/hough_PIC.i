@@ -21615,7 +21615,7 @@ void houghTransform(void){
             cosTheta = cosf(theta*3.14159265358979323846/180);
 
 
-            sinTheta = cosf(90 - (theta*3.14159265358979323846/180));
+            sinTheta = cosf((90-theta)*3.14159265358979323846/180);
 
             accumulator_pixel = 0;
             for(j=0; j<(20); j++){

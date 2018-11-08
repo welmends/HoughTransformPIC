@@ -85,7 +85,6 @@
 #define _XTAL_FREQ 32000000
 #define F_CPU 32000000/64//#define Baud_value(baud_rate) (((float)(F_CPU)/(float)baud_rate)-1)
 #define Baud_value (((float)(F_CPU)/(float)baud_rate)-1)//calculus for UART serial tramission rate
-#define _ROM __attribute__((space(auto_psv)))
 
 // Since the inputImage is default, we calculate the Accumulator size
 // The width and height of the Hough accumulator must be:
@@ -150,7 +149,6 @@ int main(void) {
     LATAbits.LATA7 = 0;
     LATAbits.LATA6 = 1;// End process   - Bit LATA6 HIGH
     return 0;
-    
 }
 
 /**

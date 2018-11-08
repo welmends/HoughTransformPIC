@@ -21531,7 +21531,7 @@ double y0(double);
 double y1(double);
 double yn(int, double);
 # 81 "hough_PIC.c" 2
-# 102 "hough_PIC.c"
+# 101 "hough_PIC.c"
 const unsigned char DataInput[400] = {
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
@@ -21559,7 +21559,7 @@ const unsigned char DataInput[400] = {
 
 
 void houghTransform(void);
-# 142 "hough_PIC.c"
+# 141 "hough_PIC.c"
 int main(void) {
 
     TRISA = 0x0F;
@@ -21571,9 +21571,8 @@ int main(void) {
     LATAbits.LATA7 = 0;
     LATAbits.LATA6 = 1;
     return 0;
-
 }
-# 167 "hough_PIC.c"
+# 165 "hough_PIC.c"
 void houghTransform(void){
 
 

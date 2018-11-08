@@ -91,12 +91,12 @@
 #define ACCU_HEIGHT     (56)  //ACCU_HEIGHT = ceil(2*D) - 1 and D = sqrt(WIDTH^2 + HEIGHT^2)
 #define WIDTH           (20)  //Default input image width
 #define HEIGHT          (20)  //Default input image height
-#define THRESH_VALUE    (200) //Standard thresh value
+#define THRESH_VALUE    (0)   //Standard thresh value
 
 ////////////////////////////////////////////////////////////////////////////////
 //                              Global Variables                              //
 ////////////////////////////////////////////////////////////////////////////////
-//Input image stored in '_ROM unsigned char DataInput[400]' (20x20 = 400 bytes)
+//Input image stored in 'const unsigned char DataInput[400]' (20x20 = 400 bytes)
 const unsigned char DataInput[400] = {
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
@@ -125,8 +125,8 @@ const unsigned char DataInput[400] = {
 ////////////////////////////////////////////////////////////////////////////////
 void startProcessLED(void);
 void endProcessLED(void);
+void initUart(void);
 void putch(unsigned char data);
-void init_uart(void);
 void houghTransform(void);
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -142,7 +142,7 @@ void houghTransform(void);
  * @return: int
  */
 int main(void) {
-    init_uart();
+    initUart();       // Initialize UART
     startProcessLED();// Indicates that process will start now
     houghTransform(); // Algorithm in process
     endProcessLED();  // Indicates that process have ended
@@ -182,6 +182,18 @@ void endProcessLED(void){
 
 /**
  * @author: Joao Wellington and Messyo Sousa
+ * @brief: This method initialize UART by enabling transmitter and serial port.
+ *         More information: http://microchipdeveloper.com/xc8:console-printing
+ * @param:  void
+ * @return: void
+ */
+void initUart(void) {
+    TXSTAbits.TXEN = 1; // Enable transmitter
+    RCSTAbits.SPEN = 1; // Enable serial port
+}
+
+/**
+ * @author: Joao Wellington and Messyo Sousa
  * @brief: The 'putch' method is called by 'printf' to send each character of 
  *         the formatted text to stdout.
  *         More information: http://microchipdeveloper.com/xc8:console-printing
@@ -194,22 +206,10 @@ void putch(unsigned char data) {
 
 /**
  * @author: Joao Wellington and Messyo Sousa
- * @brief: This method initialize UART by enabling transmitter and serial port.
- *         More information: http://microchipdeveloper.com/xc8:console-printing
- * @param:  void
- * @return: void
- */
-void init_uart(void) {
-    TXSTAbits.TXEN = 1; // Enable transmitter
-    RCSTAbits.SPEN = 1; // Enable serial port
-}
-
-/**
- * @author: Joao Wellington and Messyo Sousa
  * @brief: This method performs all the calculus related to the Hough Transform.
  *         This occurs from the image scanning and calculation of the
  *         rho = xcos (theta) + ysin (theta) [0 < theta < 180] for pixels that
- *         display the low level (<THRESH_VALUE).
+ *         display the low level (THRESH_VALUE==0).
  *         In this version we made some adjustments to the algorithm return the 
  *         value of each accumulator matrix pixel in each iteration and transmit 
  *         each pixel in UART serial output. This increases the algorithm 
@@ -221,9 +221,9 @@ void init_uart(void) {
  * @return: void
  */
 void houghTransform(void){
-    // Calculate each pixel of Accumulator by calculating rho of each image pixel 
-    // with hight level (>THRESH_VALUE) and comparing with current value of rhoD
-    // by adding with ACCU_HEIGHT/2 (or D).
+    // Calculate each pixel of Accumulator by calculating rho of each image 
+    // pixel with low level (THRESH_VALUE==0) and comparing with current value 
+    // of rhoD by adding with ACCU_HEIGHT/2 (or D).
     // OBS.: This is an adjustment to avoid storage of the accumulator.
 	
     int rhoD,theta,j,i;//Iteration variables
@@ -232,18 +232,18 @@ void houghTransform(void){
     unsigned char *inputImage;//Pointer to DataInput
     inputImage=(unsigned char *)DataInput;//Get reference of DataInput
     
-    for(theta=0; theta<ACCU_WIDTH; theta++){
-        //Avoid calculating these same values for cosine
-        cosTheta=cos(theta*M_PI/180);
-        //Avoid calculating these same values for sine
-        sinTheta=cos(90 - (theta*M_PI/180));
-        //OBS.: sin(x) = cos(90-x) (Do this to save program space)
-        for(rhoD=0; rhoD<ACCU_HEIGHT; rhoD++){
+    for(rhoD=0; rhoD<ACCU_HEIGHT; rhoD++){
+        for(theta=0; theta<ACCU_WIDTH; theta++){
+            //Avoid calculating these same values for cosine
+            cosTheta = cos(theta*M_PI/180);
+            //Avoid calculating these same values for sine
+            //OBS.: sin(x) = cos(90-x) (Do this to save program space)
+            sinTheta = cos(90 - (theta*M_PI/180));
             //Accumulator pixel reset
             accumulator_pixel = 0;
             for(j=0; j<WIDTH; j++){
                 for(i=0; i<HEIGHT; i++){
-                    if(inputImage[ (j*HEIGHT) + i] < THRESH_VALUE){
+                    if(inputImage[ (j*HEIGHT) + i] == THRESH_VALUE){
                         //rho = xcos(theta) + ysin(theta) [theta is in radians]
                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
                         
@@ -255,8 +255,8 @@ void houghTransform(void){
                     }
                 }
             }
-            //UART_OUT - accumulator_pixel out ACCU_WIDTH X ACCU_HEIGHT Times
-            printf("%u",accumulator_pixel);
+            //Transmit UART Serial Output byte by byte (pixel by pixel)
+            printf("%u ",accumulator_pixel);
         }
         printf("\n");
     }

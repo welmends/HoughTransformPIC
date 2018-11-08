@@ -21559,12 +21559,12 @@ const unsigned char DataInput[400] = {
 
 void startProcessLED(void);
 void endProcessLED(void);
+void initUart(void);
 void putch(unsigned char data);
-void init_uart(void);
 void houghTransform(void);
 # 144 "hough_PIC.c"
 int main(void) {
-    init_uart();
+    initUart();
     startProcessLED();
     houghTransform();
     endProcessLED();
@@ -21587,14 +21587,14 @@ void endProcessLED(void){
     LATAbits.LATA6 = 1;
     return;
 }
-# 191 "hough_PIC.c"
-void putch(unsigned char data) {
-    TXREG = data;
-}
-# 202 "hough_PIC.c"
-void init_uart(void) {
+# 190 "hough_PIC.c"
+void initUart(void) {
     TXSTAbits.TXEN = 1;
     RCSTAbits.SPEN = 1;
+}
+# 203 "hough_PIC.c"
+void putch(unsigned char data) {
+    TXREG = data;
 }
 # 223 "hough_PIC.c"
 void houghTransform(void){
@@ -21609,18 +21609,18 @@ void houghTransform(void){
     unsigned char *inputImage;
     inputImage=(unsigned char *)DataInput;
 
-    for(theta=0; theta<(180); theta++){
+    for(rhoD=0; rhoD<(56); rhoD++){
+        for(theta=0; theta<(180); theta++){
 
-        cosTheta=cosf(theta*3.14159265358979323846/180);
+            cosTheta = cosf(theta*3.14159265358979323846/180);
 
-        sinTheta=cosf(90 - (theta*3.14159265358979323846/180));
 
-        for(rhoD=0; rhoD<(56); rhoD++){
+            sinTheta = cosf(90 - (theta*3.14159265358979323846/180));
 
             accumulator_pixel = 0;
             for(j=0; j<(20); j++){
                 for(i=0; i<(20); i++){
-                    if(inputImage[ (j*(20)) + i] < (200)){
+                    if(inputImage[ (j*(20)) + i] == (0)){
 
                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
 
@@ -21633,7 +21633,7 @@ void houghTransform(void){
                 }
             }
 
-            printf("%u",accumulator_pixel);
+            printf("%u ",accumulator_pixel);
         }
         printf("\n");
     }

@@ -102,28 +102,30 @@ const unsigned char DataInput[400] = {
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,128,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,255,
-255,255,255,255,128,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,255,255,
+255,255,255,255, 0 ,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,255,255,
 255,255,255,255,255, 0 ,255,255,255,255, 0 ,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255, 0 ,255,255, 0 ,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255, 0 , 0 ,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255, 0 , 0 ,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255, 0 ,255,255, 0 ,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255, 0 ,255,255,255,255, 0 ,255,255,255,255,255,255,255,255,255,
-255,255,255,255,128,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,255,255,
+255,255,255,255, 0 ,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,128,255,255,255,255,
+255,255,255,255,255,255,255,255,255,255,255,255,255,255,255, 0 ,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255
 };
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                 Prototypes                                 //
 ////////////////////////////////////////////////////////////////////////////////
+void startProcessLED(void);
+void endProcessLED(void);
 void houghTransform(void);
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -140,15 +142,41 @@ void houghTransform(void);
  */
 int main(void) {
     
+    startProcessLED();// Indicates that process will start now
+    houghTransform(); // Algorithm in process
+    endProcessLED();  // Indicates that process have ended
+
+    return 0;
+}
+
+/**
+ * @author: Joao Wellington and Messyo Sousa
+ * @brief: This method set bit LATA7 to high. This indicates that process will 
+ *         start now.
+ * @param:  void
+ * @return: void
+ */
+void startProcessLED(void){
+    //Initial Setup
     TRISA = 0x0F;
     LATA = 0x00;
-    LATAbits.LATA7 = 1;// Start process - Bit LATA7 HIGH
-    
-    houghTransform();  // Processing
-    
-    LATAbits.LATA7 = 0;
-    LATAbits.LATA6 = 1;// End process   - Bit LATA6 HIGH
-    return 0;
+    //Start process
+    LATAbits.LATA7 = 1;// Bit LATA7 HIGH
+    return;
+}
+
+/**
+ * @author: Joao Wellington and Messyo Sousa
+ * @brief: This method set bit LATA6 to high and LATA7 to low. This indicates 
+ *         that process have ended.
+ * @param:  void
+ * @return: void
+ */
+void endProcessLED(void){
+    //End Process
+    LATAbits.LATA7 = 0;// Bit LATA7 LOW
+    LATAbits.LATA6 = 1;// Bit LATA6 HIGH
+    return;
 }
 
 /**
@@ -156,7 +184,12 @@ int main(void) {
  * @brief: This method performs all the calculus related to the Hough Transform.
  *         This occurs from the image scanning and calculation of the
  *         rho = xcos (theta) + ysin (theta) [0 < theta < 180] for pixels that
- *         display the high level (>THRESH_VALUE).
+ *         display the low level (<THRESH_VALUE).
+ *         In this version we made some adjustments to the algorithm return the 
+ *         value of each accumulator matrix pixel in each iteration and transmit 
+ *         each pixel in UART serial output. This increases the algorithm 
+ *         processing cost but presented a memory-saving because there is no 
+ *         longer a need to store the accumulator matrix.
  *         More information: http://homepages.inf.ed.ac.uk/rbf/HIPR2/hough.htm
  *                           PATENT US3069654A - Paul V C Hough
  * @param:  void
@@ -166,7 +199,7 @@ void houghTransform(void){
     // Calculate each pixel of Accumulator by calculating rho of each image pixel 
     // with hight level (>THRESH_VALUE) and comparing with current value of rhoD
     // by adding with ACCU_HEIGHT/2 (or D).
-    // OBS.: This is an adaptation to avoid storage of the accumulator.
+    // OBS.: This is an adjustment to avoid storage of the accumulator.
 	
     int rhoD,theta,j,i;//Iteration variables
     float rho,cosTheta,sinTheta;//Calculus variables

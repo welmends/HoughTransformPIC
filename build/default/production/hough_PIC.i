@@ -20981,7 +20981,6 @@ char *ctermid(char *);
 
 char *tempnam(const char *, const char *);
 # 79 "hough_PIC.c" 2
-
 # 1 "/opt/microchip/xc8/v2.00/pic/include/c99/math.h" 1 3
 # 10 "/opt/microchip/xc8/v2.00/pic/include/c99/math.h" 3
 # 1 "/opt/microchip/xc8/v2.00/pic/include/c99/stdint.h" 1 3
@@ -21530,8 +21529,8 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 81 "hough_PIC.c" 2
-# 101 "hough_PIC.c"
+# 80 "hough_PIC.c" 2
+# 100 "hough_PIC.c"
 const unsigned char DataInput[400] = {
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
@@ -21560,17 +21559,19 @@ const unsigned char DataInput[400] = {
 
 void startProcessLED(void);
 void endProcessLED(void);
+void putch(unsigned char data);
+void init_uart(void);
 void houghTransform(void);
-# 143 "hough_PIC.c"
+# 144 "hough_PIC.c"
 int main(void) {
-
+    init_uart();
     startProcessLED();
     houghTransform();
     endProcessLED();
 
     return 0;
 }
-# 159 "hough_PIC.c"
+# 160 "hough_PIC.c"
 void startProcessLED(void){
 
     TRISA = 0x0F;
@@ -21579,14 +21580,23 @@ void startProcessLED(void){
     LATAbits.LATA7 = 1;
     return;
 }
-# 175 "hough_PIC.c"
+# 176 "hough_PIC.c"
 void endProcessLED(void){
 
     LATAbits.LATA7 = 0;
     LATAbits.LATA6 = 1;
     return;
 }
-# 198 "hough_PIC.c"
+# 191 "hough_PIC.c"
+void putch(unsigned char data) {
+    TXREG = data;
+}
+# 202 "hough_PIC.c"
+void init_uart(void) {
+    TXSTAbits.TXEN = 1;
+    RCSTAbits.SPEN = 1;
+}
+# 223 "hough_PIC.c"
 void houghTransform(void){
 
 
@@ -21623,6 +21633,8 @@ void houghTransform(void){
                 }
             }
 
+            printf("%u",accumulator_pixel);
         }
+        printf("\n");
     }
 }

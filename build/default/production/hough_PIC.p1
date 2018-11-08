@@ -1,13 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"127 hough_PIC.c
-[; ;hough_PIC.c: 127: void startProcessLED(void);
+"129 hough_PIC.c
+[; ;hough_PIC.c: 129: void init_uart(void);
+[v _init_uart `(v ~T0 @X0 0 ef ]
+"126
+[; ;hough_PIC.c: 126: void startProcessLED(void);
 [v _startProcessLED `(v ~T0 @X0 0 ef ]
-"129
-[; ;hough_PIC.c: 129: void houghTransform(void);
+"130
+[; ;hough_PIC.c: 130: void houghTransform(void);
 [v _houghTransform `(v ~T0 @X0 0 ef ]
-"128
-[; ;hough_PIC.c: 128: void endProcessLED(void);
+"127
+[; ;hough_PIC.c: 127: void endProcessLED(void);
 [v _endProcessLED `(v ~T0 @X0 0 ef ]
 "670 /opt/microchip/xc8/v2.00/pic/include/pic16f18875.h
 [; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 670: extern volatile unsigned char TRISA __attribute__((address(0x011)));
@@ -26,12 +29,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 "967
 [; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
 [v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
+"3833
+[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 3833: extern volatile unsigned char TXREG __attribute__((address(0x11A)));
+[v _TXREG `Vuc ~T0 @X0 0 e@282 ]
+"4313
+[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 4313:     struct {
+[s S211 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S211 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"4312
+[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 4312: typedef union {
+[u S210 `S211 1 ]
+[n S210 . . ]
+"4324
+[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 4324: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0x11E)));
+[v _TXSTAbits `VS210 ~T0 @X0 0 e@286 ]
+"4133
+[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 4133:     struct {
+[s S205 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S205 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"4132
+[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 4132: typedef union {
+[u S204 `S205 1 ]
+[n S204 . . ]
+"4144
+[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 4144: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0x11D)));
+[v _RCSTAbits `VS204 ~T0 @X0 0 e@285 ]
 "230 /opt/microchip/xc8/v2.00/pic/include/c99/math.h
 [; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 230: float cosf(float);
 [v _cosf `(f ~T0 @X0 0 ef1`f ]
 "214
 [; ;/opt/microchip/xc8/v2.00/pic/include/c99/math.h: 214: float ceilf(float);
 [v _ceilf `(f ~T0 @X0 0 ef1`f ]
+"113 /opt/microchip/xc8/v2.00/pic/include/c99/stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "18 hough_PIC.c
 [p x FEXTOSC = OFF ]
 "20
@@ -1714,8 +1744,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36645
 [; ;/opt/microchip/xc8/v2.00/pic/include/pic16f18875.h: 36645: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"101 hough_PIC.c
-[; ;hough_PIC.c: 101: const unsigned char DataInput[400] = {
+"100 hough_PIC.c
+[; ;hough_PIC.c: 100: const unsigned char DataInput[400] = {
 [v _DataInput `Cuc ~T0 @X0 -> 400 `i e ]
 [i _DataInput
 :U ..
@@ -2122,188 +2152,230 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"143
-[; ;hough_PIC.c: 143: int main(void) {
+"144
+[; ;hough_PIC.c: 144: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
 "145
-[; ;hough_PIC.c: 145:     startProcessLED();
-[e ( _startProcessLED ..  ]
+[; ;hough_PIC.c: 145:     init_uart();
+[e ( _init_uart ..  ]
 "146
-[; ;hough_PIC.c: 146:     houghTransform();
-[e ( _houghTransform ..  ]
+[; ;hough_PIC.c: 146:     startProcessLED();
+[e ( _startProcessLED ..  ]
 "147
-[; ;hough_PIC.c: 147:     endProcessLED();
+[; ;hough_PIC.c: 147:     houghTransform();
+[e ( _houghTransform ..  ]
+"148
+[; ;hough_PIC.c: 148:     endProcessLED();
 [e ( _endProcessLED ..  ]
-"149
-[; ;hough_PIC.c: 149:     return 0;
+"150
+[; ;hough_PIC.c: 150:     return 0;
 [e ) -> 0 `i ]
 [e $UE 1627  ]
-"150
-[; ;hough_PIC.c: 150: }
+"151
+[; ;hough_PIC.c: 151: }
 [e :UE 1627 ]
 }
-"159
-[; ;hough_PIC.c: 159: void startProcessLED(void){
+"160
+[; ;hough_PIC.c: 160: void startProcessLED(void){
 [v _startProcessLED `(v ~T0 @X0 1 ef ]
 {
 [e :U _startProcessLED ]
 [f ]
-"161
-[; ;hough_PIC.c: 161:     TRISA = 0x0F;
-[e = _TRISA -> -> 15 `i `uc ]
 "162
-[; ;hough_PIC.c: 162:     LATA = 0x00;
+[; ;hough_PIC.c: 162:     TRISA = 0x0F;
+[e = _TRISA -> -> 15 `i `uc ]
+"163
+[; ;hough_PIC.c: 163:     LATA = 0x00;
 [e = _LATA -> -> 0 `i `uc ]
-"164
-[; ;hough_PIC.c: 164:     LATAbits.LATA7 = 1;
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
 "165
-[; ;hough_PIC.c: 165:     return;
-[e $UE 1628  ]
+[; ;hough_PIC.c: 165:     LATAbits.LATA7 = 1;
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
 "166
-[; ;hough_PIC.c: 166: }
+[; ;hough_PIC.c: 166:     return;
+[e $UE 1628  ]
+"167
+[; ;hough_PIC.c: 167: }
 [e :UE 1628 ]
 }
-"175
-[; ;hough_PIC.c: 175: void endProcessLED(void){
+"176
+[; ;hough_PIC.c: 176: void endProcessLED(void){
 [v _endProcessLED `(v ~T0 @X0 1 ef ]
 {
 [e :U _endProcessLED ]
 [f ]
-"177
-[; ;hough_PIC.c: 177:     LATAbits.LATA7 = 0;
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
 "178
-[; ;hough_PIC.c: 178:     LATAbits.LATA6 = 1;
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;hough_PIC.c: 178:     LATAbits.LATA7 = 0;
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
 "179
-[; ;hough_PIC.c: 179:     return;
-[e $UE 1629  ]
+[; ;hough_PIC.c: 179:     LATAbits.LATA6 = 1;
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 "180
-[; ;hough_PIC.c: 180: }
+[; ;hough_PIC.c: 180:     return;
+[e $UE 1629  ]
+"181
+[; ;hough_PIC.c: 181: }
 [e :UE 1629 ]
 }
-"198
-[; ;hough_PIC.c: 198: void houghTransform(void){
+"191
+[; ;hough_PIC.c: 191: void putch(unsigned char data) {
+[v _putch `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _putch ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+"192
+[; ;hough_PIC.c: 192:     TXREG = data;
+[e = _TXREG _data ]
+"193
+[; ;hough_PIC.c: 193: }
+[e :UE 1630 ]
+}
+"202
+[; ;hough_PIC.c: 202: void init_uart(void) {
+[v _init_uart `(v ~T0 @X0 1 ef ]
+{
+[e :U _init_uart ]
+[f ]
+"203
+[; ;hough_PIC.c: 203:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"204
+[; ;hough_PIC.c: 204:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"205
+[; ;hough_PIC.c: 205: }
+[e :UE 1631 ]
+}
+"223
+[; ;hough_PIC.c: 223: void houghTransform(void){
 [v _houghTransform `(v ~T0 @X0 1 ef ]
 {
 [e :U _houghTransform ]
 [f ]
-"204
-[; ;hough_PIC.c: 204:     int rhoD,theta,j,i;
+"229
+[; ;hough_PIC.c: 229:     int rhoD,theta,j,i;
 [v _rhoD `i ~T0 @X0 1 a ]
 [v _theta `i ~T0 @X0 1 a ]
 [v _j `i ~T0 @X0 1 a ]
 [v _i `i ~T0 @X0 1 a ]
-"205
-[; ;hough_PIC.c: 205:     float rho,cosTheta,sinTheta;
+"230
+[; ;hough_PIC.c: 230:     float rho,cosTheta,sinTheta;
 [v _rho `f ~T0 @X0 1 a ]
 [v _cosTheta `f ~T0 @X0 1 a ]
 [v _sinTheta `f ~T0 @X0 1 a ]
-"206
-[; ;hough_PIC.c: 206:     unsigned char accumulator_pixel;
+"231
+[; ;hough_PIC.c: 231:     unsigned char accumulator_pixel;
 [v _accumulator_pixel `uc ~T0 @X0 1 a ]
-"207
-[; ;hough_PIC.c: 207:     unsigned char *inputImage;
+"232
+[; ;hough_PIC.c: 232:     unsigned char *inputImage;
 [v _inputImage `*uc ~T0 @X0 1 a ]
-"208
-[; ;hough_PIC.c: 208:     inputImage=(unsigned char *)DataInput;
+"233
+[; ;hough_PIC.c: 233:     inputImage=(unsigned char *)DataInput;
 [e = _inputImage -> &U _DataInput `*uc ]
-"210
-[; ;hough_PIC.c: 210:     for(theta=0; theta<(180); theta++){
+"235
+[; ;hough_PIC.c: 235:     for(theta=0; theta<(180); theta++){
 {
 [e = _theta -> 0 `i ]
-[e $ < _theta -> 180 `i 1631  ]
-[e $U 1632  ]
-[e :U 1631 ]
+[e $ < _theta -> 180 `i 1633  ]
+[e $U 1634  ]
+[e :U 1633 ]
 {
-"212
-[; ;hough_PIC.c: 212:         cosTheta=cosf(theta*3.14159265358979323846/180);
+"237
+[; ;hough_PIC.c: 237:         cosTheta=cosf(theta*3.14159265358979323846/180);
 [e = _cosTheta ( _cosf (1 -> / * -> _theta `d .3.14159265358979323846 -> -> 180 `i `d `f ]
-"214
-[; ;hough_PIC.c: 214:         sinTheta=cosf(90 - (theta*3.14159265358979323846/180));
+"239
+[; ;hough_PIC.c: 239:         sinTheta=cosf(90 - (theta*3.14159265358979323846/180));
 [e = _sinTheta ( _cosf (1 -> - -> -> 90 `i `d / * -> _theta `d .3.14159265358979323846 -> -> 180 `i `d `f ]
-"216
-[; ;hough_PIC.c: 216:         for(rhoD=0; rhoD<(56); rhoD++){
+"241
+[; ;hough_PIC.c: 241:         for(rhoD=0; rhoD<(56); rhoD++){
 {
 [e = _rhoD -> 0 `i ]
-[e $ < _rhoD -> 56 `i 1634  ]
-[e $U 1635  ]
-[e :U 1634 ]
+[e $ < _rhoD -> 56 `i 1636  ]
+[e $U 1637  ]
+[e :U 1636 ]
 {
-"218
-[; ;hough_PIC.c: 218:             accumulator_pixel = 0;
+"243
+[; ;hough_PIC.c: 243:             accumulator_pixel = 0;
 [e = _accumulator_pixel -> -> 0 `i `uc ]
-"219
-[; ;hough_PIC.c: 219:             for(j=0; j<(20); j++){
+"244
+[; ;hough_PIC.c: 244:             for(j=0; j<(20); j++){
 {
 [e = _j -> 0 `i ]
-[e $ < _j -> 20 `i 1637  ]
-[e $U 1638  ]
-[e :U 1637 ]
+[e $ < _j -> 20 `i 1639  ]
+[e $U 1640  ]
+[e :U 1639 ]
 {
-"220
-[; ;hough_PIC.c: 220:                 for(i=0; i<(20); i++){
+"245
+[; ;hough_PIC.c: 245:                 for(i=0; i<(20); i++){
 {
 [e = _i -> 0 `i ]
-[e $ < _i -> 20 `i 1640  ]
-[e $U 1641  ]
-[e :U 1640 ]
+[e $ < _i -> 20 `i 1642  ]
+[e $U 1643  ]
+[e :U 1642 ]
 {
-"221
-[; ;hough_PIC.c: 221:                     if(inputImage[ (j*(20)) + i] < (200)){
-[e $ ! < -> *U + _inputImage * -> + * _j -> 20 `i _i `x -> -> # *U _inputImage `i `x `i -> 200 `i 1643  ]
+"246
+[; ;hough_PIC.c: 246:                     if(inputImage[ (j*(20)) + i] < (200)){
+[e $ ! < -> *U + _inputImage * -> + * _j -> 20 `i _i `x -> -> # *U _inputImage `i `x `i -> 200 `i 1645  ]
 {
-"223
-[; ;hough_PIC.c: 223:                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
+"248
+[; ;hough_PIC.c: 248:                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
 [e = _rho + * -> _j `f _cosTheta * -> _i `f _sinTheta ]
-"226
-[; ;hough_PIC.c: 226:                         if(ceilf(rho + (56)/2)==rhoD){
-[e $ ! == ( _ceilf (1 + _rho -> / -> 56 `i -> 2 `i `f -> _rhoD `f 1644  ]
+"251
+[; ;hough_PIC.c: 251:                         if(ceilf(rho + (56)/2)==rhoD){
+[e $ ! == ( _ceilf (1 + _rho -> / -> 56 `i -> 2 `i `f -> _rhoD `f 1646  ]
 {
-"228
-[; ;hough_PIC.c: 228:                             accumulator_pixel++;
+"253
+[; ;hough_PIC.c: 253:                             accumulator_pixel++;
 [e ++ _accumulator_pixel -> -> 1 `i `uc ]
-"229
-[; ;hough_PIC.c: 229:                         }
+"254
+[; ;hough_PIC.c: 254:                         }
 }
-[e :U 1644 ]
-"230
-[; ;hough_PIC.c: 230:                     }
+[e :U 1646 ]
+"255
+[; ;hough_PIC.c: 255:                     }
 }
-[e :U 1643 ]
-"231
-[; ;hough_PIC.c: 231:                 }
+[e :U 1645 ]
+"256
+[; ;hough_PIC.c: 256:                 }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 20 `i 1640  ]
-[e :U 1641 ]
+[e $ < _i -> 20 `i 1642  ]
+[e :U 1643 ]
 }
-"232
-[; ;hough_PIC.c: 232:             }
+"257
+[; ;hough_PIC.c: 257:             }
 }
 [e ++ _j -> 1 `i ]
-[e $ < _j -> 20 `i 1637  ]
-[e :U 1638 ]
+[e $ < _j -> 20 `i 1639  ]
+[e :U 1640 ]
 }
-"234
-[; ;hough_PIC.c: 234:         }
+"259
+[; ;hough_PIC.c: 259:             printf("%u",accumulator_pixel);
+[e ( _printf , (. :s 1C -> _accumulator_pixel `i ]
+"260
+[; ;hough_PIC.c: 260:         }
 }
 [e ++ _rhoD -> 1 `i ]
-[e $ < _rhoD -> 56 `i 1634  ]
-[e :U 1635 ]
+[e $ < _rhoD -> 56 `i 1636  ]
+[e :U 1637 ]
 }
-"235
-[; ;hough_PIC.c: 235:     }
+"261
+[; ;hough_PIC.c: 261:         printf("\n");
+[e ( _printf :s 2C ]
+"262
+[; ;hough_PIC.c: 262:     }
 }
 [e ++ _theta -> 1 `i ]
-[e $ < _theta -> 180 `i 1631  ]
-[e :U 1632 ]
+[e $ < _theta -> 180 `i 1633  ]
+[e :U 1634 ]
 }
-"236
-[; ;hough_PIC.c: 236: }
-[e :UE 1630 ]
+"263
+[; ;hough_PIC.c: 263: }
+[e :UE 1632 ]
 }
+[p f _printf 8389632 ]
+[a 1C 37 117 0 ]
+[a 2C 10 0 ]

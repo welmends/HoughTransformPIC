@@ -109,19 +109,19 @@
 [v _houghTransform houghTransform `(v  1 e 1 0 ]
 {
 "205
-[v houghTransform@rho rho `f  1 a 4 49 ]
-[v houghTransform@sinTheta sinTheta `f  1 a 4 35 ]
-[v houghTransform@cosTheta cosTheta `f  1 a 4 31 ]
+[v houghTransform@sinTheta sinTheta `f  1 a 4 39 ]
+[v houghTransform@cosTheta cosTheta `f  1 a 4 35 ]
+[v houghTransform@rho rho `f  1 a 4 31 ]
 "204
 [v houghTransform@i i `i  1 a 2 59 ]
 [v houghTransform@j j `i  1 a 2 57 ]
 [v houghTransform@theta theta `i  1 a 2 55 ]
 [v houghTransform@rhoD rhoD `i  1 a 2 53 ]
 "207
-[v houghTransform@inputImage inputImage `*.25uc  1 a 2 47 ]
+[v houghTransform@inputImage inputImage `*.25uc  1 a 2 51 ]
 "206
 [v houghTransform@accumulator_pixel accumulator_pixel `uc  1 a 1 30 ]
-"237
+"236
 } 0
 "26 /opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
 [v _cosf cosf `(f  1 e 4 0 ]

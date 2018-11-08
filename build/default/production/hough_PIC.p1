@@ -2260,53 +2260,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 "223
 [; ;hough_PIC.c: 223:                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
 [e = _rho + * -> _j `f _cosTheta * -> _i `f _sinTheta ]
-"224
-[; ;hough_PIC.c: 224:                         rho=0;
-[e = _rho -> -> 0 `i `f ]
-"227
-[; ;hough_PIC.c: 227:                         if(ceilf(rho + (56)/2)==rhoD){
+"226
+[; ;hough_PIC.c: 226:                         if(ceilf(rho + (56)/2)==rhoD){
 [e $ ! == ( _ceilf (1 + _rho -> / -> 56 `i -> 2 `i `f -> _rhoD `f 1644  ]
 {
-"229
-[; ;hough_PIC.c: 229:                             accumulator_pixel++;
+"228
+[; ;hough_PIC.c: 228:                             accumulator_pixel++;
 [e ++ _accumulator_pixel -> -> 1 `i `uc ]
-"230
-[; ;hough_PIC.c: 230:                         }
+"229
+[; ;hough_PIC.c: 229:                         }
 }
 [e :U 1644 ]
-"231
-[; ;hough_PIC.c: 231:                     }
+"230
+[; ;hough_PIC.c: 230:                     }
 }
 [e :U 1643 ]
-"232
-[; ;hough_PIC.c: 232:                 }
+"231
+[; ;hough_PIC.c: 231:                 }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 20 `i 1640  ]
 [e :U 1641 ]
 }
-"233
-[; ;hough_PIC.c: 233:             }
+"232
+[; ;hough_PIC.c: 232:             }
 }
 [e ++ _j -> 1 `i ]
 [e $ < _j -> 20 `i 1637  ]
 [e :U 1638 ]
 }
-"235
-[; ;hough_PIC.c: 235:         }
+"234
+[; ;hough_PIC.c: 234:         }
 }
 [e ++ _rhoD -> 1 `i ]
 [e $ < _rhoD -> 56 `i 1634  ]
 [e :U 1635 ]
 }
-"236
-[; ;hough_PIC.c: 236:     }
+"235
+[; ;hough_PIC.c: 235:     }
 }
 [e ++ _theta -> 1 `i ]
 [e $ < _theta -> 180 `i 1631  ]
 [e :U 1632 ]
 }
-"237
-[; ;hough_PIC.c: 237: }
+"236
+[; ;hough_PIC.c: 236: }
 [e :UE 1630 ]
 }

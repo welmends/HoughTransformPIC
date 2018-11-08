@@ -21613,7 +21613,6 @@ void houghTransform(void){
                     if(inputImage[ (j*(20)) + i] < (200)){
 
                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
-                        rho=0;
 
 
                         if(ceilf(rho + (56)/2)==rhoD){

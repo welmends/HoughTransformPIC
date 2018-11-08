@@ -221,7 +221,6 @@ void houghTransform(void){
                     if(inputImage[ (j*HEIGHT) + i] < THRESH_VALUE){
                         //rho = xcos(theta) + ysin(theta) [theta is in radians]
                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
-                        rho=0;
                         
                         //rho+D must be equal to the current rhoD
                         if(ceil(rho + ACCU_HEIGHT/2)==rhoD){

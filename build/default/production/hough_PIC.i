@@ -21531,8 +21531,8 @@ double y0(double);
 double y1(double);
 double yn(int, double);
 # 81 "hough_PIC.c" 2
-# 101 "hough_PIC.c"
-unsigned char inputImage[400] = {
+# 102 "hough_PIC.c"
+const unsigned char DataInput[400] = {
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
@@ -21559,7 +21559,7 @@ unsigned char inputImage[400] = {
 
 
 void houghTransform(void);
-# 141 "hough_PIC.c"
+# 142 "hough_PIC.c"
 int main(void) {
 
     TRISA = 0x0F;
@@ -21573,7 +21573,7 @@ int main(void) {
     return 0;
 
 }
-# 166 "hough_PIC.c"
+# 167 "hough_PIC.c"
 void houghTransform(void){
 
 
@@ -21583,6 +21583,8 @@ void houghTransform(void){
     int rhoD,theta,j,i;
     float rho,cosTheta,sinTheta;
     unsigned char accumulator_pixel;
+    unsigned char *inputImage;
+    inputImage=(unsigned char *)DataInput;
 
     for(theta=0; theta<(180); theta++){
 

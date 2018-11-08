@@ -85,6 +85,7 @@
 #define _XTAL_FREQ 32000000
 #define F_CPU 32000000/64//#define Baud_value(baud_rate) (((float)(F_CPU)/(float)baud_rate)-1)
 #define Baud_value (((float)(F_CPU)/(float)baud_rate)-1)//calculus for UART serial tramission rate
+#define _ROM __attribute__((space(auto_psv)))
 
 // Since the inputImage is default, we calculate the Accumulator size
 // The width and height of the Hough accumulator must be:
@@ -97,8 +98,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 //                              Global Variables                              //
 ////////////////////////////////////////////////////////////////////////////////
-//Input image stored in 'unsigned char inputImage[400]' (20x20 = 400 bytes)
-unsigned char inputImage[400] = {
+//Input image stored in '_ROM unsigned char DataInput[400]' (20x20 = 400 bytes)
+const unsigned char DataInput[400] = {
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
@@ -172,7 +173,9 @@ void houghTransform(void){
     int rhoD,theta,j,i;//Iteration variables
     float rho,cosTheta,sinTheta;//Calculus variables
     unsigned char accumulator_pixel;//Accumulator pixel variable
-
+    unsigned char *inputImage;//Pointer to DataInput
+    inputImage=(unsigned char *)DataInput;//Get reference of DataInput
+    
     for(theta=0; theta<ACCU_WIDTH; theta++){
         //Avoid calculating these same values for cosine
         cosTheta=cos(theta*M_PI/180);

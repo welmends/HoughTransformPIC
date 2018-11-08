@@ -37,9 +37,9 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"141 /home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+"142 /home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
 [v _main main `(i  1 e 2 0 ]
-"166
+"167
 [v _houghTransform houghTransform `(v  1 e 1 0 ]
 "670 /opt/microchip/xc8/v2.00/pic/include/pic16f18875.h
 [v _TRISA TRISA `VEuc  1 e 1 @17 ]
@@ -89,28 +89,30 @@
 [v _c3pio2 c3pio2 `DCd  1 s 4 c3pio2 ]
 "24
 [v _c4pio2 c4pio2 `DCd  1 s 4 c4pio2 ]
-"101 /home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
-[v _inputImage inputImage `[400]uc  1 e 400 @8800 ]
-"141
+"102 /home/well/MPLABXProjects/houghTransformPIC.X/hough_PIC.c
+[v _DataInput DataInput `DC[400]uc  1 e 400 0 ]
+"142
 [v _main main `(i  1 e 2 0 ]
 {
-"153
+"154
 } 0
-"166
+"167
 [v _houghTransform houghTransform `(v  1 e 1 0 ]
 {
-"173
-[v houghTransform@rho rho `f  1 a 4 47 ]
+"174
+[v houghTransform@rho rho `f  1 a 4 49 ]
 [v houghTransform@sinTheta sinTheta `f  1 a 4 35 ]
 [v houghTransform@cosTheta cosTheta `f  1 a 4 31 ]
-"172
-[v houghTransform@i i `i  1 a 2 57 ]
-[v houghTransform@j j `i  1 a 2 55 ]
-[v houghTransform@theta theta `i  1 a 2 53 ]
-[v houghTransform@rhoD rhoD `i  1 a 2 51 ]
-"174
+"173
+[v houghTransform@i i `i  1 a 2 59 ]
+[v houghTransform@j j `i  1 a 2 57 ]
+[v houghTransform@theta theta `i  1 a 2 55 ]
+[v houghTransform@rhoD rhoD `i  1 a 2 53 ]
+"176
+[v houghTransform@inputImage inputImage `*.25uc  1 a 2 47 ]
+"175
 [v houghTransform@accumulator_pixel accumulator_pixel `uc  1 a 1 30 ]
-"203
+"206
 } 0
 "26 /opt/microchip/xc8/v2.00/pic/sources/c99/common/cosf.c
 [v _cosf cosf `(f  1 e 4 0 ]
@@ -119,9 +121,9 @@
 [v cosf@ix ix `ul  1 a 4 26 ]
 "28
 [v cosf@y y `d  1 a 4 22 ]
-[u S481 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S482 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "33
-[v cosf@__xc8_float_word __xc8_float_word `S481  1 a 4 4 ]
+[v cosf@__xc8_float_word __xc8_float_word `S482  1 a 4 4 ]
 "29
 [v cosf@n n `l  1 a 4 0 ]
 "31
@@ -151,9 +153,9 @@
 [v ___rem_pio2f@t t `f  1 a 4 46 ]
 "47
 [v ___rem_pio2f@fn fn `d  1 a 4 42 ]
-[u S481 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S482 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "45
-[v ___rem_pio2f@u u `S481  1 a 4 34 ]
+[v ___rem_pio2f@u u `S482  1 a 4 34 ]
 "48
 [v ___rem_pio2f@ix ix `ul  1 a 4 28 ]
 "46
@@ -164,19 +166,19 @@
 [v ___rem_pio2f@x x `f  1 p 4 11 ]
 [v ___rem_pio2f@y y `*.5d  1 p 1 15 ]
 "44
-[v ___rem_pio2f@F520 F520 `S481  1 s 4 F520 ]
+[v ___rem_pio2f@F520 F520 `S482  1 s 4 F520 ]
 "94
 } 0
 "4 /opt/microchip/xc8/v2.00/pic/sources/c99/common/fabsf.c
 [v _fabsf fabsf `(f  1 e 4 0 ]
 {
-[u S481 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S482 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v fabsf@u u `S481  1 a 4 4 ]
+[v fabsf@u u `S482  1 a 4 4 ]
 "4
 [v fabsf@x x `f  1 p 4 0 ]
 "5
-[v fabsf@F453 F453 `S481  1 s 4 F453 ]
+[v fabsf@F453 F453 `S482  1 s 4 F453 ]
 "9
 } 0
 "10 /opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
@@ -224,17 +226,17 @@
 "8 /opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S344 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S345 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S349 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S352 . 4 `l 1 i 4 0 `d 1 f 4 0 `S344 1 fAsBytes 4 0 `S349 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S352  1 a 4 20 ]
+[s S350 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S353 . 4 `l 1 i 4 0 `d 1 f 4 0 `S345 1 fAsBytes 4 0 `S350 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S353  1 a 4 20 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 14 ]
-[s S421 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S422 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S424 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S421 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S424  1 a 2 24 ]
+[u S425 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S422 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S425  1 a 2 24 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 19 ]
 "11
@@ -279,9 +281,9 @@
 "3 /opt/microchip/xc8/v2.00/pic/sources/c99/common/ceilf.c
 [v _ceilf ceilf `(f  1 e 4 0 ]
 {
-[u S481 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S482 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "5
-[v ceilf@u u `S481  1 a 4 16 ]
+[v ceilf@u u `S482  1 a 4 16 ]
 "7
 [v ceilf@m m `ul  1 a 4 10 ]
 "6
@@ -289,7 +291,7 @@
 "3
 [v ceilf@x x `f  1 p 4 0 ]
 "4
-[v ceilf@F514 F514 `S481  1 s 4 F514 ]
+[v ceilf@F514 F514 `S482  1 s 4 F514 ]
 "27
 } 0
 "15 /opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c

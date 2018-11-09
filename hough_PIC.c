@@ -188,8 +188,8 @@ void endProcessLED(void){
  * @return: void
  */
 void initUart(void) {
-    TXSTAbits.TXEN = 1; // Enable transmitter
-    RCSTAbits.SPEN = 1; // Enable serial port
+    TXSTAbits.TXEN = 1;//Enable transmitter
+    RCSTAbits.SPEN = 1;//Enable serial port
 }
 
 /**
@@ -201,7 +201,8 @@ void initUart(void) {
  * @return: void
  */
 void putch(unsigned char data) {
-    TXREG = data;// send one character
+    while(!TRMT);//Waiting for previous data to transmit completely
+    TXREG = data;//Writing data to Transmit Register and starts transmission
 }
 
 /**

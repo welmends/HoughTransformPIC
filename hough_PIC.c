@@ -84,6 +84,7 @@
 #define _XTAL_FREQ 32000000
 #define F_CPU 32000000/64//#define Baud_value(baud_rate) (((float)(F_CPU)/(float)baud_rate)-1)
 #define Baud_value (((float)(F_CPU)/(float)baud_rate)-1)//calculus for UART serial tramission rate
+#define TX LATAbits.LATA0//PORT that we use to trasmit serial
 
 // Since the inputImage is default, we calculate the Accumulator size
 // The width and height of the Hough accumulator must be:
@@ -123,10 +124,11 @@ const unsigned char DataInput[400] = {
 ////////////////////////////////////////////////////////////////////////////////
 //                                 Prototypes                                 //
 ////////////////////////////////////////////////////////////////////////////////
+void init(void);
 void startProcessLED(void);
 void endProcessLED(void);
-void initUart(void);
 void putch(unsigned char data);
+void sendByteThroughPin(unsigned char byte);
 void houghTransform(void);
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -142,12 +144,27 @@ void houghTransform(void);
  * @return: int
  */
 int main(void) {
-    initUart();       // Initialize UART
+    init();           // Initialize
     startProcessLED();// Indicates that process will start now
     houghTransform(); // Algorithm in process
     endProcessLED();  // Indicates that process have ended
 
     return 0;
+}
+
+/**
+ * @author: Joao Wellington and Messyo Sousa
+ * @brief: This method initialize some registers and pins.
+ * @param:  void
+ * @return: void
+ */
+void init(void) {
+    //Initial Setup
+    TRISA = 0x0F;
+    LATA = 0x00;
+    //Simulador
+    TXSTAbits.TXEN = 1;//Enable transmitter
+    RCSTAbits.SPEN = 1;//Enable serial port
 }
 
 /**
@@ -158,11 +175,9 @@ int main(void) {
  * @return: void
  */
 void startProcessLED(void){
-    //Initial Setup
-    TRISA = 0x0F;
-    LATA = 0x00;
     //Start process
     LATAbits.LATA7 = 1;// Bit LATA7 HIGH
+    LATAbits.LATA6 = 0;// Bit LATA6 LOW
     return;
 }
 
@@ -182,18 +197,6 @@ void endProcessLED(void){
 
 /**
  * @author: Joao Wellington and Messyo Sousa
- * @brief: This method initialize UART by enabling transmitter and serial port.
- *         More information: http://microchipdeveloper.com/xc8:console-printing
- * @param:  void
- * @return: void
- */
-void initUart(void) {
-    TXSTAbits.TXEN = 1;//Enable transmitter
-    RCSTAbits.SPEN = 1;//Enable serial port
-}
-
-/**
- * @author: Joao Wellington and Messyo Sousa
  * @brief: The 'putch' method is called by 'printf' to send each character of 
  *         the formatted text to stdout.
  *         More information: http://microchipdeveloper.com/xc8:console-printing
@@ -203,6 +206,45 @@ void initUart(void) {
 void putch(unsigned char data) {
     while(!TRMT);//Waiting for previous data to transmit completely
     TXREG = data;//Writing data to Transmit Register and starts transmission
+}
+void sendByteThroughPin(unsigned char byte){
+	//*** Delays ***    
+	//Delay10TCYx(18);//Baud Rate: 9600
+    // Delays
+	// Ex1 => Delay10KTCYx (50); // delay time = 500ms
+    // ciclos de instrucao = (500ms x 4MHz)/4
+    // ciclos de instrucao = 500.000
+    // delay10K = 500.000/10000 = 50
+	// Ex2 => Delay10TCYx (21); // delay time = 104us
+	// ciclos de instrucao = (104us x 8MHz)/4
+	// ciclos de instrucao = 208
+	// delay10 = 208/10 = 20.8
+	// Ex3 => Delay10TCYx (166); // delay time = 833us
+	// ciclos de instrucao = (833us x 8MHz)/4
+	// ciclos de instrucao = 1666
+	// delay10 = 1666/10 = 166.6
+
+	//*** Manual ***
+	//100000 - 1seg
+	//83.3   - 1seg/1200
+	//10.4   - 1seg/9600
+	//for(t=0;t<14;t++){}//14
+    
+	TX = 1;
+    __delay_us(10);
+	TX = 1;
+	__delay_us(10);
+	TX = 0;
+	__delay_us(10.4);
+    unsigned char i;
+	for(i=0;i<=7;i++){
+		TX = (byte);
+		byte=byte>>1;
+		__delay_us(10);
+	}
+	TX = 1;
+	__delay_us(10);
+	TX = 1;
 }
 
 /**
@@ -257,10 +299,13 @@ void houghTransform(void){
                 }
             }
             //Transmit UART Serial Output byte by byte (pixel by pixel)
+            sendByteThroughPin(accumulator_pixel);
             printf("%u ",accumulator_pixel);
             if(theta==1){
+              sendByteThroughPin('\n');
               printf("\n");
             }else{
+              sendByteThroughPin(' ');
               printf(" ");
             }
         }

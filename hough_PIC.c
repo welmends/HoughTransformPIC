@@ -208,42 +208,20 @@ void putch(unsigned char data) {
     TXREG = data;//Writing data to Transmit Register and starts transmission
 }
 void sendByteThroughPin(unsigned char byte){
-	//*** Delays ***    
-	//Delay10TCYx(18);//Baud Rate: 9600
-    // Delays
-	// Ex1 => Delay10KTCYx (50); // delay time = 500ms
-    // ciclos de instrucao = (500ms x 4MHz)/4
-    // ciclos de instrucao = 500.000
-    // delay10K = 500.000/10000 = 50
-	// Ex2 => Delay10TCYx (21); // delay time = 104us
-	// ciclos de instrucao = (104us x 8MHz)/4
-	// ciclos de instrucao = 208
-	// delay10 = 208/10 = 20.8
-	// Ex3 => Delay10TCYx (166); // delay time = 833us
-	// ciclos de instrucao = (833us x 8MHz)/4
-	// ciclos de instrucao = 1666
-	// delay10 = 1666/10 = 166.6
-
-	//*** Manual ***
-	//100000 - 1seg
-	//83.3   - 1seg/1200
-	//10.4   - 1seg/9600
-	//for(t=0;t<14;t++){}//14
-    
 	TX = 1;
-    __delay_us(10);
+    __delay_us(104);
 	TX = 1;
-	__delay_us(10);
+	__delay_us(104);
 	TX = 0;
-	__delay_us(10.4);
+	__delay_us(104);
     unsigned char i;
 	for(i=0;i<=7;i++){
 		TX = (byte);
 		byte=byte>>1;
-		__delay_us(10);
+		__delay_us(104);
 	}
 	TX = 1;
-	__delay_us(10);
+	__delay_us(104);
 	TX = 1;
 }
 

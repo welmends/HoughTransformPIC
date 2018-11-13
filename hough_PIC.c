@@ -84,7 +84,7 @@
 #define _XTAL_FREQ 32000000
 #define F_CPU 32000000/64//#define Baud_value(baud_rate) (((float)(F_CPU)/(float)baud_rate)-1)
 #define Baud_value (((float)(F_CPU)/(float)baud_rate)-1)//calculus for UART serial tramission rate
-#define TX LATAbits.LATA0//PORT that we use to trasmit serial
+#define TX LATCbits.LATC6//PIN that we use to trasmit serial on PIC
 
 // Since the inputImage is default, we calculate the Accumulator size
 // The width and height of the Hough accumulator must be:
@@ -93,6 +93,7 @@
 #define WIDTH           (20)  //Default input image width
 #define HEIGHT          (20)  //Default input image height
 #define THRESH_VALUE    (1)   //Standard thresh value
+#define SIMULATOR       (1)   //1 - Use Simulator | 0 - Don't use Simulator
 
 ////////////////////////////////////////////////////////////////////////////////
 //                              Global Variables                              //
@@ -129,6 +130,7 @@ void startProcessLED(void);
 void endProcessLED(void);
 void putch(unsigned char data);
 void sendByteThroughPin(unsigned char byte);
+void UARTTransmitter(unsigned char byte, int theta);
 void houghTransform(void);
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -147,7 +149,8 @@ int main(void) {
     init();           // Initialize
     startProcessLED();// Indicates that process will start now
     houghTransform(); // Algorithm in process
-    endProcessLED();  // Indicates that process have ended
+    endProcessLED();  // Indicates that process have ended    
+    while(1);         // Prevent from starting over
 
     return 0;
 }
@@ -161,8 +164,9 @@ int main(void) {
 void init(void) {
     //Initial Setup
     TRISA = 0x0F;
+    TRISC = 0x00;
     LATA = 0x00;
-    //Simulador
+    //Simulator
     TXSTAbits.TXEN = 1;//Enable transmitter
     RCSTAbits.SPEN = 1;//Enable serial port
 }
@@ -198,7 +202,7 @@ void endProcessLED(void){
 /**
  * @author: Joao Wellington and Messyo Sousa
  * @brief: The 'putch' method is called by 'printf' to send each character of 
- *         the formatted text to stdout.
+ *         the formatted text to stdout.(Simulator only)
  *         More information: http://microchipdeveloper.com/xc8:console-printing
  * @param:  unsigned char
  * @return: void
@@ -207,22 +211,59 @@ void putch(unsigned char data) {
     while(!TRMT);//Waiting for previous data to transmit completely
     TXREG = data;//Writing data to Transmit Register and starts transmission
 }
-void sendByteThroughPin(unsigned char byte){
-	TX = 1;
-    __delay_us(104);
-	TX = 1;
+
+/**
+ * @author: Joao Wellington and Messyo Sousa
+ * @brief: The 'sendBytePin' method implements UART protocol to transmit a byte. 
+ *         This protocol is used to transmit and receive bytes between interfaces
+ *         and here we implement the transmit part. The delay we use was defined
+ *         by 1/9600 sec (104us), and 9600 was the baud rate used by default.
+ *         More information: https://www.solitontech.com/uart-protocol-validation-service/ 
+ * @param:  unsigned char
+ * @return: void
+ */
+void sendBytePin(unsigned char byte){
+	TX = 1;//Idle
+    __delay_us(104);// 1/9600 sec ~= 104 us
+	TX = 1;//Idle
 	__delay_us(104);
-	TX = 0;
+	TX = 0;//Start bit
 	__delay_us(104);
     unsigned char i;
 	for(i=0;i<=7;i++){
-		TX = (byte);
+		TX = (byte);//Data bits
 		byte=byte>>1;
 		__delay_us(104);
 	}
-	TX = 1;
+	TX = 1;//Stop bit
 	__delay_us(104);
-	TX = 1;
+	TX = 1;//Idle
+}
+
+/**
+ * @author: Joao Wellington and Messyo Sousa
+ * @brief: Here we separate when we transmit with the simulator and when we 
+ *         transmit on PIC TX Pin. Also, we set the end of the line and space 
+ *         between pixels of the output matrix.
+ * @param:  unsigned char
+ * @return: void
+ */
+void UARTTransmitter(unsigned char byte, int theta){
+    if(SIMULATOR){//SIMULATOR macro equals 1
+        printf("%u",byte);//transmit byte (pixel) (Simulator) 
+        if(theta==1){
+            printf("\n");//transmit byte (pixel) (Simulator) 
+        }else{
+            printf(" ");//space between pixels (Simulator) 
+        }
+    }else{//SIMULATOR macro equals 0
+        sendBytePin(byte);//transmit byte (pixel) (PIC))
+        if(theta==1){
+            sendBytePin('\n');//end of output matrix line (PIC)
+        }else{
+            sendBytePin(' ');//space between pixels (PIC)
+        }
+    }
 }
 
 /**
@@ -245,7 +286,7 @@ void houghTransform(void){
     // Calculate each pixel of Accumulator by calculating rho of each image 
     // pixel with high level (THRESH_VALUE==1) and comparing with current value 
     // of rhoD by adding with ACCU_HEIGHT/2 (or D).
-    // OBS.: This is an adjustment to avoid storage of the accumulator.
+    // OBS.: This is an adjustment to avoid storage of the accumulator matrix.
 	
     int rhoD,theta,j,i;//Iteration variables
     float rho,cosTheta,sinTheta;//Calculus variables
@@ -276,16 +317,8 @@ void houghTransform(void){
                     }
                 }
             }
-            //Transmit UART Serial Output byte by byte (pixel by pixel)
-            sendByteThroughPin(accumulator_pixel);
-            printf("%u ",accumulator_pixel);
-            if(theta==1){
-              sendByteThroughPin('\n');
-              printf("\n");
-            }else{
-              sendByteThroughPin(' ');
-              printf(" ");
-            }
+            //Transmit byte by byte (pixel by pixel) with UART Serial Output
+            UARTTransmitter(accumulator_pixel, theta);
         }
     }
 }

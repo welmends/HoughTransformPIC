@@ -89,7 +89,7 @@
 // Since the inputImage is default, we calculate the Accumulator size
 // The width and height of the Hough accumulator must be:
 #define ACCU_WIDTH      (180) //ACCU_WIDTH  = 180 to 1 degrees
-#define ACCU_HEIGHT     (55)  //ACCU_HEIGHT = 2*D - 1 and D = sqrt(WIDTH^2 + HEIGHT^2) (55 or 71)
+#define ACCU_HEIGHT     (55)  //ACCU_HEIGHT = 2*D - 1 and D = sqrt(WIDTH^2 + HEIGHT^2)
 #define WIDTH           (20)  //Default input image width
 #define HEIGHT          (20)  //Default input image height
 #define THRESH_VALUE    (1)   //Standard thresh value
@@ -99,6 +99,7 @@
 //                              Global Variables                              //
 ////////////////////////////////////////////////////////////////////////////////
 //Input image stored in 'const unsigned char DataInput[400]' (20x20 = 400 bytes)
+//ACCU_HEIGHT = 55
 const unsigned char DataInput[400] = {
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -122,6 +123,7 @@ const unsigned char DataInput[400] = {
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 };
 //Input image stored in 'const unsigned char DataInput[650]' (25x26 = 650 bytes)
+//ACCU_HEIGHT = 71
 /*const unsigned char DataInput[650] = {
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,

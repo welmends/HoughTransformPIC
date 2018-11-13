@@ -1,4 +1,4 @@
-# Hough Transform - C Implementation on PIC16 Platform
+# Hough Transform - C Implementation on PIC16F18875 Platform
 
 Hough Transform Implementation in C language that provides the Hough Accumulator Matrix as serial output (UART)
 
@@ -22,6 +22,6 @@ Hough Transform Implementation in C language that provides the Hough Accumulator
 
 - Run as Debugger mode or
 
-- Select in project properties to run as PICKIT3
+- Select in project properties to run as Microchip Starter Kit and select Curiosity 
 
 - Write on your MCU

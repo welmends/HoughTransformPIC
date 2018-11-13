@@ -246,7 +246,7 @@ void putch(unsigned char data) {
  *         This protocol is used to transmit and receive bytes between interfaces
  *         and here we implement the transmit part. The delay we use was defined
  *         by 1/9600 sec (104us), and 9600 was the baud rate used by default.
- *         More information: https://www.solitontech.com/uart-protocol-validation-service/ 
+ *         More information: https://web.stanford.edu/class/cs140e/notes/lec4/uart-basics.pdf 
  * @param:  unsigned char
  * @return: void
  */

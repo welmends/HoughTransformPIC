@@ -6,6 +6,8 @@ Hough Transform Implementation in C language that provides the Hough Accumulator
 
 - XC8 Compiler on MPLAB X IDE
 
+- PIC16F18875
+
 ### Compiling
 
 - Open the MPLAB X IDE
@@ -18,9 +20,7 @@ Hough Transform Implementation in C language that provides the Hough Accumulator
 
 - Select in project properties to run as Simulator with UART I/O Output Enabled
 
-- Run as Debugger mode
-
-- Or
+- Run as Debugger mode or
 
 - Select in project properties to run as PICKIT3
 

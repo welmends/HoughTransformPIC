@@ -2,7 +2,7 @@
  * @file hough_PIC.c
  * @brief Standard Hough Transform Implemantation on C language
           Platform: PIC16F18875 - Microchip (MPLAB X - XC8 C Compiler)
-          Input : 8-bit 20x20 Matrix
+          Input : 8-bit Matrix
           Output: Accumulator Matrix passed through serial output (UART)
           Other : ...
  * @author $Author:$ de Souza, Joao Wellington Mendes; Brito, Messyo Sousa
@@ -93,7 +93,7 @@
 #define WIDTH           (20)  //Default input image width
 #define HEIGHT          (20)  //Default input image height
 #define THRESH_VALUE    (1)   //Standard thresh value
-#define SIMULATOR       (1)   //1 - Use Simulator | 0 - Don't use Simulator
+#define SIMULATOR       (0)   //1 - Use Simulator | 0 - Don't use Simulator
 
 ////////////////////////////////////////////////////////////////////////////////
 //                              Global Variables                              //
@@ -159,7 +159,7 @@ void init(void);
 void startProcessLED(void);
 void endProcessLED(void);
 void putch(unsigned char data);
-void sendByteThroughPin(unsigned char byte);
+void sendBytePin(unsigned char byte);
 void UARTTransmitter(unsigned char byte, int theta);
 void houghTransform(void);
 
@@ -288,11 +288,6 @@ void UARTTransmitter(unsigned char byte, int theta){
         }
     }else{//SIMULATOR macro equals 0
         sendBytePin(byte);//transmit byte (pixel) (PIC))
-        if(theta==1){
-            sendBytePin('\n');//end of output matrix line (PIC)
-        }else{
-            sendBytePin(' ');//space between pixels (PIC)
-        }
     }
 }
 

@@ -18,12 +18,13 @@ if __name__ == "__main__":
     while condition:
         pixel = rx.read(1)
         if(pixel != b''):
+            #print(ord(pixel))
             if(contW==0 and contH==0):
                 print('Reading from PIC Serial...')
             contW+=1
             imageFile.write(str(ord(pixel)))
-            #print(ord(pixel))
             if(contW==width):
+                print('Line '+str(contH+1)+'/'+str(height))
                 imageFile.write("\n")
                 contW=0
                 contH+=1

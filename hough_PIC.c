@@ -2,12 +2,13 @@
  * @file hough_PIC.c
  * @brief Standard Hough Transform Implemantation on C language
           Platform: PIC16F18875 - Microchip (MPLAB X - XC8 C Compiler)
-          Input : 8-bit Matrix
-          Output: Accumulator Matrix passed through serial output (UART)
+          Input : 8-bit Matrix stored as const
+          Output: Accumulator Matrix passed through serial output (UART) or 
+                  Serial I/O Terminal (Simulator)
           Other : ...
  * @author $Author:$ de Souza, Joao Wellington Mendes; Brito, Messyo Sousa
  * @version $Revision:$
- * @date $Date:$ Created on 04/11/2018 and Last Update on 07/11/2018
+ * @date $Date:$ Created on 04/11/2018 and Last Update on 22/11/2018
  */
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -247,34 +248,36 @@ void putch(unsigned char data) {
  * @brief: The 'sendBytePin' method implements UART protocol to transmit a byte. 
  *         This protocol is used to transmit and receive bytes between interfaces
  *         and here we implement the transmit part. The delay we use was defined
- *         by 1/9600 sec (104us), and 9600 was the baud rate used by default.
- *         More information: https://web.stanford.edu/class/cs140e/notes/lec4/uart-basics.pdf 
+ *         by 1/9600 sec (104us), and 9600 was the baud rate used by default. 
+ *         We implemented the transmission with 0 parity bits and 1 stop bits.
+ *         More information: https://web.stanford.edu/class/cs140e/notes/lec4/uart-basics.pdf
+ *                           https://developer.electricimp.com/resources/uart
  * @param:  unsigned char
  * @return: void
  */
 void sendBytePin(unsigned char byte){
-	TX = 1;//Idle
+    TX = 1;//Idle
     __delay_us(104);// 1/9600 sec ~= 104 us
-	TX = 1;//Idle
-	__delay_us(104);
-	TX = 0;//Start bit
-	__delay_us(104);
+    TX = 1;//Idle
+    __delay_us(104);
+    TX = 0;//Start bit
+    __delay_us(104);
     unsigned char i;
-	for(i=0;i<=7;i++){
-		TX = (byte);//Data bits
-		byte=byte>>1;
-		__delay_us(104);
-	}
-	TX = 1;//Stop bit
+    for(i=0;i<=7;i++){
+	TX = (byte);//Data bits
+	byte=byte>>1;
 	__delay_us(104);
-	TX = 1;//Idle
+    }
+    TX = 1;//Stop bit
+    __delay_us(104);
+    TX = 1;//Idle
 }
 
 /**
  * @author: Joao Wellington and Messyo Sousa
  * @brief: Here we separate when we transmit with the simulator and when we 
- *         transmit on PIC TX Pin. Also, we set the end of the line and space 
- *         between pixels of the output matrix.
+ *         transmit on PIC TX Pin(RC6). Also, we set the end of the line and 
+ *         space between pixels of the output matrix.
  * @param:  unsigned char
  * @return: void
  */

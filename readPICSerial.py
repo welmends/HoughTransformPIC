@@ -1,4 +1,4 @@
-#Run: sudo python3 readPICSerial
+#Run: sudo python3 readPICSerial.py
 #Requirements: pyserial, serial and Serial
 
 import serial

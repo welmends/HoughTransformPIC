@@ -20,6 +20,14 @@ Hough Transform Implementation in C language that provides the Hough Accumulator
 
 ### Executing
 
-- Select in project properties to run as Simulator with UART I/O Output Enabled and run as Debugger mode OR
+#### Method 1
+- Select in project properties to run as Simulator with UART I/O Output Enabled and run as Debugger mode
 
-- Select in project properties to run as Microchip Starter Kit then select Curiosity and program the PIC16F18875. After that run the python script holding the Curiosity reset button and release the button after the script is executed so that the application starts in the PIC and the reading by the serial begins.
+#### Method 2
+- Select in project properties to run as Microchip Starter Kit then select Curiosity and program the PIC16F18875. After that run the python script(*readPICSerial.py*) holding the Curiosity reset button and release the button after the script is executed so that the application starts in the PIC and the reading by the serial begins. The python script will generate a file named *accumulator.txt* that is the output of the algorithm.
+
+### Scripts
+
+- Run *houghComparison.m* on MATLAB after executing in *Method 2* and have generated *accumulator.txt* file to view a comparison between the accumulator generated from MATLAB implementation and this implementation on PIC.
+
+- Run *getLines.m* on MATLAB after executing in *Method 2* and have generated *accumulator.txt* file to view a comparison between the lines plotted in the inputImage generated from MATLAB implementation and this implementation on PIC.

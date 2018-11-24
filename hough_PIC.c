@@ -1,14 +1,47 @@
 /**
+ *           Copyright 2018 by João Wellington and Messyo Sousa          
+ * Federal Institute of Education, Science and Technology of Ceará - IFCE
+ *          All rights reserved. This software is public domain.          
+ *
+ * Development context: This software was made in the discipline of Embedded 
+ *                      Systems under the guidance of Professor Elias Teodoro.
+ * 
+ * 
  * @file hough_PIC.c
  * @brief Standard Hough Transform Implemantation on C language
-          Platform: PIC16F18875 - Microchip (MPLAB X - XC8 C Compiler)
-          Input : 8-bit Matrix stored as const
-          Output: Accumulator Matrix passed through serial output (UART) or 
-                  Serial I/O Terminal (Simulator)
-          Other : ...
+            Platform  : PIC16F18875 - Microchip (MPLAB X - XC8 C Compiler)
+            Input     : 8-bit Matrix stored as const (20x20 matrix is the default)
+            Output    : Accumulator Matrix passed through serial output (UART) or 
+                        Serial I/O Terminal (Simulator)
+ * @instructions Using the code on MPLAB X Simulator or Curiosity
+            Requisites: XC8 Compiler on MPLAB X IDE, Curiosity with PIC16F18875,
+                        python3(Optional) with pyserial, serial and Serial libs,
+                        Matlab (Optional).
+            Initiate  : Open MPLAB X, create and add hough_PIC.c to the project.
+            Simulator : Select in project properties to run as Simulator with 
+                        UART I/O Output Enabled and run as Debugger mode.
+                        (No accumulator.txt generated!)
+                        (SET MACRO SIMULATOR TO 1)
+            Curiosity : Select in project properties to run as Microchip Starter
+                        Kit then select Curiosity and program the PIC16F18875. 
+                        After that, run the python script (readPICSerial.py) 
+                        holding the Curiosity reset button and release the 
+                        button after the script is executed so that the 
+                        application starts in the PIC and the serial reading 
+                        begins. The python script will generate a file named 
+                        accumulator.txt that is the output of the algorithm.
+                        (SET MACRO SIMULATOR TO 0)
+            Validation: * Run houghComparison.m on MATLAB after generated 
+                        accumulator.txt file to view a comparison between the 
+                        accumulator generated from MATLAB implementation and 
+                        this implementation on PIC.
+                        * Run getLines.m on MATLAB after generated accumulator.txt
+                        file to view a comparison between the lines plotted in 
+                        the inputImage generated from MATLAB implementation and
+                        this implementation on PIC.
  * @author $Author:$ de Souza, Joao Wellington Mendes; Brito, Messyo Sousa
  * @version $Revision:$
- * @date $Date:$ Created on 04/11/2018 and Last Update on 22/11/2018
+ * @date $Date:$ Created on 04/11/2018 and Last Update on 23/11/2018
  */
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -87,7 +120,7 @@
 #define Baud_value (((float)(F_CPU)/(float)baud_rate)-1)//calculus for UART serial tramission rate
 #define TX LATCbits.LATC6//PIN that we use to trasmit serial on PIC
 
-// Since the inputImage is default, we calculate the Accumulator size
+// Since the input image size is default, we calculate the Accumulator size
 // The width and height of the Hough accumulator must be:
 #define ACCU_WIDTH      (180) //ACCU_WIDTH  = 180 to 1 degrees
 #define ACCU_HEIGHT     (55)  //ACCU_HEIGHT = 2*D - 1 and D = sqrt(WIDTH^2 + HEIGHT^2)
@@ -171,15 +204,14 @@ void houghTransform(void);
 /**
  * @author: Joao Wellington and Messyo Sousa
  * @brief: The main method will call all other methods aiming to perform all
- *         operations prescribed. Also, the main method receives as input the
- *         arguments.
+ *         operations prescribed.
  * @param:  void
  * @return: int
  */
 int main(void) {
     init();           // Initialize
     startProcessLED();// Indicates that process will start now
-    houghTransform(); // Algorithm in process
+    houghTransform(); // Algorithm in process..
     endProcessLED();  // Indicates that process have ended    
     while(1);         // Prevent from starting over
 
@@ -197,9 +229,10 @@ void init(void) {
     TRISA = 0x0F;
     TRISC = 0x00;
     LATA = 0x00;
+    
     //Simulator
-    TXSTAbits.TXEN = 1;//Enable transmitter
-    RCSTAbits.SPEN = 1;//Enable serial port
+    TXSTAbits.TXEN = 1;// Enable transmitter
+    RCSTAbits.SPEN = 1;// Enable serial port
 }
 
 /**
@@ -239,8 +272,8 @@ void endProcessLED(void){
  * @return: void
  */
 void putch(unsigned char data) {
-    while(!TRMT);//Waiting for previous data to transmit completely
-    TXREG = data;//Writing data to Transmit Register and starts transmission
+    while(!TRMT);// Waiting for previous data to transmit completely
+    TXREG = data;// Writing data to Transmit Register and starts transmission
 }
 
 /**
@@ -277,7 +310,7 @@ void sendBytePin(unsigned char byte){
  * @author: Joao Wellington and Messyo Sousa
  * @brief: Here we separate when we transmit with the simulator and when we 
  *         transmit on PIC TX Pin(RC6). Also, we set the end of the line and 
- *         space between pixels of the output matrix.
+ *         space between pixels of the output matrix (Simulator).
  * @param:  unsigned char
  * @return: void
  */
@@ -302,9 +335,9 @@ void UARTTransmitter(unsigned char byte, int theta){
  *         display the high level (THRESH_VALUE==1).
  *         In this version we made some adjustments to the algorithm return the 
  *         value of each accumulator matrix pixel in each iteration and transmit 
- *         each pixel in UART serial output. This increases the algorithm 
- *         processing cost but presented a memory-saving because there is no 
- *         longer a need to store the accumulator matrix.
+ *         each pixel in UART serial output (or Serial I/O Terminal). This 
+ *         increases the algorithm processing cost but presented a memory-saving
+ *         because there is no longer a need to store the accumulator matrix.
  *         More information: http://homepages.inf.ed.ac.uk/rbf/HIPR2/hough.htm
  *                           PATENT US3069654A - Paul V C Hough
  * @param:  void
@@ -345,7 +378,8 @@ void houghTransform(void){
                     }
                 }
             }
-            //Transmit byte by byte (pixel by pixel) with UART Serial Output
+            //Transmit byte by byte (pixel by pixel) with UART Serial Output or
+            //Serial I/O Terminal
             UARTTransmitter(accumulator_pixel, theta);
         }
     }

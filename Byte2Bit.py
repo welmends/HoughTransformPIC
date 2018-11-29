@@ -50,7 +50,7 @@ def writeArrayToFile(array):
 
 if __name__ == "__main__":
     #read inputImage
-    inputImage = readFromFile("inputImage2.txt")
+    inputImage = readFromFile("inputImage.txt")
 
     #generate an array of Bytes from input image
     bytes = getArrayOfByte(inputImage)

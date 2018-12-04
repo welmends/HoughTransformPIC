@@ -132,9 +132,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 //                              Global Variables                              //
 ////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//                               CASO ALEATORIO                               //
+////////////////////////////////////////////////////////////////////////////////
 //Input image stored in 'const unsigned char DataInput[400]' (20x20 = 400 bytes)
 //ACCU_HEIGHT = 55
-/*const unsigned char DataInput[400] = {
+const unsigned char DataInput[400] = {
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -155,14 +158,34 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-};*/
-//Input image stored in 'const unsigned char DataInput[50]' (OPTIMIZED)
-//(20x20 = 400 bytes/8 = 50 bytes)
-//ACCU_HEIGHT = 55
-const unsigned char DataInput[50] = {
-0,0,0,0,0,0,0,0,0,16,0,2,0,0,64,0,8,0,129,0,4,32,0,36,0,
-1,128,0,24,0,2,64,0,66,0,8,16,0,0,128,0,4,0,0,32,0,1,0,0,0
 };
+////////////////////////////////////////////////////////////////////////////////
+//                                 PIOR CASO                                  //
+////////////////////////////////////////////////////////////////////////////////
+//Input image stored in 'const unsigned char DataInput[400]' (20x20 = 400 bytes)
+//ACCU_HEIGHT = 55
+/*const unsigned char DataInput[400] = {
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+};*/
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                 Prototypes                                 //
@@ -173,7 +196,6 @@ void endProcessLED(void);
 void putch(unsigned char data);
 void sendBytePin(unsigned char byte);
 void UARTTransmitter(unsigned char byte, int theta);
-unsigned char retrievePixel(int sequenceValue, unsigned char *inputImage);
 void houghTransform(void);
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -308,35 +330,6 @@ void UARTTransmitter(unsigned char byte, int theta){
 
 /**
  * @author: Joao Wellington and Messyo Sousa
- * @brief: This method is used to retrieve the actual binary value of the input 
- *         image, since the input pixel is represented by a bit. We return the 
- *         value of the pixel from the value of the sequence that represents the 
- *         pixel position of the matrix in a one-dimensional array.
- *         Example:
- *                 Input :  i=14 and j=5 (pixel value must be 1)
- *                          sequenceValue is 114
- *                          byte is (14+1)th that is 64 = 0100 0000
- *                          byte<<(2-1) => 1000 0000
- *                          byte>>7     => 0000 0001
- *                 Output:  [1] and is correct!
- * 
- * @param:  int, unsigned char *
- * @return: unsigned char
- */
-unsigned char retrievePixel(int sequenceValue, unsigned char *inputImage){
-    //get byte that contains the pixel that we want
-    unsigned char byte = inputImage[(int)(sequenceValue/8)];
-    
-    //(sequenceValue%8 - 1) is the remainder value from division by 8
-    //and adjusted on a scale from 0 to 7.
-    byte<<((sequenceValue%8)-1);//shift bit to Least Significant Bit (LSB)
-    byte>>7;                    //shift bit to Most  Significant Bit (MSB)
-    
-    return byte;//must be 0 or 1 (value of binary image)
-}
-
-/**
- * @author: Joao Wellington and Messyo Sousa
  * @brief: This method performs all the calculus related to the Hough Transform.
  *         This occurs from the image scanning and calculation of the
  *         rho = xcos (theta) + ysin (theta) [0 < theta < 180] for pixels that
@@ -374,7 +367,7 @@ void houghTransform(void){
             accumulator_pixel = 0;
             for(j=0; j<WIDTH; j++){
                 for(i=0; i<HEIGHT; i++){
-                    if(retrievePixel((j*HEIGHT)+i,inputImage) == THRESH_VALUE){
+                    if(inputImage[(j*HEIGHT)+i] == THRESH_VALUE){
                         //rho = xcos(theta) + ysin(theta) [theta is in radians]
                         rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
                         

@@ -132,6 +132,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 //                              Global Variables                              //
 ////////////////////////////////////////////////////////////////////////////////
+//Array to store each Accumulator Matrix column to transmit serial to PC
+unsigned char columnTheta[ACCU_HEIGHT];
 ////////////////////////////////////////////////////////////////////////////////
 //                               CASO ALEATORIO                               //
 ////////////////////////////////////////////////////////////////////////////////
@@ -195,7 +197,7 @@ void startProcessLED(void);
 void endProcessLED(void);
 void putch(unsigned char data);
 void sendBytePin(unsigned char byte);
-void UARTTransmitter(unsigned char byte, int theta);
+void UARTTransmitter();
 void houghTransform(void);
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -315,16 +317,18 @@ void sendBytePin(unsigned char byte){
  * @param:  unsigned char
  * @return: void
  */
-void UARTTransmitter(unsigned char byte, int theta){
+void UARTTransmitter(){
+    int col;
     if(SIMULATOR){//SIMULATOR macro equals 1
-        printf("%u",byte);//transmit byte (pixel) (Simulator) 
-        if(theta==1){
-            printf("\n");//transmit byte (pixel) (Simulator) 
-        }else{
-            printf(" ");//space between pixels (Simulator) 
+        //scroll on array of Accumulator column
+        for(col=0; col<ACCU_HEIGHT; col++){
+            printf("%u",columnTheta[col]);//transmit byte (pixel) (Simulator) 
         }
     }else{//SIMULATOR macro equals 0
-        sendBytePin(byte);//transmit byte (pixel) (PIC))
+        //scroll on array of Accumulator column
+        for(col=0; col<ACCU_HEIGHT; col++){
+            sendBytePin(columnTheta[col]);//transmit byte (pixel) (PIC)) 
+        }
     }
 }
 
@@ -335,53 +339,50 @@ void UARTTransmitter(unsigned char byte, int theta){
  *         rho = xcos (theta) + ysin (theta) [0 < theta < 180] for pixels that
  *         display the high level (THRESH_VALUE==1).
  *         In this version we made some adjustments to the algorithm return the 
- *         value of each accumulator matrix pixel in each iteration and transmit 
- *         each pixel in UART serial output (or Serial I/O Terminal). This 
+ *         value of each accumulator matrix column in each iteration and transmit 
+ *         each column in UART serial output (or Serial I/O Terminal). This 
  *         increases the algorithm processing cost but presented a memory-saving
- *         because there is no longer a need to store the accumulator matrix.
+ *         because there is no longer a need to store the all accumulator matrix.
  *         More information: http://homepages.inf.ed.ac.uk/rbf/HIPR2/hough.htm
  *                           PATENT US3069654A - Paul V C Hough
  * @param:  void
  * @return: void
  */
-void houghTransform(void){
-    // Calculate each pixel of Accumulator by calculating rho of each image 
-    // pixel with high level (THRESH_VALUE==1) and comparing with current value 
-    // of rhoD by adding with ACCU_HEIGHT/2 (or D).
-    // OBS.: This is an adjustment to avoid storage of the accumulator matrix.
-	
-    int rhoD,theta,j,i;//Iteration variables
+void houghTransform(void){	
+    int col,theta,j,i;//Iteration variables
     float rho,cosTheta,sinTheta;//Calculus variables
     unsigned char accumulator_pixel;//Accumulator pixel variable
     unsigned char *inputImage;//Pointer to DataInput
     inputImage=(unsigned char *)DataInput;//Get reference of DataInput
     
-    for(rhoD=0; rhoD<ACCU_HEIGHT; rhoD++){
-        for(theta=ACCU_WIDTH; theta>=1; theta--){
-            //Avoid calculating these same values for cosine
-            cosTheta = cos(theta*M_PI/180);
-            //Avoid calculating these same values for sine
-            //OBS.: sin(x) = cos(90-x) (Do this to save program space)
-            sinTheta = cos((90-theta)*M_PI/180);
-            //Accumulator pixel reset
-            accumulator_pixel = 0;
-            for(j=0; j<WIDTH; j++){
-                for(i=0; i<HEIGHT; i++){
-                    if(inputImage[(j*HEIGHT)+i] == THRESH_VALUE){
-                        //rho = xcos(theta) + ysin(theta) [theta is in radians]
-                        rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
-                        
-                        //rho+D must be equal to the current rhoD
-                        if(ceil(rho + ACCU_HEIGHT/2)==rhoD){
-                            //accumulator[rho+D,theta]++
-                            accumulator_pixel++;
-                        }
+    for(theta=ACCU_WIDTH; theta>=1; theta--){
+        //Avoid calculating these same values for cosine
+        cosTheta = cos(theta*M_PI/180);
+        //Avoid calculating these same values for sine
+        //OBS.: sin(x) = cos(90-x) (Do this to save program space)
+        sinTheta = cos((90-theta)*M_PI/180);
+        //Accumulator column reset
+        for(col=0; col<ACCU_HEIGHT; col++){
+            columnTheta[col]=0;
+        }
+        for(j=0; j<WIDTH; j++){
+            for(i=0; i<HEIGHT; i++){
+                if(inputImage[(j*HEIGHT)+i] == THRESH_VALUE){
+                    //rho = xcos(theta) + ysin(theta) [theta is in radians]
+                    rho = ( (j)*cosTheta ) + ( (i)*sinTheta );
+
+                    //Calculate rho and increments in right place if 255>=rho>=0
+                    col = ceil(rho + ACCU_HEIGHT/2);
+                    if(col<55 || col>=0){
+                        //accumulator[rho+D,theta]++
+                        columnTheta[col]++;
                     }
                 }
             }
-            //Transmit byte by byte (pixel by pixel) with UART Serial Output or
-            //Serial I/O Terminal
-            UARTTransmitter(accumulator_pixel, theta);
         }
+        //Transmit Accumulator column
+        //Transmit byte by byte (pixel by pixel) with UART Serial Output or
+        //Serial I/O Terminal
+        //UARTTransmitter();
     }
 }

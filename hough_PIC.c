@@ -127,7 +127,7 @@
 #define WIDTH           (20)  //Default input image width
 #define HEIGHT          (20)  //Default input image height
 #define THRESH_VALUE    (1)   //Standard thresh value
-#define SIMULATOR       (0)   //1 - Use Simulator | 0 - Don't use Simulator
+#define SIMULATOR       (1)   //1 - Use Simulator | 0 - Don't use Simulator
 
 ////////////////////////////////////////////////////////////////////////////////
 //                              Global Variables                              //
@@ -333,11 +333,6 @@ void UARTTransmitter(){
         //scroll on array of Accumulator column
         for(col=0; col<ACCU_HEIGHT; col++){
             sendBytePin(columnTheta[col]);//transmit byte (pixel) (PIC))
-            if(col==ACCU_HEIGHT-1){
-                sendBytePin('\n');//end line
-            }else{
-                sendBytePin(' ');//space
-            }
         }
     }
 }

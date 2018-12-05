@@ -8,8 +8,9 @@ from serial import Serial
 import array
 
 #control variables
-width     = 180
-height    = 55 #20x20 input image
+#Invert accumulator size because of the optimization
+width     = 55 #180
+height    = 180#55 #20x20 input image
 contW     = 0
 contH     = 0
 pixel     = 0

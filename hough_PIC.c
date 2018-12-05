@@ -322,12 +322,22 @@ void UARTTransmitter(){
     if(SIMULATOR){//SIMULATOR macro equals 1
         //scroll on array of Accumulator column
         for(col=0; col<ACCU_HEIGHT; col++){
-            printf("%u",columnTheta[col]);//transmit byte (pixel) (Simulator) 
+            printf("%u",columnTheta[col]);//transmit byte (pixel) (Simulator)
+            if(col==ACCU_HEIGHT-1){
+                printf("\n");//end line
+            }else{
+                printf(" ");//space
+            }
         }
     }else{//SIMULATOR macro equals 0
         //scroll on array of Accumulator column
         for(col=0; col<ACCU_HEIGHT; col++){
-            sendBytePin(columnTheta[col]);//transmit byte (pixel) (PIC)) 
+            sendBytePin(columnTheta[col]);//transmit byte (pixel) (PIC))
+            if(col==ACCU_HEIGHT-1){
+                sendBytePin('\n');//end line
+            }else{
+                sendBytePin(' ');//space
+            }
         }
     }
 }
@@ -383,6 +393,6 @@ void houghTransform(void){
         //Transmit Accumulator column
         //Transmit byte by byte (pixel by pixel) with UART Serial Output or
         //Serial I/O Terminal
-        //UARTTransmitter();
+        UARTTransmitter();
     }
 }
